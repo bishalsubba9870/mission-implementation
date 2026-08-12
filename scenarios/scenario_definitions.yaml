@@ -1,0 +1,86 @@
+test_cases:
+
+  baseline:
+    inject: false
+    category: Control
+    event: NONE
+    example: Normal Mission Execution
+    expected_outcome:
+      - COMPLETE_NORMALLY
+    purpose: Baseline comparison
+
+  gps_lost:
+    inject: true
+    category: Navigation
+    event: GPS_LOST
+    purpose: Fault Handling
+
+    variants:
+      recovery_success:
+        follow_up_event: GPS_AVAILABLE
+        expected_outcome:
+          - RECOVER_GPS
+          - CONTINUE_MISSION
+
+      recovery_failure:
+        follow_up_event: GPS_RECOVERY_FAILED
+        expected_outcome:
+          - LAND
+
+  battery_critical:
+    inject: true
+    category: Energy
+    event: BATTERY_CRITICAL
+    example: Critical Battery Mid-Mission
+    expected_outcome:
+      - EMERGENCY_LAND
+    purpose: Emergency Handling
+
+  communication_lost:
+    inject: true
+    category: Communication
+    event: COMMUNICATION_LOST
+    example: Communication Lost Mid-Mission
+    purpose: Mission Recovery Behavior
+
+    variants:
+
+      recovery_success:
+        follow_up_event: COMMUNICATION_RESTORED
+        expected_outcome:
+          - CONTINUE
+
+      recovery_failure:
+        follow_up_event: COMMUNICATION_RECOVERY_FAILED
+        expected_outcome:
+          - RETURN_TO_HOME
+
+  abort_requested:
+    inject: true
+    category: Mission
+    event: ABORT_REQUESTED
+    example: Abort Command
+    expected_outcome:
+      - ABORT_MISSION
+      - RETURN_TO_HOME
+    purpose: Mission-Level Decision
+
+  propulsion_failure:
+    inject: true
+    category: Hardware
+    event: PROPULSION_FAILURE
+    example: Propeller Damage
+    expected_outcome:
+      - EMERGENCY_LAND
+    purpose: Emergency Handling
+
+  wind_unsafe:
+    inject: true
+    category: Environment
+    event: WIND_UNSAFE
+    example: Unsafe High Wind
+    expected_outcome:
+      - ABORT_MISSION
+      - RETURN_TO_HOME
+      - SAFE_LAND
+    purpose: Emergency Handling

@@ -1,0 +1,29 @@
+mission:
+  id: M4
+  name: Zigzag and Return
+
+tasks:
+  - type: takeoff
+  - type: navigate
+    waypoint: WP1
+  - type: navigate
+    waypoint: WP2
+  - type: navigate
+    waypoint: WP3
+  - type: navigate
+    waypoint: WP4
+  - type: navigate
+    waypoint: WP5
+  - type: navigate
+    waypoint: WP6
+  - type: navigate
+    waypoint: WP5
+  - type: navigate
+    waypoint: WP4
+  - type: navigate
+    waypoint: WP3
+  - type: navigate
+    waypoint: WP2
+  - type: navigate
+    waypoint: WP1
+  - type: land

@@ -1,0 +1,54 @@
+mission:
+  id: M2
+  name: Branch and Return
+
+tasks:
+  - id: TAKEOFF
+    type: takeoff
+
+  - id: NAV_WP1_INITIAL
+    type: navigate
+    waypoint: WP1
+
+  - id: NAV_WP2_OUT
+    type: navigate
+    waypoint: WP2
+
+  - id: NAV_WP1_FROM_WP2
+    type: navigate
+    waypoint: WP1
+
+  - id: NAV_WP3_OUT
+    type: navigate
+    waypoint: WP3
+
+  - id: NAV_WP1_FROM_WP3
+    type: navigate
+    waypoint: WP1
+
+  - id: NAV_WP4_INITIAL
+    type: navigate
+    waypoint: WP4
+
+  - id: NAV_WP5_OUT
+    type: navigate
+    waypoint: WP5
+
+  - id: NAV_WP4_FROM_WP5
+    type: navigate
+    waypoint: WP4
+
+  - id: NAV_WP6_OUT
+    type: navigate
+    waypoint: WP6
+
+  - id: NAV_WP4_FROM_WP6
+    type: navigate
+    waypoint: WP4
+
+  - id: NAV_WP1_FINAL
+    type: navigate
+    waypoint: WP1
+
+  - id: LAND
+    type: land

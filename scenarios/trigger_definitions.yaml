@@ -1,0 +1,37 @@
+mission_triggers:
+
+  M1:
+    trigger_type: COMPLETED_NAVIGATION_COUNT
+    trigger_value: 1
+    required_current_task_type: navigate
+    required_current_task_status: RUNNING
+    description: >
+      Activate the selected runtime condition when the second
+      navigation task starts, after one navigation task has completed.
+
+  M2:
+    trigger_type: COMPLETED_NAVIGATION_COUNT
+    trigger_value: 5
+    required_current_task_type: navigate
+    required_current_task_status: RUNNING
+    description: >
+      Activate the selected runtime condition when navigation to WP4
+      starts, after the branch-and-return segment has completed.
+
+  M3:
+    trigger_type: COMPLETED_NAVIGATION_COUNT
+    trigger_value: 49
+    required_current_task_type: navigate
+    required_current_task_status: RUNNING
+    description: >
+      Activate the selected runtime condition when the fiftieth
+      navigation task starts in the 100-waypoint mission.
+
+  M4:
+    trigger_type: COMPLETED_NAVIGATION_COUNT
+    trigger_value: 100
+    required_current_task_type: navigate
+    required_current_task_status: RUNNING
+    description: >
+      Activate the selected runtime condition when return navigation
+      starts after completion of the outbound path to WP100.

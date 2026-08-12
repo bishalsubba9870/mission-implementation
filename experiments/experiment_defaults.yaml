@@ -1,0 +1,19 @@
+experiment:
+
+  formalism: waypoint
+  mission: M1
+  test_case: baseline
+
+  task_duration_seconds: 2.0
+
+  trigger_override:
+    enabled: false
+    value: 0
+
+  logging:
+    enabled: true
+    output_directory: logs
+
+  execution:
+    stop_after_scenario_response: true
+    decision_timeout_seconds: 5.0
