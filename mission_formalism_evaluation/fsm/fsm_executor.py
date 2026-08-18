@@ -243,6 +243,13 @@ class FSMExecutor(Node):
                 'action': 'LAND',
             },
 
+            # Wind-triggered mission abort.
+            # Kept separate from operator ABORT_REQUESTED.
+            'WIND_ABORT': {
+                'type': 'recovery',
+                'action': 'ABORT_MISSION',
+            },
+
             'ABORT_MISSION': {
                 'type': 'recovery',
                 'action': 'ABORT_MISSION',
@@ -347,14 +354,14 @@ class FSMExecutor(Node):
                     )
                 ] = 'COMM_RECOVERY'
 
-                # Current Wind Variant 3:
-                # unsafe wind -> safe land
+                # Unsafe wind:
+                # abort nominal mission, then perform safe landing.
                 self.transitions[
                     (
                         state_name,
                         'WIND_UNSAFE',
                     )
-                ] = 'LAND'
+                ] = 'WIND_ABORT'
 
                 # Battery
                 self.transitions[
@@ -364,7 +371,7 @@ class FSMExecutor(Node):
                     )
                 ] = 'LAND'
 
-                # Mission-level abort request
+                # Mission-level operator abort request
                 self.transitions[
                     (
                         state_name,
@@ -395,7 +402,20 @@ class FSMExecutor(Node):
         ] = 'RTL'
 
         # ---------------------------------------------------------
-        # Abort request:
+        # Wind-triggered abort:
+        #
+        # WIND_ABORT -> LAND
+        # ---------------------------------------------------------
+
+        self.transitions[
+            (
+                'WIND_ABORT',
+                'WIND_ABORT_COMPLETED',
+            )
+        ] = 'LAND'
+
+        # ---------------------------------------------------------
+        # Operator abort request:
         #
         # ABORT_MISSION -> RTL
         # ---------------------------------------------------------
@@ -410,7 +430,7 @@ class FSMExecutor(Node):
         # ---------------------------------------------------------
         # Generic RTL default:
         #
-        # communication recovery failure uses
+        # Communication recovery failure uses
         # RTL -> LAND.
         #
         # ABORT_REQUESTED is handled specially in the timer
@@ -673,7 +693,33 @@ class FSMExecutor(Node):
         ).lower()
 
         # ---------------------------------------------------------
-        # Abort completed
+        # Wind-triggered abort completed
+        # ---------------------------------------------------------
+
+        if (
+            self.current_state
+            == 'WIND_ABORT'
+        ):
+
+            self._publish_progress(
+                state_name='WIND_ABORT',
+                task_type='recovery',
+                status='COMPLETED',
+            )
+
+            self.get_logger().info(
+                'EVENT: WIND_ABORT_COMPLETED '
+                'in WIND_ABORT'
+            )
+
+            self._handle_event(
+                'WIND_ABORT_COMPLETED'
+            )
+
+            return
+
+        # ---------------------------------------------------------
+        # Operator abort completed
         # ---------------------------------------------------------
 
         if (

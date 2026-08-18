@@ -16,8 +16,15 @@ class FSMExecutor(Node):
     def __init__(self) -> None:
         super().__init__('fsm_executor')
 
-        self.declare_parameter('mission_file', 'mission_1.yaml')
-        self.declare_parameter('state_duration', 1.0)
+        self.declare_parameter(
+            'mission_file',
+            'mission_1.yaml',
+        )
+
+        self.declare_parameter(
+            'state_duration',
+            1.0,
+        )
 
         mission_file = (
             self.get_parameter('mission_file')
@@ -63,10 +70,6 @@ class FSMExecutor(Node):
         self.interrupted_state: str | None = None
         self.termination_reason = ''
 
-        # ---------------------------------------------------------
-        # ROS interfaces
-        # ---------------------------------------------------------
-
         self.progress_publisher = self.create_publisher(
             String,
             '/mission/progress',
@@ -80,25 +83,28 @@ class FSMExecutor(Node):
             10,
         )
 
-        # ---------------------------------------------------------
-        # Load mission and build FSM
-        # ---------------------------------------------------------
+        self._load_mission(
+            mission_path
+        )
 
-        self._load_mission(mission_path)
         self._build_fsm()
 
         self.get_logger().info(
             f'Mission ID: {self.mission_id}'
         )
+
         self.get_logger().info(
             f'Mission Name: {self.mission_name}'
         )
+
         self.get_logger().info(
             f'Mission Items: {len(self.tasks)}'
         )
+
         self.get_logger().info(
             f'FSM States: {len(self.states)}'
         )
+
         self.get_logger().info(
             f'FSM Transitions: {len(self.transitions)}'
         )
@@ -108,7 +114,9 @@ class FSMExecutor(Node):
             self._timer_callback,
         )
 
-        self._handle_event('START')
+        self._handle_event(
+            'START'
+        )
 
     # =============================================================
     # Mission loading
@@ -124,9 +132,12 @@ class FSMExecutor(Node):
             f'Loading mission: {mission_path}'
         )
 
-        if not os.path.exists(mission_path):
+        if not os.path.exists(
+            mission_path
+        ):
             raise FileNotFoundError(
-                f'Mission file not found: {mission_path}'
+                f'Mission file not found: '
+                f'{mission_path}'
             )
 
         with open(
@@ -134,29 +145,50 @@ class FSMExecutor(Node):
             'r',
             encoding='utf-8',
         ) as file:
-            data = yaml.safe_load(file)
+            data = yaml.safe_load(
+                file
+            )
 
-        if not isinstance(data, dict):
+        if not isinstance(
+            data,
+            dict,
+        ):
             raise ValueError(
                 'Mission YAML root must be a mapping.'
             )
 
-        if 'mission' not in data or 'tasks' not in data:
+        if (
+            'mission' not in data
+            or 'tasks' not in data
+        ):
             raise ValueError(
-                "Mission YAML requires 'mission' and 'tasks'."
+                "Mission YAML requires "
+                "'mission' and 'tasks'."
             )
 
-        mission_data = data['mission']
-        tasks = data['tasks']
+        mission_data = data[
+            'mission'
+        ]
 
-        if not isinstance(mission_data, dict):
+        tasks = data[
+            'tasks'
+        ]
+
+        if not isinstance(
+            mission_data,
+            dict,
+        ):
             raise ValueError(
                 "'mission' must be a mapping."
             )
 
-        if not isinstance(tasks, list) or not tasks:
+        if (
+            not isinstance(tasks, list)
+            or not tasks
+        ):
             raise ValueError(
-                'Mission must contain at least one task.'
+                'Mission must contain '
+                'at least one task.'
             )
 
         self.mission_id = str(
@@ -175,14 +207,15 @@ class FSMExecutor(Node):
 
     def _build_fsm(self) -> None:
         """
-        Build nominal mission and supported runtime-condition states.
+        Build nominal mission and runtime-condition states.
 
-        Supported:
-        - GPS loss
-        - Propulsion failure
-        - Communication loss
-        - Unsafe wind
-        - Battery emergency/critical event
+        Supported runtime events:
+        - GPS_LOST
+        - PROPULSION_FAILURE
+        - COMMUNICATION_LOST
+        - WIND_UNSAFE
+        - BATTERY_CRITICAL
+        - ABORT_REQUESTED
         """
 
         self.states = {
@@ -210,6 +243,13 @@ class FSMExecutor(Node):
                 'action': 'LAND',
             },
 
+            # Wind-triggered mission abort.
+            # Kept separate from operator ABORT_REQUESTED.
+            'WIND_ABORT': {
+                'type': 'recovery',
+                'action': 'ABORT_MISSION',
+            },
+
             'ABORT_MISSION': {
                 'type': 'recovery',
                 'action': 'ABORT_MISSION',
@@ -220,33 +260,54 @@ class FSMExecutor(Node):
 
         task_state_names: list[str] = []
 
-        for index, task in enumerate(self.tasks):
-            state_name = self._create_state_name(
-                task,
-                index,
+        for index, task in enumerate(
+            self.tasks
+        ):
+            state_name = (
+                self._create_state_name(
+                    task,
+                    index,
+                )
             )
 
-            self.states[state_name] = task
-            task_state_names.append(state_name)
+            self.states[
+                state_name
+            ] = task
 
+            task_state_names.append(
+                state_name
+            )
+
+        # ---------------------------------------------------------
         # Initial transition
+        # ---------------------------------------------------------
+
         self.transitions[
-            ('IDLE', 'START')
+            (
+                'IDLE',
+                'START',
+            )
         ] = task_state_names[0]
 
         # ---------------------------------------------------------
-        # Nominal + runtime transitions
+        # Nominal and runtime transitions
         # ---------------------------------------------------------
 
         for index, state_name in enumerate(
             task_state_names
         ):
-            if index == len(task_state_names) - 1:
+            if (
+                index
+                == len(task_state_names) - 1
+            ):
                 next_state = 'COMPLETED'
+
             else:
-                next_state = task_state_names[
-                    index + 1
-                ]
+                next_state = (
+                    task_state_names[
+                        index + 1
+                    ]
+                )
 
             self.transitions[
                 (
@@ -255,7 +316,9 @@ class FSMExecutor(Node):
                 )
             ] = next_state
 
-            state_data = self.states[state_name]
+            state_data = self.states[
+                state_name
+            ]
 
             if (
                 state_data is not None
@@ -267,7 +330,7 @@ class FSMExecutor(Node):
                 ).lower()
                 == 'navigate'
             ):
-                # GPS
+                # GPS loss
                 self.transitions[
                     (
                         state_name,
@@ -275,7 +338,7 @@ class FSMExecutor(Node):
                     )
                 ] = 'GPS_RECOVERY'
 
-                # Propulsion
+                # Propulsion failure
                 self.transitions[
                     (
                         state_name,
@@ -283,7 +346,7 @@ class FSMExecutor(Node):
                     )
                 ] = 'LAND'
 
-                # Communication
+                # Communication loss
                 self.transitions[
                     (
                         state_name,
@@ -291,13 +354,14 @@ class FSMExecutor(Node):
                     )
                 ] = 'COMM_RECOVERY'
 
-                # Wind
+                # Unsafe wind:
+                # abort nominal mission, then perform safe landing.
                 self.transitions[
                     (
                         state_name,
                         'WIND_UNSAFE',
                     )
-                ] = 'ABORT_MISSION'
+                ] = 'WIND_ABORT'
 
                 # Battery
                 self.transitions[
@@ -307,7 +371,18 @@ class FSMExecutor(Node):
                     )
                 ] = 'LAND'
 
-        # GPS failure
+                # Mission-level operator abort request
+                self.transitions[
+                    (
+                        state_name,
+                        'ABORT_REQUESTED',
+                    )
+                ] = 'ABORT_MISSION'
+
+        # ---------------------------------------------------------
+        # GPS recovery failure
+        # ---------------------------------------------------------
+
         self.transitions[
             (
                 'GPS_RECOVERY',
@@ -315,7 +390,10 @@ class FSMExecutor(Node):
             )
         ] = 'LAND'
 
-        # Communication failure
+        # ---------------------------------------------------------
+        # Communication recovery failure
+        # ---------------------------------------------------------
+
         self.transitions[
             (
                 'COMM_RECOVERY',
@@ -323,7 +401,25 @@ class FSMExecutor(Node):
             )
         ] = 'RTL'
 
-        # Wind: mission has been aborted, now return home
+        # ---------------------------------------------------------
+        # Wind-triggered abort:
+        #
+        # WIND_ABORT -> LAND
+        # ---------------------------------------------------------
+
+        self.transitions[
+            (
+                'WIND_ABORT',
+                'WIND_ABORT_COMPLETED',
+            )
+        ] = 'LAND'
+
+        # ---------------------------------------------------------
+        # Operator abort request:
+        #
+        # ABORT_MISSION -> RTL
+        # ---------------------------------------------------------
+
         self.transitions[
             (
                 'ABORT_MISSION',
@@ -331,7 +427,17 @@ class FSMExecutor(Node):
             )
         ] = 'RTL'
 
-        # RTL reaches home
+        # ---------------------------------------------------------
+        # Generic RTL default:
+        #
+        # Communication recovery failure uses
+        # RTL -> LAND.
+        #
+        # ABORT_REQUESTED is handled specially in the timer
+        # callback so its RTL completion ends the experiment
+        # at SAFE_TERMINATED.
+        # ---------------------------------------------------------
+
         self.transitions[
             (
                 'RTL',
@@ -339,7 +445,10 @@ class FSMExecutor(Node):
             )
         ] = 'LAND'
 
-        # Landing ends safely
+        # ---------------------------------------------------------
+        # Landing completion
+        # ---------------------------------------------------------
+
         self.transitions[
             (
                 'LAND',
@@ -356,7 +465,7 @@ class FSMExecutor(Node):
         task: dict[str, Any],
         index: int,
     ) -> str:
-        """Create a unique FSM state name."""
+        """Create unique FSM state name."""
 
         task_type = str(
             task.get(
@@ -366,26 +475,38 @@ class FSMExecutor(Node):
         ).lower()
 
         if task_type == 'takeoff':
-            return f'TAKEOFF_{index}'
+
+            return (
+                f'TAKEOFF_{index}'
+            )
 
         if task_type == 'navigate':
 
-            waypoint = task.get('waypoint')
+            waypoint = task.get(
+                'waypoint'
+            )
 
             if waypoint is None:
+
                 raise ValueError(
                     f'Navigate task {index} '
                     f'has no waypoint.'
                 )
 
-            return f'NAV_{index}_{waypoint}'
+            return (
+                f'NAV_{index}_{waypoint}'
+            )
 
         if task_type == 'land':
-            return f'LAND_{index}'
+
+            return (
+                f'LAND_{index}'
+            )
 
         raise ValueError(
-            f'Unsupported task type at index '
-            f'{index}: {task_type}'
+            f'Unsupported task type '
+            f'at index {index}: '
+            f'{task_type}'
         )
 
     # =============================================================
@@ -396,27 +517,36 @@ class FSMExecutor(Node):
         self,
         event: str,
     ) -> None:
-        """Perform an FSM transition."""
+        """Perform FSM transition associated with event."""
 
         transition_key = (
             self.current_state,
             event,
         )
 
-        next_state = self.transitions.get(
-            transition_key
+        next_state = (
+            self.transitions.get(
+                transition_key
+            )
         )
 
         if next_state is None:
+
             self.get_logger().warning(
                 f'No transition from state '
                 f'{self.current_state} '
                 f'for event {event}.'
             )
+
             return
 
-        previous_state = self.current_state
-        self.current_state = next_state
+        previous_state = (
+            self.current_state
+        )
+
+        self.current_state = (
+            next_state
+        )
 
         self.get_logger().info(
             f'TRANSITION: '
@@ -425,7 +555,9 @@ class FSMExecutor(Node):
             f'{next_state}'
         )
 
-        self._enter_state(next_state)
+        self._enter_state(
+            next_state
+        )
 
     # =============================================================
     # State entry
@@ -446,9 +578,13 @@ class FSMExecutor(Node):
             self._finish_mission(
                 result='SUCCESS'
             )
+
             return
 
-        if state_name == 'SAFE_TERMINATED':
+        if (
+            state_name
+            == 'SAFE_TERMINATED'
+        ):
 
             self.get_logger().info(
                 'STATE: SAFE_TERMINATED'
@@ -457,6 +593,7 @@ class FSMExecutor(Node):
             self._finish_mission(
                 result='SAFE_TERMINATED'
             )
+
             return
 
         state_data = self.states[
@@ -467,7 +604,9 @@ class FSMExecutor(Node):
             return
 
         state_type = str(
-            state_data['type']
+            state_data[
+                'type'
+            ]
         ).lower()
 
         if state_type == 'takeoff':
@@ -488,7 +627,9 @@ class FSMExecutor(Node):
         elif state_type == 'recovery':
 
             action = str(
-                state_data['action']
+                state_data[
+                    'action'
+                ]
             )
 
         else:
@@ -516,7 +657,7 @@ class FSMExecutor(Node):
     def _timer_callback(
         self,
     ) -> None:
-        """Simulate completion of active state."""
+        """Simulate completion of active FSM state."""
 
         if self.mission_finished:
             return
@@ -528,15 +669,17 @@ class FSMExecutor(Node):
         }:
             return
 
-        # Wait for externally supplied recovery result.
+        # Wait for explicit recovery result.
         if self.current_state in {
             'GPS_RECOVERY',
             'COMM_RECOVERY',
         }:
             return
 
-        state_data = self.states.get(
-            self.current_state
+        state_data = (
+            self.states.get(
+                self.current_state
+            )
         )
 
         if state_data is None:
@@ -549,8 +692,40 @@ class FSMExecutor(Node):
             )
         ).lower()
 
-        # Abort current mission
-        if self.current_state == 'ABORT_MISSION':
+        # ---------------------------------------------------------
+        # Wind-triggered abort completed
+        # ---------------------------------------------------------
+
+        if (
+            self.current_state
+            == 'WIND_ABORT'
+        ):
+
+            self._publish_progress(
+                state_name='WIND_ABORT',
+                task_type='recovery',
+                status='COMPLETED',
+            )
+
+            self.get_logger().info(
+                'EVENT: WIND_ABORT_COMPLETED '
+                'in WIND_ABORT'
+            )
+
+            self._handle_event(
+                'WIND_ABORT_COMPLETED'
+            )
+
+            return
+
+        # ---------------------------------------------------------
+        # Operator abort completed
+        # ---------------------------------------------------------
+
+        if (
+            self.current_state
+            == 'ABORT_MISSION'
+        ):
 
             self._publish_progress(
                 state_name='ABORT_MISSION',
@@ -566,9 +741,13 @@ class FSMExecutor(Node):
             self._handle_event(
                 'ABORT_COMPLETED'
             )
+
             return
 
-        # Return to home
+        # ---------------------------------------------------------
+        # Return-to-home completed
+        # ---------------------------------------------------------
+
         if self.current_state == 'RTL':
 
             self._publish_progress(
@@ -581,12 +760,51 @@ class FSMExecutor(Node):
                 'EVENT: RTL_COMPLETED in RTL'
             )
 
+            # ABORT_REQUESTED expected outcome:
+            #
+            # ABORT_MISSION -> RETURN_TO_HOME
+            #
+            # Once home is reached, the experimental
+            # requirement is satisfied.
+            if (
+                self.termination_reason
+                == 'ABORT_REQUESTED'
+            ):
+
+                previous_state = (
+                    self.current_state
+                )
+
+                self.current_state = (
+                    'SAFE_TERMINATED'
+                )
+
+                self.get_logger().info(
+                    f'TRANSITION: '
+                    f'{previous_state} '
+                    f'--[RTL_COMPLETED]--> '
+                    f'SAFE_TERMINATED'
+                )
+
+                self._enter_state(
+                    'SAFE_TERMINATED'
+                )
+
+                return
+
+            # Communication-failure path retains:
+            #
+            # RTL -> LAND
             self._handle_event(
                 'RTL_COMPLETED'
             )
+
             return
 
-        # Recovery landing
+        # ---------------------------------------------------------
+        # Landing completed
+        # ---------------------------------------------------------
+
         if self.current_state == 'LAND':
 
             self._publish_progress(
@@ -602,9 +820,13 @@ class FSMExecutor(Node):
             self._handle_event(
                 'LAND_COMPLETED'
             )
+
             return
 
+        # ---------------------------------------------------------
         # Nominal task completion
+        # ---------------------------------------------------------
+
         self._publish_progress(
             state_name=self.current_state,
             task_type=state_type,
@@ -612,6 +834,7 @@ class FSMExecutor(Node):
         )
 
         if state_type == 'navigate':
+
             self.completed_navigation_tasks += 1
 
         self.get_logger().info(
@@ -624,7 +847,7 @@ class FSMExecutor(Node):
         )
 
     # =============================================================
-    # Runtime events
+    # Runtime event callback
     # =============================================================
 
     def _runtime_event_callback(
@@ -636,48 +859,61 @@ class FSMExecutor(Node):
         if self.mission_finished:
             return
 
-        event = self._extract_runtime_event(
-            message.data
+        event = (
+            self._extract_runtime_event(
+                message.data
+            )
         )
 
         if not event:
             return
 
         self.get_logger().warning(
-            f'RUNTIME EVENT RECEIVED: {event}'
+            f'RUNTIME EVENT RECEIVED: '
+            f'{event}'
         )
 
-        # ---------------------------------------------------------
-        # GPS lost
-        # ---------------------------------------------------------
+        # =========================================================
+        # GPS LOST
+        # =========================================================
 
         if event == 'GPS_LOST':
 
             if not self._is_navigating():
+
                 self.get_logger().warning(
                     'GPS_LOST ignored because '
                     'FSM is not navigating.'
                 )
+
                 return
 
             self.interrupted_state = (
                 self.current_state
             )
 
-            self._handle_event('GPS_LOST')
+            self._handle_event(
+                'GPS_LOST'
+            )
+
             return
 
-        # ---------------------------------------------------------
-        # GPS restored
-        # ---------------------------------------------------------
+        # =========================================================
+        # GPS AVAILABLE
+        # =========================================================
 
         if event == 'GPS_AVAILABLE':
 
-            if self.current_state != 'GPS_RECOVERY':
+            if (
+                self.current_state
+                != 'GPS_RECOVERY'
+            ):
+
                 self.get_logger().warning(
                     'GPS_AVAILABLE received '
                     'outside GPS_RECOVERY.'
                 )
+
                 return
 
             self._resume_interrupted_state(
@@ -687,19 +923,25 @@ class FSMExecutor(Node):
                     'Resuming interrupted mission task.'
                 ),
             )
+
             return
 
-        # ---------------------------------------------------------
-        # GPS recovery failed
-        # ---------------------------------------------------------
+        # =========================================================
+        # GPS RECOVERY FAILED
+        # =========================================================
 
         if event == 'GPS_RECOVERY_FAILED':
 
-            if self.current_state != 'GPS_RECOVERY':
+            if (
+                self.current_state
+                != 'GPS_RECOVERY'
+            ):
+
                 self.get_logger().warning(
                     'GPS_RECOVERY_FAILED received '
                     'outside GPS_RECOVERY.'
                 )
+
                 return
 
             self.termination_reason = (
@@ -711,19 +953,25 @@ class FSMExecutor(Node):
             self._handle_event(
                 'GPS_RECOVERY_FAILED'
             )
+
             return
 
-        # ---------------------------------------------------------
-        # Propulsion failure
-        # ---------------------------------------------------------
+        # =========================================================
+        # PROPULSION FAILURE
+        # =========================================================
 
-        if event == 'PROPULSION_FAILURE':
+        if (
+            event
+            == 'PROPULSION_FAILURE'
+        ):
 
             if not self._is_navigating():
+
                 self.get_logger().warning(
                     'PROPULSION_FAILURE ignored because '
                     'FSM is not navigating.'
                 )
+
                 return
 
             self.termination_reason = (
@@ -735,19 +983,25 @@ class FSMExecutor(Node):
             self._handle_event(
                 'PROPULSION_FAILURE'
             )
+
             return
 
-        # ---------------------------------------------------------
-        # Communication lost
-        # ---------------------------------------------------------
+        # =========================================================
+        # COMMUNICATION LOST
+        # =========================================================
 
-        if event == 'COMMUNICATION_LOST':
+        if (
+            event
+            == 'COMMUNICATION_LOST'
+        ):
 
             if not self._is_navigating():
+
                 self.get_logger().warning(
                     'COMMUNICATION_LOST ignored because '
                     'FSM is not navigating.'
                 )
+
                 return
 
             self.interrupted_state = (
@@ -757,19 +1011,28 @@ class FSMExecutor(Node):
             self._handle_event(
                 'COMMUNICATION_LOST'
             )
+
             return
 
-        # ---------------------------------------------------------
-        # Communication restored
-        # ---------------------------------------------------------
+        # =========================================================
+        # COMMUNICATION RESTORED
+        # =========================================================
 
-        if event == 'COMMUNICATION_RESTORED':
+        if (
+            event
+            == 'COMMUNICATION_RESTORED'
+        ):
 
-            if self.current_state != 'COMM_RECOVERY':
+            if (
+                self.current_state
+                != 'COMM_RECOVERY'
+            ):
+
                 self.get_logger().warning(
                     'COMMUNICATION_RESTORED received '
                     'outside COMM_RECOVERY.'
                 )
+
                 return
 
             self._resume_interrupted_state(
@@ -779,19 +1042,28 @@ class FSMExecutor(Node):
                     'Resuming interrupted mission task.'
                 ),
             )
+
             return
 
-        # ---------------------------------------------------------
-        # Communication recovery failed
-        # ---------------------------------------------------------
+        # =========================================================
+        # COMMUNICATION RECOVERY FAILED
+        # =========================================================
 
-        if event == 'COMMUNICATION_RECOVERY_FAILED':
+        if (
+            event
+            == 'COMMUNICATION_RECOVERY_FAILED'
+        ):
 
-            if self.current_state != 'COMM_RECOVERY':
+            if (
+                self.current_state
+                != 'COMM_RECOVERY'
+            ):
+
                 self.get_logger().warning(
                     'COMMUNICATION_RECOVERY_FAILED '
                     'received outside COMM_RECOVERY.'
                 )
+
                 return
 
             self.termination_reason = (
@@ -803,19 +1075,22 @@ class FSMExecutor(Node):
             self._handle_event(
                 'COMMUNICATION_RECOVERY_FAILED'
             )
+
             return
 
-        # ---------------------------------------------------------
-        # Unsafe wind
-        # ---------------------------------------------------------
+        # =========================================================
+        # WIND UNSAFE
+        # =========================================================
 
         if event == 'WIND_UNSAFE':
 
             if not self._is_navigating():
+
                 self.get_logger().warning(
                     'WIND_UNSAFE ignored because '
                     'FSM is not navigating.'
                 )
+
                 return
 
             self.termination_reason = (
@@ -827,19 +1102,22 @@ class FSMExecutor(Node):
             self._handle_event(
                 'WIND_UNSAFE'
             )
+
             return
 
-        # ---------------------------------------------------------
-        # Battery
-        # ---------------------------------------------------------
+        # =========================================================
+        # BATTERY
+        # =========================================================
 
         if event == 'BATTERY_CRITICAL':
 
             if not self._is_navigating():
+
                 self.get_logger().warning(
                     'BATTERY_CRITICAL ignored because '
                     'FSM is not navigating.'
                 )
+
                 return
 
             self.termination_reason = (
@@ -851,7 +1129,39 @@ class FSMExecutor(Node):
             self._handle_event(
                 'BATTERY_CRITICAL'
             )
+
             return
+
+        # =========================================================
+        # ABORT REQUESTED
+        # =========================================================
+
+        if event == 'ABORT_REQUESTED':
+
+            if not self._is_navigating():
+
+                self.get_logger().warning(
+                    'ABORT_REQUESTED ignored because '
+                    'FSM is not navigating.'
+                )
+
+                return
+
+            self.termination_reason = (
+                'ABORT_REQUESTED'
+            )
+
+            self.interrupted_state = None
+
+            self._handle_event(
+                'ABORT_REQUESTED'
+            )
+
+            return
+
+        # =========================================================
+        # Unsupported event
+        # =========================================================
 
         self.get_logger().warning(
             f'Runtime event not yet supported '
@@ -865,7 +1175,7 @@ class FSMExecutor(Node):
     def _is_navigating(
         self,
     ) -> bool:
-        """Check whether current state is navigation."""
+        """Check whether current FSM state is navigation."""
 
         state_data = self.states.get(
             self.current_state
@@ -891,12 +1201,16 @@ class FSMExecutor(Node):
     ) -> None:
         """Resume interrupted navigation state."""
 
-        if self.interrupted_state is None:
+        if (
+            self.interrupted_state
+            is None
+        ):
 
             self.get_logger().error(
                 'No interrupted state '
                 'available to resume.'
             )
+
             return
 
         previous_state = (
@@ -928,11 +1242,15 @@ class FSMExecutor(Node):
             resume_state
         )
 
+    # =============================================================
+    # Event parser
+    # =============================================================
+
     def _extract_runtime_event(
         self,
         raw_data: str,
     ) -> str:
-        """Parse JSON or plain-string event."""
+        """Parse JSON or plain-string runtime event."""
 
         try:
 
@@ -940,7 +1258,10 @@ class FSMExecutor(Node):
                 raw_data
             )
 
-            if isinstance(parsed, dict):
+            if isinstance(
+                parsed,
+                dict,
+            ):
 
                 return str(
                     parsed.get(
@@ -959,7 +1280,7 @@ class FSMExecutor(Node):
         )
 
     # =============================================================
-    # Progress
+    # Progress publication
     # =============================================================
 
     def _publish_progress(
@@ -996,19 +1317,20 @@ class FSMExecutor(Node):
         )
 
     # =============================================================
-    # Mission termination
+    # Mission completion
     # =============================================================
 
     def _finish_mission(
         self,
         result: str,
     ) -> None:
-        """Finish mission execution."""
+        """Finish FSM execution."""
 
         if self.mission_finished:
             return
 
         self.mission_finished = True
+
         self.timer.cancel()
 
         if result == 'SUCCESS':
@@ -1016,6 +1338,7 @@ class FSMExecutor(Node):
             self.get_logger().info(
                 'FSM mission completed successfully.'
             )
+
             return
 
         if result == 'SAFE_TERMINATED':
@@ -1036,14 +1359,19 @@ class FSMExecutor(Node):
 
 def main(args=None) -> None:
 
-    rclpy.init(args=args)
+    rclpy.init(
+        args=args
+    )
 
     node = None
 
     try:
 
         node = FSMExecutor()
-        rclpy.spin(node)
+
+        rclpy.spin(
+            node
+        )
 
     except (
         FileNotFoundError,
@@ -1053,7 +1381,8 @@ def main(args=None) -> None:
     ) as error:
 
         print(
-            f'[FSM EXECUTOR ERROR] {error}'
+            f'[FSM EXECUTOR ERROR] '
+            f'{error}'
         )
 
     finally:

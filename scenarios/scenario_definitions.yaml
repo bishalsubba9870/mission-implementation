@@ -81,6 +81,5 @@ test_cases:
     example: Unsafe High Wind
     expected_outcome:
       - ABORT_MISSION
-      - RETURN_TO_HOME
       - SAFE_LAND
     purpose: Emergency Handling
