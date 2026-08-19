@@ -29,7 +29,7 @@ mission_triggers:
 
   M4:
     trigger_type: COMPLETED_NAVIGATION_COUNT
-    trigger_value: 100
+    trigger_value: 149
     required_current_task_type: navigate
     required_current_task_status: RUNNING
     description: >
