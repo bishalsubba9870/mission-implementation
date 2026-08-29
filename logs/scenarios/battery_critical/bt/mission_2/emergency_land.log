@@ -1,0 +1,65 @@
+[INFO] [1787513341.086849746] [bt_executor]: ========================================
+[INFO] [1787513341.088014702] [bt_executor]: Behavior Tree Mission Executor
+[INFO] [1787513341.089224236] [bt_executor]: Mode: GPS + PROPULSION + COMMUNICATION + WIND + BATTERY
+[INFO] [1787513341.089967349] [bt_executor]: ========================================
+[INFO] [1787513341.097418228] [bt_executor]: Mission ID: M2
+[INFO] [1787513341.098114841] [bt_executor]: Mission items: 13
+[INFO] [1787513341.099174114] [bt_executor]: ========================================
+[INFO] [1787513341.099697446] [bt_executor]: BEHAVIOR TREE STRUCTURE
+[INFO] [1787513341.100186814] [bt_executor]: BT total nodes: 20
+[INFO] [1787513341.100696073] [bt_executor]: BT composite nodes: 2
+[INFO] [1787513341.101207334] [bt_executor]: BT leaf/action nodes: 18
+[INFO] [1787513341.101743148] [bt_executor]: Runtime controllers: GPS + Propulsion + Communication + Wind + Battery
+[INFO] [1787513341.102276752] [bt_executor]: ========================================
+[INFO] [1787513341.123524738] [bt_executor]: ----------------------------------------
+[INFO] [1787513341.124048218] [bt_executor]: BT NODE RUNNING: TAKEOFF_1
+[INFO] [1787513341.124602374] [bt_executor]: ACTION: TAKEOFF
+[INFO] [1787513341.324470654] [bt_executor]: BT NODE SUCCESS: TAKEOFF_1
+[INFO] [1787513341.327573858] [bt_executor]: Completed tasks: 1/13
+[INFO] [1787513341.330596951] [bt_executor]: Completed navigation tasks: 0
+[INFO] [1787513341.333201055] [bt_executor]: ----------------------------------------
+[INFO] [1787513341.334782080] [bt_executor]: BT NODE RUNNING: NAV_2_WP1
+[INFO] [1787513341.336921348] [bt_executor]: ACTION: NAVIGATE -> WP1
+[INFO] [1787513341.546012230] [bt_executor]: BT NODE SUCCESS: NAV_2_WP1
+[INFO] [1787513341.548925565] [bt_executor]: Completed tasks: 2/13
+[INFO] [1787513341.550873324] [bt_executor]: Completed navigation tasks: 1
+[INFO] [1787513341.552878995] [bt_executor]: ----------------------------------------
+[INFO] [1787513341.555016841] [bt_executor]: BT NODE RUNNING: NAV_3_WP2
+[INFO] [1787513341.556669962] [bt_executor]: ACTION: NAVIGATE -> WP2
+[INFO] [1787513341.765283696] [bt_executor]: BT NODE SUCCESS: NAV_3_WP2
+[INFO] [1787513341.768129160] [bt_executor]: Completed tasks: 3/13
+[INFO] [1787513341.771346015] [bt_executor]: Completed navigation tasks: 2
+[INFO] [1787513341.774151945] [bt_executor]: ----------------------------------------
+[INFO] [1787513341.775933295] [bt_executor]: BT NODE RUNNING: NAV_4_WP1
+[INFO] [1787513341.778235871] [bt_executor]: ACTION: NAVIGATE -> WP1
+[INFO] [1787513341.984840596] [bt_executor]: BT NODE SUCCESS: NAV_4_WP1
+[INFO] [1787513341.986543945] [bt_executor]: Completed tasks: 4/13
+[INFO] [1787513341.988958421] [bt_executor]: Completed navigation tasks: 3
+[INFO] [1787513341.992161375] [bt_executor]: ----------------------------------------
+[INFO] [1787513341.995118666] [bt_executor]: BT NODE RUNNING: NAV_5_WP3
+[INFO] [1787513341.998843135] [bt_executor]: ACTION: NAVIGATE -> WP3
+[INFO] [1787513342.204739879] [bt_executor]: BT NODE SUCCESS: NAV_5_WP3
+[INFO] [1787513342.206427161] [bt_executor]: Completed tasks: 5/13
+[INFO] [1787513342.208147829] [bt_executor]: Completed navigation tasks: 4
+[INFO] [1787513342.211352535] [bt_executor]: ----------------------------------------
+[INFO] [1787513342.213765724] [bt_executor]: BT NODE RUNNING: NAV_6_WP1
+[INFO] [1787513342.215747262] [bt_executor]: ACTION: NAVIGATE -> WP1
+[INFO] [1787513342.426097586] [bt_executor]: BT NODE SUCCESS: NAV_6_WP1
+[INFO] [1787513342.429799442] [bt_executor]: Completed tasks: 6/13
+[INFO] [1787513342.433259218] [bt_executor]: Completed navigation tasks: 5
+[INFO] [1787513342.436747312] [bt_executor]: ----------------------------------------
+[INFO] [1787513342.439905416] [bt_executor]: BT NODE RUNNING: NAV_7_WP4
+[INFO] [1787513342.443047737] [bt_executor]: ACTION: NAVIGATE -> WP4
+[WARN] [1787513342.451714200] [bt_executor]: RUNTIME EVENT RECEIVED: BATTERY_CRITICAL
+[ERROR] [1787513342.456607400] [bt_executor]: BATTERY CRITICAL DETECTED
+[WARN] [1787513342.461674846] [bt_executor]: Normal mission execution interrupted.
+[WARN] [1787513342.466655978] [bt_executor]: BT BATTERY CRITICAL HANDLER ACTIVE
+[WARN] [1787513342.470289364] [bt_executor]: ACTION: EMERGENCY_LAND
+[WARN] [1787513342.474154085] [bt_executor]: BT NODE PAUSED: NAV_7_WP4 | Reason: BATTERY_CRITICAL
+[INFO] [1787513342.685265365] [bt_executor]: BT EMERGENCY LANDING COMPLETED
+[INFO] [1787513342.688860629] [bt_executor]: ========================================
+[INFO] [1787513342.692005155] [bt_executor]: MISSION SAFE TERMINATED
+[INFO] [1787513342.695081752] [bt_executor]: Reason: BATTERY_CRITICAL
+[INFO] [1787513342.698390200] [bt_executor]: Completed tasks: 6
+[INFO] [1787513342.702253827] [bt_executor]: Completed navigation tasks: 5
+[INFO] [1787513342.705996232] [bt_executor]: ========================================

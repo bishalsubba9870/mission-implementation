@@ -1,0 +1,42 @@
+[INFO] [1788005696.172185796] [htn_executor]: Loading mission: /home/bishal/ros2_ws/install/mission_formalism_evaluation/share/mission_formalism_evaluation/missions/mission_2.yaml
+[INFO] [1788005696.182018866] [htn_executor]: ================================
+[INFO] [1788005696.182606408] [htn_executor]: HTN Mission Executor
+[INFO] [1788005696.183146885] [htn_executor]: Mode: GPS_PROPULSION_COMMUNICATION_WIND_CAPABLE
+[INFO] [1788005696.183671589] [htn_executor]: Model: Totally Ordered State-Based HTN
+[INFO] [1788005696.184224873] [htn_executor]: Mission ID: M2
+[INFO] [1788005696.184767887] [htn_executor]: Mission Name: Branch and Return
+[INFO] [1788005696.185401556] [htn_executor]: Mission Items: 13
+[INFO] [1788005696.185975396] [htn_executor]: HTN Primitive Operators: 12
+[INFO] [1788005696.186573791] [htn_executor]: HTN Compound Tasks: 4
+[INFO] [1788005696.187208066] [htn_executor]: HTN Methods: 14
+[INFO] [1788005696.187848787] [htn_executor]: Mission Method Applications: 15
+[INFO] [1788005696.188543721] [htn_executor]: Generated Primitive Plan: 13
+[INFO] [1788005696.189214113] [htn_executor]: ================================
+[INFO] [1788005696.209985682] [htn_executor]: HTN PRIMITIVE RUNNING: takeoff [TAKEOFF]
+[INFO] [1788005696.411722779] [htn_executor]: HTN PRIMITIVE SUCCESS: takeoff [TAKEOFF]
+[INFO] [1788005696.433194312] [htn_executor]: HTN PRIMITIVE RUNNING: navigate [NAV_WP1_INITIAL]
+[INFO] [1788005696.633839783] [htn_executor]: HTN PRIMITIVE SUCCESS: navigate [NAV_WP1_INITIAL]
+[INFO] [1788005696.651766814] [htn_executor]: HTN PRIMITIVE RUNNING: navigate [NAV_WP2_OUT]
+[INFO] [1788005696.852245399] [htn_executor]: HTN PRIMITIVE SUCCESS: navigate [NAV_WP2_OUT]
+[INFO] [1788005696.872137142] [htn_executor]: HTN PRIMITIVE RUNNING: navigate [NAV_WP1_FROM_WP2]
+[INFO] [1788005697.071834921] [htn_executor]: HTN PRIMITIVE SUCCESS: navigate [NAV_WP1_FROM_WP2]
+[INFO] [1788005697.091549994] [htn_executor]: HTN PRIMITIVE RUNNING: navigate [NAV_WP3_OUT]
+[INFO] [1788005697.292292916] [htn_executor]: HTN PRIMITIVE SUCCESS: navigate [NAV_WP3_OUT]
+[INFO] [1788005697.311660134] [htn_executor]: HTN PRIMITIVE RUNNING: navigate [NAV_WP1_FROM_WP3]
+[INFO] [1788005697.513609510] [htn_executor]: HTN PRIMITIVE SUCCESS: navigate [NAV_WP1_FROM_WP3]
+[INFO] [1788005697.532212904] [htn_executor]: HTN PRIMITIVE RUNNING: navigate [NAV_WP4_INITIAL]
+[WARN] [1788005697.596765616] [htn_executor]: RUNTIME EVENT RECEIVED: WIND_UNSAFE
+[WARN] [1788005697.600353972] [htn_executor]: HTN PAUSED: navigate [NAV_WP4_INITIAL]
+[WARN] [1788005697.605687909] [htn_executor]: HTN REPLANNING
+[WARN] [1788005697.608355315] [htn_executor]: Selected method: m_wind_unsafe
+[WARN] [1788005697.610810170] [htn_executor]: Recovery plan: abort_mission -> safe_land -> safe_terminate
+[INFO] [1788005697.613985968] [htn_executor]: HTN RECOVERY RUNNING: abort_mission
+[INFO] [1788005698.112770322] [htn_executor]: HTN PRIMITIVE SUCCESS: abort_mission
+[INFO] [1788005698.131912136] [htn_executor]: HTN RECOVERY RUNNING: safe_land
+[INFO] [1788005698.333927184] [htn_executor]: HTN PRIMITIVE SUCCESS: safe_land
+[INFO] [1788005698.351716586] [htn_executor]: HTN RECOVERY RUNNING: safe_terminate
+[INFO] [1788005698.550673532] [htn_executor]: HTN PRIMITIVE SUCCESS: safe_terminate
+[WARN] [1788005698.551530195] [htn_executor]: ================================
+[WARN] [1788005698.552337437] [htn_executor]: MISSION SAFE TERMINATED
+[WARN] [1788005698.552807641] [htn_executor]: Reason: WIND_UNSAFE
+[WARN] [1788005698.553338451] [htn_executor]: ================================

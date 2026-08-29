@@ -1,0 +1,55 @@
+[INFO] [1787488821.649489482] [bt_executor]: ========================================
+[INFO] [1787488821.650010971] [bt_executor]: Behavior Tree Mission Executor
+[INFO] [1787488821.650641313] [bt_executor]: Mode: NOMINAL
+[INFO] [1787488821.651226238] [bt_executor]: ========================================
+[INFO] [1787488821.651843285] [bt_executor]: Mission file: /home/bishal/ros2_ws/install/mission_formalism_evaluation/share/mission_formalism_evaluation/missions/mission_1.yaml
+[INFO] [1787488821.654696043] [bt_executor]: Mission ID: mission_1
+[INFO] [1787488821.655486983] [bt_executor]: Mission name: mission_1
+[INFO] [1787488821.656109079] [bt_executor]: Mission items: 4
+[INFO] [1787488821.657014584] [bt_executor]: ========================================
+[INFO] [1787488821.657422377] [bt_executor]: BEHAVIOR TREE STRUCTURE
+[INFO] [1787488821.657816609] [bt_executor]: BT total nodes: 5
+[INFO] [1787488821.658219058] [bt_executor]: BT composite nodes: 1
+[INFO] [1787488821.658762924] [bt_executor]: BT leaf/action nodes: 4
+[INFO] [1787488821.659232252] [bt_executor]: Root: MISSION_SEQUENCE
+[INFO] [1787488821.659851489] [bt_executor]: Root type: Sequence(memory=True)
+[INFO] [1787488821.660464561] [bt_executor]: ========================================
+[INFO] [1787488821.661659325] [bt_executor]: 
+{-} MISSION_SEQUENCE
+    --> TAKEOFF_1
+    --> NAV_2_WP1
+    --> NAV_3_WP2
+    --> LAND_4
+
+[INFO] [1787488821.662407744] [bt_executor]: Logical task duration: 0.100 s
+[INFO] [1787488821.662925149] [bt_executor]: BT tick period: 0.020 s
+[INFO] [1787488821.663576643] [bt_executor]: Behavior Tree execution started.
+[INFO] [1787488821.682733124] [bt_executor]: ----------------------------------------
+[INFO] [1787488821.683177181] [bt_executor]: BT NODE RUNNING: TAKEOFF_1
+[INFO] [1787488821.683609036] [bt_executor]: ACTION: TAKEOFF
+[INFO] [1787488821.783861489] [bt_executor]: BT NODE SUCCESS: TAKEOFF_1
+[INFO] [1787488821.786456225] [bt_executor]: Completed tasks: 1/4
+[INFO] [1787488821.790489434] [bt_executor]: Completed navigation tasks: 0
+[INFO] [1787488821.792621919] [bt_executor]: ----------------------------------------
+[INFO] [1787488821.794150151] [bt_executor]: BT NODE RUNNING: NAV_2_WP1
+[INFO] [1787488821.797285757] [bt_executor]: ACTION: NAVIGATE -> WP1
+[INFO] [1787488821.903839012] [bt_executor]: BT NODE SUCCESS: NAV_2_WP1
+[INFO] [1787488821.907773185] [bt_executor]: Completed tasks: 2/4
+[INFO] [1787488821.910543790] [bt_executor]: Completed navigation tasks: 1
+[INFO] [1787488821.915499607] [bt_executor]: ----------------------------------------
+[INFO] [1787488821.917534370] [bt_executor]: BT NODE RUNNING: NAV_3_WP2
+[INFO] [1787488821.919424388] [bt_executor]: ACTION: NAVIGATE -> WP2
+[INFO] [1787488822.023785007] [bt_executor]: BT NODE SUCCESS: NAV_3_WP2
+[INFO] [1787488822.025638253] [bt_executor]: Completed tasks: 3/4
+[INFO] [1787488822.027776105] [bt_executor]: Completed navigation tasks: 2
+[INFO] [1787488822.033117106] [bt_executor]: ----------------------------------------
+[INFO] [1787488822.035799948] [bt_executor]: BT NODE RUNNING: LAND_4
+[INFO] [1787488822.037700113] [bt_executor]: ACTION: LAND
+[INFO] [1787488822.144347725] [bt_executor]: BT NODE SUCCESS: LAND_4
+[INFO] [1787488822.147276559] [bt_executor]: Completed tasks: 4/4
+[INFO] [1787488822.150522704] [bt_executor]: Completed navigation tasks: 2
+[INFO] [1787488822.154576705] [bt_executor]: ========================================
+[INFO] [1787488822.156531360] [bt_executor]: MISSION COMPLETED
+[INFO] [1787488822.158096403] [bt_executor]: Completed tasks: 4
+[INFO] [1787488822.159672835] [bt_executor]: Completed navigation tasks: 2
+[INFO] [1787488822.161601628] [bt_executor]: ========================================

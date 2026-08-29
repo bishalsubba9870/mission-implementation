@@ -1,0 +1,33 @@
+metrics/snapshots/nominal/bt/bt_executor.py
+    M 405:4 BehaviorTreeExecutor.determine_task_type - C (11)
+    M 650:4 BehaviorTreeExecutor.action_description - B (7)
+    M 173:4 BehaviorTreeExecutor.resolve_mission_file - A (5)
+    M 319:4 BehaviorTreeExecutor.normalize_task - A (5)
+    C 18:0 BehaviorTreeExecutor - A (4)
+    M 216:4 BehaviorTreeExecutor.load_mission - A (4)
+    M 514:4 BehaviorTreeExecutor.tick_tree - A (4)
+    F 831:0 main - A (3)
+    M 297:4 BehaviorTreeExecutor.find_task_list - A (3)
+    M 766:4 BehaviorTreeExecutor.print_tree_structure - A (3)
+    M 494:4 BehaviorTreeExecutor.extract_waypoint - A (2)
+    M 597:4 BehaviorTreeExecutor.on_task_completed - A (2)
+    M 631:4 BehaviorTreeExecutor.node_name - A (2)
+    M 34:4 BehaviorTreeExecutor.__init__ - A (1)
+    M 465:4 BehaviorTreeExecutor.normalize_task_type - A (1)
+    M 574:4 BehaviorTreeExecutor.on_task_started - A (1)
+    M 682:4 BehaviorTreeExecutor.publish_task_progress - A (1)
+    M 730:4 BehaviorTreeExecutor.publish_mission_status - A (1)
+metrics/snapshots/nominal/bt/tree_builder.py
+    C 8:0 NominalTreeBuilder - A (3)
+    M 31:4 NominalTreeBuilder.build - A (2)
+    M 52:4 NominalTreeBuilder.make_node_name - A (2)
+    M 23:4 NominalTreeBuilder.__init__ - A (1)
+metrics/snapshots/nominal/bt/nodes/mission_action.py
+    M 42:4 MissionAction.update - A (3)
+    C 7:0 MissionAction - A (2)
+    M 18:4 MissionAction.__init__ - A (1)
+    M 34:4 MissionAction.initialise - A (1)
+    M 60:4 MissionAction.terminate - A (1)
+
+27 blocks (classes, functions, methods) analyzed.
+Average complexity: A (2.814814814814815)

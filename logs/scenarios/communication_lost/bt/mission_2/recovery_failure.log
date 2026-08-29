@@ -1,0 +1,65 @@
+[INFO] [1787511032.616097913] [bt_executor]: ========================================
+[INFO] [1787511032.617014252] [bt_executor]: Behavior Tree Mission Executor
+[INFO] [1787511032.617975570] [bt_executor]: Mode: GPS + PROPULSION + COMMUNICATION
+[INFO] [1787511032.618934663] [bt_executor]: ========================================
+[INFO] [1787511032.626496199] [bt_executor]: Mission ID: M2
+[INFO] [1787511032.627025659] [bt_executor]: Mission items: 13
+[INFO] [1787511032.628000338] [bt_executor]: ========================================
+[INFO] [1787511032.628393191] [bt_executor]: BEHAVIOR TREE STRUCTURE
+[INFO] [1787511032.628827384] [bt_executor]: BT total nodes: 18
+[INFO] [1787511032.629253171] [bt_executor]: BT composite nodes: 2
+[INFO] [1787511032.629736777] [bt_executor]: BT leaf/action nodes: 16
+[INFO] [1787511032.630190395] [bt_executor]: Runtime controllers: GPS + Propulsion + Communication
+[INFO] [1787511032.630746346] [bt_executor]: ========================================
+[INFO] [1787511032.651972242] [bt_executor]: ----------------------------------------
+[INFO] [1787511032.652382734] [bt_executor]: BT NODE RUNNING: TAKEOFF_1
+[INFO] [1787511032.652772960] [bt_executor]: ACTION: TAKEOFF
+[INFO] [1787511032.852885937] [bt_executor]: BT NODE SUCCESS: TAKEOFF_1
+[INFO] [1787511032.855678788] [bt_executor]: Completed tasks: 1/13
+[INFO] [1787511032.858543170] [bt_executor]: Completed navigation tasks: 0
+[INFO] [1787511032.860792671] [bt_executor]: ----------------------------------------
+[INFO] [1787511032.862308881] [bt_executor]: BT NODE RUNNING: NAV_2_WP1
+[INFO] [1787511032.863984325] [bt_executor]: ACTION: NAVIGATE -> WP1
+[INFO] [1787511033.072440346] [bt_executor]: BT NODE SUCCESS: NAV_2_WP1
+[INFO] [1787511033.073822091] [bt_executor]: Completed tasks: 2/13
+[INFO] [1787511033.074935964] [bt_executor]: Completed navigation tasks: 1
+[INFO] [1787511033.076392776] [bt_executor]: ----------------------------------------
+[INFO] [1787511033.078191210] [bt_executor]: BT NODE RUNNING: NAV_3_WP2
+[INFO] [1787511033.079936953] [bt_executor]: ACTION: NAVIGATE -> WP2
+[INFO] [1787511033.291942206] [bt_executor]: BT NODE SUCCESS: NAV_3_WP2
+[INFO] [1787511033.293099150] [bt_executor]: Completed tasks: 3/13
+[INFO] [1787511033.294252121] [bt_executor]: Completed navigation tasks: 2
+[INFO] [1787511033.295291363] [bt_executor]: ----------------------------------------
+[INFO] [1787511033.296155088] [bt_executor]: BT NODE RUNNING: NAV_4_WP1
+[INFO] [1787511033.297078867] [bt_executor]: ACTION: NAVIGATE -> WP1
+[INFO] [1787511033.512360655] [bt_executor]: BT NODE SUCCESS: NAV_4_WP1
+[INFO] [1787511033.513269076] [bt_executor]: Completed tasks: 4/13
+[INFO] [1787511033.514246454] [bt_executor]: Completed navigation tasks: 3
+[INFO] [1787511033.515159812] [bt_executor]: ----------------------------------------
+[INFO] [1787511033.515740382] [bt_executor]: BT NODE RUNNING: NAV_5_WP3
+[INFO] [1787511033.516230325] [bt_executor]: ACTION: NAVIGATE -> WP3
+[INFO] [1787511033.731795124] [bt_executor]: BT NODE SUCCESS: NAV_5_WP3
+[INFO] [1787511033.732401144] [bt_executor]: Completed tasks: 5/13
+[INFO] [1787511033.732979275] [bt_executor]: Completed navigation tasks: 4
+[INFO] [1787511033.733917646] [bt_executor]: ----------------------------------------
+[INFO] [1787511033.734730120] [bt_executor]: BT NODE RUNNING: NAV_6_WP1
+[INFO] [1787511033.735548819] [bt_executor]: ACTION: NAVIGATE -> WP1
+[INFO] [1787511033.952057493] [bt_executor]: BT NODE SUCCESS: NAV_6_WP1
+[INFO] [1787511033.952860008] [bt_executor]: Completed tasks: 6/13
+[INFO] [1787511033.953672607] [bt_executor]: Completed navigation tasks: 5
+[INFO] [1787511033.955594721] [bt_executor]: ----------------------------------------
+[INFO] [1787511033.956329973] [bt_executor]: BT NODE RUNNING: NAV_7_WP4
+[INFO] [1787511033.957082761] [bt_executor]: ACTION: NAVIGATE -> WP4
+[WARN] [1787511034.055940722] [bt_executor]: RUNTIME EVENT RECEIVED: COMMUNICATION_LOST
+[WARN] [1787511034.058122810] [bt_executor]: COMMUNICATION LOST
+[INFO] [1787511034.059939874] [bt_executor]: BT COMMUNICATION RECOVERY ACTIVE
+[WARN] [1787511034.071914403] [bt_executor]: BT NODE PAUSED: NAV_7_WP4 | Reason: COMMUNICATION_LOST
+[WARN] [1787511050.220039427] [bt_executor]: RUNTIME EVENT RECEIVED: COMMUNICATION_RECOVERY_FAILED
+[INFO] [1787511050.220722464] [bt_executor]: Communication recovery result received: COMMUNICATION_RECOVERY_FAILED
+[WARN] [1787511050.232245625] [bt_executor]: BT COMMUNICATION RECOVERY FAILED
+[WARN] [1787511050.233179662] [bt_executor]: ACTION: RETURN_TO_HOME
+[INFO] [1787511050.432282156] [bt_executor]: BT RETURN_TO_HOME COMPLETED
+[INFO] [1787511050.433376564] [bt_executor]: ========================================
+[INFO] [1787511050.435090650] [bt_executor]: MISSION SAFE TERMINATED
+[INFO] [1787511050.435855086] [bt_executor]: Reason: COMMUNICATION_RECOVERY_FAILED
+[INFO] [1787511050.436355026] [bt_executor]: ========================================

@@ -1,5 +1,5 @@
 """
-Final scenario-capable ROS2 HTN mission executor.
+GPS-, propulsion-, communication-, and wind-capable ROS2 HTN executor.
 
 The executor runs the primitive mission plan, updates
 world-state facts, and invokes HTN recovery planning.
@@ -36,7 +36,7 @@ from mission_formalism_evaluation.htn.htn_planner import (
 
 
 class HTNExecutor(Node):
-    """Execute the final scenario-capable UAV HTN mission."""
+    """Execute the current scenario-capable UAV HTN mission."""
 
     def __init__(
         self,
@@ -137,8 +137,6 @@ class HTNExecutor(Node):
             "communication_recovery_failed": False,
 
             "wind_unsafe": False,
-            "battery_critical": False,
-            "abort_requested": False,
 
             "mission_interrupted": False,
             "mission_aborted": False,
@@ -231,7 +229,7 @@ class HTNExecutor(Node):
         )
 
         self.get_logger().info(
-            "Mode: FINAL_SCENARIO_CAPABLE"
+            "Mode: GPS_PROPULSION_COMMUNICATION_WIND_CAPABLE"
         )
 
         self.get_logger().info(
@@ -474,8 +472,6 @@ class HTNExecutor(Node):
             "PROPULSION_FAILURE",
             "COMMUNICATION_LOST",
             "WIND_UNSAFE",
-            "BATTERY_CRITICAL",
-            "ABORT_REQUESTED",
         }
 
         if (
@@ -578,6 +574,7 @@ class HTNExecutor(Node):
         )
 
         self.recovery_index = 0
+
         self.executing_recovery = True
 
         self.active_task = None
@@ -1044,6 +1041,7 @@ class HTNExecutor(Node):
             return
 
         self.mission_finished = True
+
         self.timer.cancel()
 
         self._publish_progress(
@@ -1084,6 +1082,7 @@ class HTNExecutor(Node):
             return
 
         self.mission_finished = True
+
         self.timer.cancel()
 
         self.world_state[

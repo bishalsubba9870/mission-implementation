@@ -1,0 +1,39 @@
+metrics/snapshots/scenario_capable/htn/final/htn_domain.py:
+    h1: 5
+    h2: 114
+    N1: 59
+    N2: 114
+    vocabulary: 119
+    length: 173
+    calculated_length: 790.5591020892174
+    volume: 1192.8034730522743
+    difficulty: 2.5
+    effort: 2982.0086826306856
+    time: 165.66714903503808
+    bugs: 0.39760115768409143
+metrics/snapshots/scenario_capable/htn/final/htn_planner.py:
+    h1: 4
+    h2: 9
+    N1: 6
+    N2: 9
+    vocabulary: 13
+    length: 15
+    calculated_length: 36.52932501298081
+    volume: 55.506595772116384
+    difficulty: 2.0
+    effort: 111.01319154423277
+    time: 6.167399530235154
+    bugs: 0.01850219859070546
+metrics/snapshots/scenario_capable/htn/final/htn_executor.py:
+    h1: 12
+    h2: 75
+    N1: 44
+    N2: 84
+    vocabulary: 87
+    length: 128
+    calculated_length: 510.1809517958449
+    volume: 824.6967674686373
+    difficulty: 6.72
+    effort: 5541.962277389242
+    time: 307.8867931882912
+    bugs: 0.2748989224895458

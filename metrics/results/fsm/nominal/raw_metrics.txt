@@ -1,0 +1,24 @@
+metrics/snapshots/nominal/fsm/fsm_executor.py
+    LOC: 311
+    LLOC: 143
+    SLOC: 220
+    Comments: 5
+    Single comments: 13
+    Multi: 0
+    Blank: 78
+    - Comment Stats
+        (C % L): 2%
+        (C % S): 2%
+        (C + M % L): 2%
+** Total **
+    LOC: 311
+    LLOC: 143
+    SLOC: 220
+    Comments: 5
+    Single comments: 13
+    Multi: 0
+    Blank: 78
+    - Comment Stats
+        (C % L): 2%
+        (C % S): 2%
+        (C + M % L): 2%

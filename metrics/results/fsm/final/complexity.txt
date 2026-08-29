@@ -1,0 +1,19 @@
+metrics/snapshots/scenario_capable/fsm/final/fsm_executor.py
+    M 807:4 FSMExecutor._runtime_event_callback - D (23)
+    M 637:4 FSMExecutor._timer_callback - B (10)
+    M 125:4 FSMExecutor._load_mission - B (8)
+    M 546:4 FSMExecutor._enter_state - B (8)
+    C 13:0 FSMExecutor - B (6)
+    M 208:4 FSMExecutor._build_fsm - B (6)
+    M 443:4 FSMExecutor._create_state_name - A (5)
+    M 1277:4 FSMExecutor._finish_mission - A (5)
+    F 1314:0 main - A (4)
+    M 1203:4 FSMExecutor._extract_runtime_event - A (3)
+    M 496:4 FSMExecutor._handle_event - A (2)
+    M 1129:4 FSMExecutor._is_navigating - A (2)
+    M 1151:4 FSMExecutor._resume_interrupted_state - A (2)
+    M 16:4 FSMExecutor.__init__ - A (1)
+    M 1240:4 FSMExecutor._publish_progress - A (1)
+
+15 blocks (classes, functions, methods) analyzed.
+Average complexity: B (5.733333333333333)

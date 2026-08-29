@@ -1,0 +1,120 @@
+metrics/snapshots/scenario_capable/bt/final/bt_executor.py
+    LOC: 1250
+    LLOC: 331
+    SLOC: 844
+    Comments: 82
+    Single comments: 82
+    Multi: 0
+    Blank: 324
+    - Comment Stats
+        (C % L): 7%
+        (C % S): 10%
+        (C + M % L): 7%
+metrics/snapshots/scenario_capable/bt/final/tree_builder.py
+    LOC: 168
+    LLOC: 33
+    SLOC: 124
+    Comments: 10
+    Single comments: 10
+    Multi: 0
+    Blank: 34
+    - Comment Stats
+        (C % L): 6%
+        (C % S): 8%
+        (C + M % L): 6%
+metrics/snapshots/scenario_capable/bt/final/nodes/__init__.py
+    LOC: 0
+    LLOC: 0
+    SLOC: 0
+    Comments: 0
+    Single comments: 0
+    Multi: 0
+    Blank: 0
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/scenario_capable/bt/final/nodes/communication_recovery.py
+    LOC: 152
+    LLOC: 42
+    SLOC: 74
+    Comments: 22
+    Single comments: 22
+    Multi: 10
+    Blank: 46
+    - Comment Stats
+        (C % L): 14%
+        (C % S): 30%
+        (C + M % L): 21%
+metrics/snapshots/scenario_capable/bt/final/nodes/abort_requested.py
+    LOC: 132
+    LLOC: 46
+    SLOC: 69
+    Comments: 10
+    Single comments: 10
+    Multi: 8
+    Blank: 45
+    - Comment Stats
+        (C % L): 8%
+        (C % S): 14%
+        (C + M % L): 14%
+metrics/snapshots/scenario_capable/bt/final/nodes/battery_critical.py
+    LOC: 74
+    LLOC: 30
+    SLOC: 45
+    Comments: 1
+    Single comments: 1
+    Multi: 6
+    Blank: 22
+    - Comment Stats
+        (C % L): 1%
+        (C % S): 2%
+        (C + M % L): 9%
+metrics/snapshots/scenario_capable/bt/final/nodes/gps_recovery.py
+    LOC: 189
+    LLOC: 47
+    SLOC: 101
+    Comments: 21
+    Single comments: 21
+    Multi: 13
+    Blank: 54
+    - Comment Stats
+        (C % L): 11%
+        (C % S): 21%
+        (C + M % L): 18%
+metrics/snapshots/scenario_capable/bt/final/nodes/mission_action.py
+    LOC: 251
+    LLOC: 88
+    SLOC: 135
+    Comments: 28
+    Single comments: 28
+    Multi: 0
+    Blank: 88
+    - Comment Stats
+        (C % L): 11%
+        (C % S): 21%
+        (C + M % L): 11%
+metrics/snapshots/scenario_capable/bt/final/nodes/propulsion_failure.py
+    LOC: 118
+    LLOC: 32
+    SLOC: 51
+    Comments: 13
+    Single comments: 13
+    Multi: 22
+    Blank: 32
+    - Comment Stats
+        (C % L): 11%
+        (C % S): 25%
+        (C + M % L): 30%
+metrics/snapshots/scenario_capable/bt/final/nodes/wind_unsafe.py
+    LOC: 149
+    LLOC: 46
+    SLOC: 75
+    Comments: 13
+    Single comments: 13
+    Multi: 10
+    Blank: 51
+    - Comment Stats
+        (C % L): 9%
+        (C % S): 17%
+        (C + M % L): 15%

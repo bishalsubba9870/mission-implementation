@@ -1,0 +1,13 @@
+metrics/snapshots/scenario_capable/fsm/final/fsm_executor.py:
+    h1: 12
+    h2: 89
+    N1: 66
+    N2: 120
+    vocabulary: 101
+    length: 186
+    calculated_length: 619.3598253646633
+    volume: 1238.427335791834
+    difficulty: 8.089887640449438
+    effort: 10018.737997417084
+    time: 556.5965554120602
+    bugs: 0.4128091119306113

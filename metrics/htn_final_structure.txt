@@ -1,0 +1,37 @@
+HTN STRUCTURAL METRICS
+Primitive operators: 12
+Compound tasks: 4
+Methods: 16
+Recovery methods: 10
+
+Operators:
+takeoff
+navigate
+mission_action
+land
+wait_for_gps
+wait_for_communication
+resume_mission
+emergency_land
+return_to_home
+abort_mission
+safe_land
+safe_terminate
+
+Compound tasks:
+execute_mission
+execute_route
+handle_runtime_condition
+perform_task
+
+Recovery methods:
+m_abort_requested
+m_propulsion_failure
+m_battery_critical
+m_wind_unsafe
+m_communication_recovery_failed
+m_communication_restored
+m_communication_lost
+m_gps_recovery_failed
+m_gps_restored
+m_gps_lost

@@ -1,5 +1,5 @@
 """
-Final scenario-capable ROS2 HTN mission executor.
+GPS-capable ROS2 HTN mission executor.
 
 The executor runs the primitive mission plan, updates
 world-state facts, and invokes HTN recovery planning.
@@ -36,7 +36,7 @@ from mission_formalism_evaluation.htn.htn_planner import (
 
 
 class HTNExecutor(Node):
-    """Execute the final scenario-capable UAV HTN mission."""
+    """Execute a GPS-capable UAV mission using HTN."""
 
     def __init__(
         self,
@@ -130,18 +130,7 @@ class HTNExecutor(Node):
             "gps_was_lost": False,
             "gps_recovery_failed": False,
 
-            "propulsion_failure": False,
-
-            "communication_available": True,
-            "communication_was_lost": False,
-            "communication_recovery_failed": False,
-
-            "wind_unsafe": False,
-            "battery_critical": False,
-            "abort_requested": False,
-
             "mission_interrupted": False,
-            "mission_aborted": False,
             "safe_terminated": False,
         }
 
@@ -231,7 +220,7 @@ class HTNExecutor(Node):
         )
 
         self.get_logger().info(
-            "Mode: FINAL_SCENARIO_CAPABLE"
+            "Mode: GPS_CAPABLE"
         )
 
         self.get_logger().info(
@@ -464,27 +453,18 @@ class HTNExecutor(Node):
 
             self.get_logger().warning(
                 "Runtime event not supported "
-                f"by current HTN: {event}"
+                f"by GPS-capable HTN: {event}"
             )
 
             return
 
-        initial_fault_events = {
-            "GPS_LOST",
-            "PROPULSION_FAILURE",
-            "COMMUNICATION_LOST",
-            "WIND_UNSAFE",
-            "BATTERY_CRITICAL",
-            "ABORT_REQUESTED",
-        }
-
         if (
-            event in initial_fault_events
+            event == "GPS_LOST"
             and not self._is_navigating()
         ):
 
             self.get_logger().warning(
-                f"{event} ignored because "
+                "GPS_LOST ignored because "
                 "HTN is not navigating."
             )
 
@@ -499,7 +479,7 @@ class HTNExecutor(Node):
             f"{event}"
         )
 
-        if event in initial_fault_events:
+        if event == "GPS_LOST":
 
             self._pause_mission_task()
 
@@ -556,8 +536,7 @@ class HTNExecutor(Node):
                     (
                         "handle_runtime_condition",
                         {
-                            "event":
-                                event,
+                            "event": event,
                         },
                     )
                 ],
@@ -720,19 +699,6 @@ class HTNExecutor(Node):
 
             self._publish_progress(
                 state_name="HTN_GPS_RECOVERY",
-                task_type="recovery",
-                task_status="RUNNING",
-            )
-
-            return
-
-        if (
-            self.active_task[0]
-            == "wait_for_communication"
-        ):
-
-            self._publish_progress(
-                state_name="HTN_COMMUNICATION_RECOVERY",
                 task_type="recovery",
                 task_status="RUNNING",
             )

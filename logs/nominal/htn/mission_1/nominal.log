@@ -1,0 +1,27 @@
+[INFO] [1787978705.877652632] [htn_executor]: Loading mission: /home/bishal/ros2_ws/install/mission_formalism_evaluation/share/mission_formalism_evaluation/missions/mission_1.yaml
+[INFO] [1787978705.881232508] [htn_executor]: ================================
+[INFO] [1787978705.882029187] [htn_executor]: HTN Mission Executor
+[INFO] [1787978705.883109389] [htn_executor]: Mode: NOMINAL
+[INFO] [1787978705.884163560] [htn_executor]: Model: Totally Ordered State-Based HTN
+[INFO] [1787978705.884932316] [htn_executor]: Mission ID: M1
+[INFO] [1787978705.885595778] [htn_executor]: Mission Name: Basic Navigation
+[INFO] [1787978705.886196145] [htn_executor]: Mission Items: 4
+[INFO] [1787978705.887405628] [htn_executor]: HTN Primitive Operators: 4
+[INFO] [1787978705.888562828] [htn_executor]: HTN Compound Tasks: 3
+[INFO] [1787978705.889396467] [htn_executor]: HTN Methods: 6
+[INFO] [1787978705.890239388] [htn_executor]: Mission Method Applications: 6
+[INFO] [1787978705.891300648] [htn_executor]: Generated Primitive Plan: 4
+[INFO] [1787978705.892068056] [htn_executor]: ================================
+[INFO] [1787978705.913091370] [htn_executor]: HTN PRIMITIVE RUNNING: takeoff
+[INFO] [1787978706.115048792] [htn_executor]: HTN PRIMITIVE SUCCESS: takeoff
+[INFO] [1787978706.134496771] [htn_executor]: HTN PRIMITIVE RUNNING: navigate [WP1]
+[INFO] [1787978706.335608582] [htn_executor]: HTN PRIMITIVE SUCCESS: navigate [WP1]
+[INFO] [1787978706.355008751] [htn_executor]: HTN PRIMITIVE RUNNING: navigate [WP2]
+[INFO] [1787978706.553172797] [htn_executor]: HTN PRIMITIVE SUCCESS: navigate [WP2]
+[INFO] [1787978706.573038170] [htn_executor]: HTN PRIMITIVE RUNNING: land
+[INFO] [1787978706.775144758] [htn_executor]: HTN PRIMITIVE SUCCESS: land
+[INFO] [1787978706.794601768] [htn_executor]: ================================
+[INFO] [1787978706.796259641] [htn_executor]: MISSION COMPLETED
+[INFO] [1787978706.797913406] [htn_executor]: Completed tasks: 4
+[INFO] [1787978706.799575457] [htn_executor]: Completed navigation tasks: 2
+[INFO] [1787978706.801387417] [htn_executor]: ================================

@@ -1,0 +1,638 @@
+[INFO] [1787678541.028977574] [bt_executor]: ========================================
+[INFO] [1787678541.029575668] [bt_executor]: Behavior Tree Mission Executor
+[INFO] [1787678541.030334434] [bt_executor]: Mode: FINAL SCENARIO CAPABLE
+[INFO] [1787678541.031504056] [bt_executor]: ========================================
+[INFO] [1787678541.050944340] [bt_executor]: Mission ID: M3
+[INFO] [1787678541.051531188] [bt_executor]: Mission items: 102
+[INFO] [1787678541.052907010] [bt_executor]: ========================================
+[INFO] [1787678541.053563104] [bt_executor]: BEHAVIOR TREE STRUCTURE
+[INFO] [1787678541.054719601] [bt_executor]: BT total nodes: 110
+[INFO] [1787678541.055631894] [bt_executor]: BT composite nodes: 2
+[INFO] [1787678541.056289263] [bt_executor]: BT leaf/action nodes: 108
+[INFO] [1787678541.057130394] [bt_executor]: Runtime controllers: GPS + Propulsion + Communication + Wind + Battery + Abort
+[INFO] [1787678541.057782766] [bt_executor]: ========================================
+[INFO] [1787678541.078814771] [bt_executor]: ----------------------------------------
+[INFO] [1787678541.079222880] [bt_executor]: BT NODE RUNNING: TAKEOFF_1
+[INFO] [1787678541.079654034] [bt_executor]: ACTION: TAKEOFF
+[INFO] [1787678541.280305803] [bt_executor]: BT NODE SUCCESS: TAKEOFF_1
+[INFO] [1787678541.283645006] [bt_executor]: Completed tasks: 1/102
+[INFO] [1787678541.285476489] [bt_executor]: Completed navigation tasks: 0
+[INFO] [1787678541.286696835] [bt_executor]: ----------------------------------------
+[INFO] [1787678541.287918377] [bt_executor]: BT NODE RUNNING: NAV_2_WP1
+[INFO] [1787678541.289159155] [bt_executor]: ACTION: NAVIGATE -> WP1
+[INFO] [1787678541.498960127] [bt_executor]: BT NODE SUCCESS: NAV_2_WP1
+[INFO] [1787678541.500049528] [bt_executor]: Completed tasks: 2/102
+[INFO] [1787678541.501336124] [bt_executor]: Completed navigation tasks: 1
+[INFO] [1787678541.502500945] [bt_executor]: ----------------------------------------
+[INFO] [1787678541.503161981] [bt_executor]: BT NODE RUNNING: NAV_3_WP2
+[INFO] [1787678541.503924464] [bt_executor]: ACTION: NAVIGATE -> WP2
+[INFO] [1787678541.719587805] [bt_executor]: BT NODE SUCCESS: NAV_3_WP2
+[INFO] [1787678541.720743978] [bt_executor]: Completed tasks: 3/102
+[INFO] [1787678541.721910369] [bt_executor]: Completed navigation tasks: 2
+[INFO] [1787678541.723967665] [bt_executor]: ----------------------------------------
+[INFO] [1787678541.726359301] [bt_executor]: BT NODE RUNNING: NAV_4_WP3
+[INFO] [1787678541.728500515] [bt_executor]: ACTION: NAVIGATE -> WP3
+[INFO] [1787678541.939675014] [bt_executor]: BT NODE SUCCESS: NAV_4_WP3
+[INFO] [1787678541.941240470] [bt_executor]: Completed tasks: 4/102
+[INFO] [1787678541.942828913] [bt_executor]: Completed navigation tasks: 3
+[INFO] [1787678541.944501328] [bt_executor]: ----------------------------------------
+[INFO] [1787678541.945922445] [bt_executor]: BT NODE RUNNING: NAV_5_WP4
+[INFO] [1787678541.947466997] [bt_executor]: ACTION: NAVIGATE -> WP4
+[INFO] [1787678542.159585053] [bt_executor]: BT NODE SUCCESS: NAV_5_WP4
+[INFO] [1787678542.160736852] [bt_executor]: Completed tasks: 5/102
+[INFO] [1787678542.161917652] [bt_executor]: Completed navigation tasks: 4
+[INFO] [1787678542.164155000] [bt_executor]: ----------------------------------------
+[INFO] [1787678542.165280042] [bt_executor]: BT NODE RUNNING: NAV_6_WP5
+[INFO] [1787678542.166449984] [bt_executor]: ACTION: NAVIGATE -> WP5
+[INFO] [1787678542.380032682] [bt_executor]: BT NODE SUCCESS: NAV_6_WP5
+[INFO] [1787678542.381262226] [bt_executor]: Completed tasks: 6/102
+[INFO] [1787678542.383129267] [bt_executor]: Completed navigation tasks: 5
+[INFO] [1787678542.384570897] [bt_executor]: ----------------------------------------
+[INFO] [1787678542.385627044] [bt_executor]: BT NODE RUNNING: NAV_7_WP6
+[INFO] [1787678542.386737089] [bt_executor]: ACTION: NAVIGATE -> WP6
+[INFO] [1787678542.599882133] [bt_executor]: BT NODE SUCCESS: NAV_7_WP6
+[INFO] [1787678542.603564537] [bt_executor]: Completed tasks: 7/102
+[INFO] [1787678542.604778070] [bt_executor]: Completed navigation tasks: 6
+[INFO] [1787678542.605889142] [bt_executor]: ----------------------------------------
+[INFO] [1787678542.606861798] [bt_executor]: BT NODE RUNNING: NAV_8_WP7
+[INFO] [1787678542.608154821] [bt_executor]: ACTION: NAVIGATE -> WP7
+[INFO] [1787678542.818685842] [bt_executor]: BT NODE SUCCESS: NAV_8_WP7
+[INFO] [1787678542.819419720] [bt_executor]: Completed tasks: 8/102
+[INFO] [1787678542.820209399] [bt_executor]: Completed navigation tasks: 7
+[INFO] [1787678542.821163587] [bt_executor]: ----------------------------------------
+[INFO] [1787678542.821855110] [bt_executor]: BT NODE RUNNING: NAV_9_WP8
+[INFO] [1787678542.822426763] [bt_executor]: ACTION: NAVIGATE -> WP8
+[INFO] [1787678543.039264357] [bt_executor]: BT NODE SUCCESS: NAV_9_WP8
+[INFO] [1787678543.040188632] [bt_executor]: Completed tasks: 9/102
+[INFO] [1787678543.040972668] [bt_executor]: Completed navigation tasks: 8
+[INFO] [1787678543.042302325] [bt_executor]: ----------------------------------------
+[INFO] [1787678543.043199410] [bt_executor]: BT NODE RUNNING: NAV_10_WP9
+[INFO] [1787678543.044012706] [bt_executor]: ACTION: NAVIGATE -> WP9
+[INFO] [1787678543.557434906] [bt_executor]: BT NODE SUCCESS: NAV_10_WP9
+[INFO] [1787678543.559506819] [bt_executor]: Completed tasks: 10/102
+[INFO] [1787678543.561668735] [bt_executor]: Completed navigation tasks: 9
+[INFO] [1787678543.563952928] [bt_executor]: ----------------------------------------
+[INFO] [1787678543.565649003] [bt_executor]: BT NODE RUNNING: NAV_11_WP10
+[INFO] [1787678543.567105978] [bt_executor]: ACTION: NAVIGATE -> WP10
+[INFO] [1787678543.779723799] [bt_executor]: BT NODE SUCCESS: NAV_11_WP10
+[INFO] [1787678543.781286945] [bt_executor]: Completed tasks: 11/102
+[INFO] [1787678543.782874545] [bt_executor]: Completed navigation tasks: 10
+[INFO] [1787678543.785016521] [bt_executor]: ----------------------------------------
+[INFO] [1787678543.786603290] [bt_executor]: BT NODE RUNNING: NAV_12_WP11
+[INFO] [1787678543.787975055] [bt_executor]: ACTION: NAVIGATE -> WP11
+[INFO] [1787678543.999851581] [bt_executor]: BT NODE SUCCESS: NAV_12_WP11
+[INFO] [1787678544.001311954] [bt_executor]: Completed tasks: 12/102
+[INFO] [1787678544.002740201] [bt_executor]: Completed navigation tasks: 11
+[INFO] [1787678544.004319575] [bt_executor]: ----------------------------------------
+[INFO] [1787678544.005770882] [bt_executor]: BT NODE RUNNING: NAV_13_WP12
+[INFO] [1787678544.007113834] [bt_executor]: ACTION: NAVIGATE -> WP12
+[INFO] [1787678544.220334167] [bt_executor]: BT NODE SUCCESS: NAV_13_WP12
+[INFO] [1787678544.222942590] [bt_executor]: Completed tasks: 13/102
+[INFO] [1787678544.226287092] [bt_executor]: Completed navigation tasks: 12
+[INFO] [1787678544.229821678] [bt_executor]: ----------------------------------------
+[INFO] [1787678544.232453590] [bt_executor]: BT NODE RUNNING: NAV_14_WP13
+[INFO] [1787678544.235300421] [bt_executor]: ACTION: NAVIGATE -> WP13
+[INFO] [1787678544.439569987] [bt_executor]: BT NODE SUCCESS: NAV_14_WP13
+[INFO] [1787678544.440928613] [bt_executor]: Completed tasks: 14/102
+[INFO] [1787678544.442749775] [bt_executor]: Completed navigation tasks: 13
+[INFO] [1787678544.445140681] [bt_executor]: ----------------------------------------
+[INFO] [1787678544.446286843] [bt_executor]: BT NODE RUNNING: NAV_15_WP14
+[INFO] [1787678544.447817442] [bt_executor]: ACTION: NAVIGATE -> WP14
+[INFO] [1787678544.658794840] [bt_executor]: BT NODE SUCCESS: NAV_15_WP14
+[INFO] [1787678544.659514717] [bt_executor]: Completed tasks: 15/102
+[INFO] [1787678544.660268518] [bt_executor]: Completed navigation tasks: 14
+[INFO] [1787678544.661552626] [bt_executor]: ----------------------------------------
+[INFO] [1787678544.662296224] [bt_executor]: BT NODE RUNNING: NAV_16_WP15
+[INFO] [1787678544.663021121] [bt_executor]: ACTION: NAVIGATE -> WP15
+[INFO] [1787678544.879827343] [bt_executor]: BT NODE SUCCESS: NAV_16_WP15
+[INFO] [1787678544.882031542] [bt_executor]: Completed tasks: 16/102
+[INFO] [1787678544.884486964] [bt_executor]: Completed navigation tasks: 15
+[INFO] [1787678544.887134011] [bt_executor]: ----------------------------------------
+[INFO] [1787678544.888845486] [bt_executor]: BT NODE RUNNING: NAV_17_WP16
+[INFO] [1787678544.890386747] [bt_executor]: ACTION: NAVIGATE -> WP16
+[INFO] [1787678545.099630707] [bt_executor]: BT NODE SUCCESS: NAV_17_WP16
+[INFO] [1787678545.101210864] [bt_executor]: Completed tasks: 17/102
+[INFO] [1787678545.102904481] [bt_executor]: Completed navigation tasks: 16
+[INFO] [1787678545.106462766] [bt_executor]: ----------------------------------------
+[INFO] [1787678545.108110608] [bt_executor]: BT NODE RUNNING: NAV_18_WP17
+[INFO] [1787678545.110023737] [bt_executor]: ACTION: NAVIGATE -> WP17
+[INFO] [1787678545.319415853] [bt_executor]: BT NODE SUCCESS: NAV_18_WP17
+[INFO] [1787678545.321039712] [bt_executor]: Completed tasks: 18/102
+[INFO] [1787678545.322823919] [bt_executor]: Completed navigation tasks: 17
+[INFO] [1787678545.325584260] [bt_executor]: ----------------------------------------
+[INFO] [1787678545.327234283] [bt_executor]: BT NODE RUNNING: NAV_19_WP18
+[INFO] [1787678545.328559791] [bt_executor]: ACTION: NAVIGATE -> WP18
+[INFO] [1787678545.539733934] [bt_executor]: BT NODE SUCCESS: NAV_19_WP18
+[INFO] [1787678545.542282276] [bt_executor]: Completed tasks: 19/102
+[INFO] [1787678545.545149552] [bt_executor]: Completed navigation tasks: 18
+[INFO] [1787678545.548093020] [bt_executor]: ----------------------------------------
+[INFO] [1787678545.550438704] [bt_executor]: BT NODE RUNNING: NAV_20_WP19
+[INFO] [1787678545.552902869] [bt_executor]: ACTION: NAVIGATE -> WP19
+[INFO] [1787678545.759906183] [bt_executor]: BT NODE SUCCESS: NAV_20_WP19
+[INFO] [1787678545.762069515] [bt_executor]: Completed tasks: 20/102
+[INFO] [1787678545.764229459] [bt_executor]: Completed navigation tasks: 19
+[INFO] [1787678545.768124649] [bt_executor]: ----------------------------------------
+[INFO] [1787678545.769432779] [bt_executor]: BT NODE RUNNING: NAV_21_WP20
+[INFO] [1787678545.771000408] [bt_executor]: ACTION: NAVIGATE -> WP20
+[INFO] [1787678545.979708028] [bt_executor]: BT NODE SUCCESS: NAV_21_WP20
+[INFO] [1787678545.981709130] [bt_executor]: Completed tasks: 21/102
+[INFO] [1787678545.984066372] [bt_executor]: Completed navigation tasks: 20
+[INFO] [1787678545.988865272] [bt_executor]: ----------------------------------------
+[INFO] [1787678545.990257228] [bt_executor]: BT NODE RUNNING: NAV_22_WP21
+[INFO] [1787678545.992166414] [bt_executor]: ACTION: NAVIGATE -> WP21
+[INFO] [1787678546.199339054] [bt_executor]: BT NODE SUCCESS: NAV_22_WP21
+[INFO] [1787678546.200846765] [bt_executor]: Completed tasks: 22/102
+[INFO] [1787678546.202417416] [bt_executor]: Completed navigation tasks: 21
+[INFO] [1787678546.204089889] [bt_executor]: ----------------------------------------
+[INFO] [1787678546.205549813] [bt_executor]: BT NODE RUNNING: NAV_23_WP22
+[INFO] [1787678546.206568335] [bt_executor]: ACTION: NAVIGATE -> WP22
+[INFO] [1787678546.419392524] [bt_executor]: BT NODE SUCCESS: NAV_23_WP22
+[INFO] [1787678546.420276451] [bt_executor]: Completed tasks: 23/102
+[INFO] [1787678546.421252216] [bt_executor]: Completed navigation tasks: 22
+[INFO] [1787678546.423936644] [bt_executor]: ----------------------------------------
+[INFO] [1787678546.425524632] [bt_executor]: BT NODE RUNNING: NAV_24_WP23
+[INFO] [1787678546.426593237] [bt_executor]: ACTION: NAVIGATE -> WP23
+[INFO] [1787678546.639399077] [bt_executor]: BT NODE SUCCESS: NAV_24_WP23
+[INFO] [1787678546.640347454] [bt_executor]: Completed tasks: 24/102
+[INFO] [1787678546.641538244] [bt_executor]: Completed navigation tasks: 23
+[INFO] [1787678546.643409625] [bt_executor]: ----------------------------------------
+[INFO] [1787678546.644940959] [bt_executor]: BT NODE RUNNING: NAV_25_WP24
+[INFO] [1787678546.645861111] [bt_executor]: ACTION: NAVIGATE -> WP24
+[INFO] [1787678546.859257116] [bt_executor]: BT NODE SUCCESS: NAV_25_WP24
+[INFO] [1787678546.860153206] [bt_executor]: Completed tasks: 25/102
+[INFO] [1787678546.861080250] [bt_executor]: Completed navigation tasks: 24
+[INFO] [1787678546.862786088] [bt_executor]: ----------------------------------------
+[INFO] [1787678546.863667737] [bt_executor]: BT NODE RUNNING: NAV_26_WP25
+[INFO] [1787678546.864524342] [bt_executor]: ACTION: NAVIGATE -> WP25
+[INFO] [1787678547.079256225] [bt_executor]: BT NODE SUCCESS: NAV_26_WP25
+[INFO] [1787678547.080744378] [bt_executor]: Completed tasks: 26/102
+[INFO] [1787678547.082342287] [bt_executor]: Completed navigation tasks: 25
+[INFO] [1787678547.085084798] [bt_executor]: ----------------------------------------
+[INFO] [1787678547.086031756] [bt_executor]: BT NODE RUNNING: NAV_27_WP26
+[INFO] [1787678547.087387680] [bt_executor]: ACTION: NAVIGATE -> WP26
+[INFO] [1787678547.299757743] [bt_executor]: BT NODE SUCCESS: NAV_27_WP26
+[INFO] [1787678547.300793007] [bt_executor]: Completed tasks: 27/102
+[INFO] [1787678547.301860725] [bt_executor]: Completed navigation tasks: 26
+[INFO] [1787678547.303844239] [bt_executor]: ----------------------------------------
+[INFO] [1787678547.305030403] [bt_executor]: BT NODE RUNNING: NAV_28_WP27
+[INFO] [1787678547.306062444] [bt_executor]: ACTION: NAVIGATE -> WP27
+[INFO] [1787678547.520103784] [bt_executor]: BT NODE SUCCESS: NAV_28_WP27
+[INFO] [1787678547.522736968] [bt_executor]: Completed tasks: 28/102
+[INFO] [1787678547.525564100] [bt_executor]: Completed navigation tasks: 27
+[INFO] [1787678547.528600390] [bt_executor]: ----------------------------------------
+[INFO] [1787678547.530862288] [bt_executor]: BT NODE RUNNING: NAV_29_WP28
+[INFO] [1787678547.533811758] [bt_executor]: ACTION: NAVIGATE -> WP28
+[INFO] [1787678547.740178246] [bt_executor]: BT NODE SUCCESS: NAV_29_WP28
+[INFO] [1787678547.741771436] [bt_executor]: Completed tasks: 29/102
+[INFO] [1787678547.743349751] [bt_executor]: Completed navigation tasks: 28
+[INFO] [1787678547.746260762] [bt_executor]: ----------------------------------------
+[INFO] [1787678547.747805691] [bt_executor]: BT NODE RUNNING: NAV_30_WP29
+[INFO] [1787678547.751123283] [bt_executor]: ACTION: NAVIGATE -> WP29
+[INFO] [1787678547.960083583] [bt_executor]: BT NODE SUCCESS: NAV_30_WP29
+[INFO] [1787678547.962574447] [bt_executor]: Completed tasks: 30/102
+[INFO] [1787678547.964776390] [bt_executor]: Completed navigation tasks: 29
+[INFO] [1787678547.968953777] [bt_executor]: ----------------------------------------
+[INFO] [1787678547.970871192] [bt_executor]: BT NODE RUNNING: NAV_31_WP30
+[INFO] [1787678547.972738697] [bt_executor]: ACTION: NAVIGATE -> WP30
+[INFO] [1787678548.179442781] [bt_executor]: BT NODE SUCCESS: NAV_31_WP30
+[INFO] [1787678548.180853505] [bt_executor]: Completed tasks: 31/102
+[INFO] [1787678548.182005506] [bt_executor]: Completed navigation tasks: 30
+[INFO] [1787678548.184361256] [bt_executor]: ----------------------------------------
+[INFO] [1787678548.186059367] [bt_executor]: BT NODE RUNNING: NAV_32_WP31
+[INFO] [1787678548.187552048] [bt_executor]: ACTION: NAVIGATE -> WP31
+[INFO] [1787678548.399704407] [bt_executor]: BT NODE SUCCESS: NAV_32_WP31
+[INFO] [1787678548.401397100] [bt_executor]: Completed tasks: 32/102
+[INFO] [1787678548.403196737] [bt_executor]: Completed navigation tasks: 31
+[INFO] [1787678548.405204924] [bt_executor]: ----------------------------------------
+[INFO] [1787678548.406844504] [bt_executor]: BT NODE RUNNING: NAV_33_WP32
+[INFO] [1787678548.407991298] [bt_executor]: ACTION: NAVIGATE -> WP32
+[INFO] [1787678548.619553652] [bt_executor]: BT NODE SUCCESS: NAV_33_WP32
+[INFO] [1787678548.621216316] [bt_executor]: Completed tasks: 33/102
+[INFO] [1787678548.623095543] [bt_executor]: Completed navigation tasks: 32
+[INFO] [1787678548.625171735] [bt_executor]: ----------------------------------------
+[INFO] [1787678548.626391138] [bt_executor]: BT NODE RUNNING: NAV_34_WP33
+[INFO] [1787678548.628136328] [bt_executor]: ACTION: NAVIGATE -> WP33
+[INFO] [1787678548.839019898] [bt_executor]: BT NODE SUCCESS: NAV_34_WP33
+[INFO] [1787678548.840192985] [bt_executor]: Completed tasks: 34/102
+[INFO] [1787678548.841546210] [bt_executor]: Completed navigation tasks: 33
+[INFO] [1787678548.843049901] [bt_executor]: ----------------------------------------
+[INFO] [1787678548.845390890] [bt_executor]: BT NODE RUNNING: NAV_35_WP34
+[INFO] [1787678548.846242594] [bt_executor]: ACTION: NAVIGATE -> WP34
+[INFO] [1787678549.059315411] [bt_executor]: BT NODE SUCCESS: NAV_35_WP34
+[INFO] [1787678549.060243517] [bt_executor]: Completed tasks: 35/102
+[INFO] [1787678549.061765002] [bt_executor]: Completed navigation tasks: 34
+[INFO] [1787678549.062940417] [bt_executor]: ----------------------------------------
+[INFO] [1787678549.064288954] [bt_executor]: BT NODE RUNNING: NAV_36_WP35
+[INFO] [1787678549.065910250] [bt_executor]: ACTION: NAVIGATE -> WP35
+[INFO] [1787678549.279358390] [bt_executor]: BT NODE SUCCESS: NAV_36_WP35
+[INFO] [1787678549.280191166] [bt_executor]: Completed tasks: 36/102
+[INFO] [1787678549.281481005] [bt_executor]: Completed navigation tasks: 35
+[INFO] [1787678549.283054840] [bt_executor]: ----------------------------------------
+[INFO] [1787678549.284384003] [bt_executor]: BT NODE RUNNING: NAV_37_WP36
+[INFO] [1787678549.285234304] [bt_executor]: ACTION: NAVIGATE -> WP36
+[INFO] [1787678549.500167705] [bt_executor]: BT NODE SUCCESS: NAV_37_WP36
+[INFO] [1787678549.501577937] [bt_executor]: Completed tasks: 37/102
+[INFO] [1787678549.502937950] [bt_executor]: Completed navigation tasks: 36
+[INFO] [1787678549.505431973] [bt_executor]: ----------------------------------------
+[INFO] [1787678549.507671355] [bt_executor]: BT NODE RUNNING: NAV_38_WP37
+[INFO] [1787678549.509913305] [bt_executor]: ACTION: NAVIGATE -> WP37
+[INFO] [1787678549.719922985] [bt_executor]: BT NODE SUCCESS: NAV_38_WP37
+[INFO] [1787678549.720980200] [bt_executor]: Completed tasks: 38/102
+[INFO] [1787678549.722091428] [bt_executor]: Completed navigation tasks: 37
+[INFO] [1787678549.727118771] [bt_executor]: ----------------------------------------
+[INFO] [1787678549.728925187] [bt_executor]: BT NODE RUNNING: NAV_39_WP38
+[INFO] [1787678549.730868046] [bt_executor]: ACTION: NAVIGATE -> WP38
+[INFO] [1787678549.940133880] [bt_executor]: BT NODE SUCCESS: NAV_39_WP38
+[INFO] [1787678549.942909769] [bt_executor]: Completed tasks: 39/102
+[INFO] [1787678549.946140496] [bt_executor]: Completed navigation tasks: 38
+[INFO] [1787678549.949030913] [bt_executor]: ----------------------------------------
+[INFO] [1787678549.951695245] [bt_executor]: BT NODE RUNNING: NAV_40_WP39
+[INFO] [1787678549.953543291] [bt_executor]: ACTION: NAVIGATE -> WP39
+[INFO] [1787678550.160414179] [bt_executor]: BT NODE SUCCESS: NAV_40_WP39
+[INFO] [1787678550.164114778] [bt_executor]: Completed tasks: 40/102
+[INFO] [1787678550.167271889] [bt_executor]: Completed navigation tasks: 39
+[INFO] [1787678550.169339974] [bt_executor]: ----------------------------------------
+[INFO] [1787678550.170758044] [bt_executor]: BT NODE RUNNING: NAV_41_WP40
+[INFO] [1787678550.172309650] [bt_executor]: ACTION: NAVIGATE -> WP40
+[INFO] [1787678550.379189171] [bt_executor]: BT NODE SUCCESS: NAV_41_WP40
+[INFO] [1787678550.380445556] [bt_executor]: Completed tasks: 41/102
+[INFO] [1787678550.381778597] [bt_executor]: Completed navigation tasks: 40
+[INFO] [1787678550.383355964] [bt_executor]: ----------------------------------------
+[INFO] [1787678550.384615178] [bt_executor]: BT NODE RUNNING: NAV_42_WP41
+[INFO] [1787678550.385421864] [bt_executor]: ACTION: NAVIGATE -> WP41
+[INFO] [1787678550.599030081] [bt_executor]: BT NODE SUCCESS: NAV_42_WP41
+[INFO] [1787678550.599774745] [bt_executor]: Completed tasks: 42/102
+[INFO] [1787678550.600820496] [bt_executor]: Completed navigation tasks: 41
+[INFO] [1787678550.601981714] [bt_executor]: ----------------------------------------
+[INFO] [1787678550.602883403] [bt_executor]: BT NODE RUNNING: NAV_43_WP42
+[INFO] [1787678550.603730549] [bt_executor]: ACTION: NAVIGATE -> WP42
+[INFO] [1787678550.819265502] [bt_executor]: BT NODE SUCCESS: NAV_43_WP42
+[INFO] [1787678550.820663180] [bt_executor]: Completed tasks: 43/102
+[INFO] [1787678550.822148999] [bt_executor]: Completed navigation tasks: 42
+[INFO] [1787678550.823907224] [bt_executor]: ----------------------------------------
+[INFO] [1787678550.825278018] [bt_executor]: BT NODE RUNNING: NAV_44_WP43
+[INFO] [1787678550.826984174] [bt_executor]: ACTION: NAVIGATE -> WP43
+[INFO] [1787678551.038857597] [bt_executor]: BT NODE SUCCESS: NAV_44_WP43
+[INFO] [1787678551.039449714] [bt_executor]: Completed tasks: 44/102
+[INFO] [1787678551.039888820] [bt_executor]: Completed navigation tasks: 43
+[INFO] [1787678551.042859171] [bt_executor]: ----------------------------------------
+[INFO] [1787678551.043551088] [bt_executor]: BT NODE RUNNING: NAV_45_WP44
+[INFO] [1787678551.044004719] [bt_executor]: ACTION: NAVIGATE -> WP44
+[INFO] [1787678551.259133574] [bt_executor]: BT NODE SUCCESS: NAV_45_WP44
+[INFO] [1787678551.260314350] [bt_executor]: Completed tasks: 45/102
+[INFO] [1787678551.261413358] [bt_executor]: Completed navigation tasks: 44
+[INFO] [1787678551.262659301] [bt_executor]: ----------------------------------------
+[INFO] [1787678551.263352573] [bt_executor]: BT NODE RUNNING: NAV_46_WP45
+[INFO] [1787678551.264026986] [bt_executor]: ACTION: NAVIGATE -> WP45
+[INFO] [1787678551.480157497] [bt_executor]: BT NODE SUCCESS: NAV_46_WP45
+[INFO] [1787678551.482616565] [bt_executor]: Completed tasks: 46/102
+[INFO] [1787678551.485164243] [bt_executor]: Completed navigation tasks: 45
+[INFO] [1787678551.487183231] [bt_executor]: ----------------------------------------
+[INFO] [1787678551.488197465] [bt_executor]: BT NODE RUNNING: NAV_47_WP46
+[INFO] [1787678551.489288721] [bt_executor]: ACTION: NAVIGATE -> WP46
+[INFO] [1787678551.700701559] [bt_executor]: BT NODE SUCCESS: NAV_47_WP46
+[INFO] [1787678551.703513716] [bt_executor]: Completed tasks: 47/102
+[INFO] [1787678551.706575973] [bt_executor]: Completed navigation tasks: 46
+[INFO] [1787678551.710178019] [bt_executor]: ----------------------------------------
+[INFO] [1787678551.715967139] [bt_executor]: BT NODE RUNNING: NAV_48_WP47
+[INFO] [1787678551.718541345] [bt_executor]: ACTION: NAVIGATE -> WP47
+[INFO] [1787678551.919627263] [bt_executor]: BT NODE SUCCESS: NAV_48_WP47
+[INFO] [1787678551.921467353] [bt_executor]: Completed tasks: 48/102
+[INFO] [1787678551.923500171] [bt_executor]: Completed navigation tasks: 47
+[INFO] [1787678551.925784226] [bt_executor]: ----------------------------------------
+[INFO] [1787678551.927622457] [bt_executor]: BT NODE RUNNING: NAV_49_WP48
+[INFO] [1787678551.928977863] [bt_executor]: ACTION: NAVIGATE -> WP48
+[INFO] [1787678552.140456645] [bt_executor]: BT NODE SUCCESS: NAV_49_WP48
+[INFO] [1787678552.142633509] [bt_executor]: Completed tasks: 49/102
+[INFO] [1787678552.145045250] [bt_executor]: Completed navigation tasks: 48
+[INFO] [1787678552.147861205] [bt_executor]: ----------------------------------------
+[INFO] [1787678552.150280620] [bt_executor]: BT NODE RUNNING: NAV_50_WP49
+[INFO] [1787678552.152307381] [bt_executor]: ACTION: NAVIGATE -> WP49
+[INFO] [1787678552.359678461] [bt_executor]: BT NODE SUCCESS: NAV_50_WP49
+[INFO] [1787678552.361546546] [bt_executor]: Completed tasks: 50/102
+[INFO] [1787678552.363520633] [bt_executor]: Completed navigation tasks: 49
+[INFO] [1787678552.367073855] [bt_executor]: ----------------------------------------
+[INFO] [1787678552.368226917] [bt_executor]: BT NODE RUNNING: NAV_51_WP50
+[INFO] [1787678552.369748993] [bt_executor]: ACTION: NAVIGATE -> WP50
+[WARN] [1787678552.376271148] [bt_executor]: RUNTIME EVENT RECEIVED: GPS_LOST
+[INFO] [1787678552.378818768] [bt_executor]: BT GPS RECOVERY ACTIVE
+[WARN] [1787678552.381994133] [bt_executor]: BT NODE PAUSED: NAV_51_WP50 | Reason: GPS_LOST
+[WARN] [1787678586.552594490] [bt_executor]: RUNTIME EVENT RECEIVED: GPS_AVAILABLE
+[INFO] [1787678586.560083748] [bt_executor]: GPS recovery successful.
+[INFO] [1787678586.561757508] [bt_executor]: BT GPS RECOVERY: GPS_AVAILABLE
+[INFO] [1787678586.562851658] [bt_executor]: GPS RECOVERED -> resume NAV_51_WP50
+[INFO] [1787678586.564658155] [bt_executor]: BT NODE RESUMING: NAV_51_WP50
+[INFO] [1787678586.738634608] [bt_executor]: BT NODE SUCCESS: NAV_51_WP50
+[INFO] [1787678586.739085557] [bt_executor]: Completed tasks: 51/102
+[INFO] [1787678586.739561987] [bt_executor]: Completed navigation tasks: 50
+[INFO] [1787678586.740832903] [bt_executor]: ----------------------------------------
+[INFO] [1787678586.741391549] [bt_executor]: BT NODE RUNNING: NAV_52_WP51
+[INFO] [1787678586.741837046] [bt_executor]: ACTION: NAVIGATE -> WP51
+[INFO] [1787678586.960677121] [bt_executor]: BT NODE SUCCESS: NAV_52_WP51
+[INFO] [1787678586.963078614] [bt_executor]: Completed tasks: 52/102
+[INFO] [1787678586.964892877] [bt_executor]: Completed navigation tasks: 51
+[INFO] [1787678586.968859260] [bt_executor]: ----------------------------------------
+[INFO] [1787678586.970026347] [bt_executor]: BT NODE RUNNING: NAV_53_WP52
+[INFO] [1787678586.970900629] [bt_executor]: ACTION: NAVIGATE -> WP52
+[INFO] [1787678587.179963804] [bt_executor]: BT NODE SUCCESS: NAV_53_WP52
+[INFO] [1787678587.181305361] [bt_executor]: Completed tasks: 53/102
+[INFO] [1787678587.182847658] [bt_executor]: Completed navigation tasks: 52
+[INFO] [1787678587.185345676] [bt_executor]: ----------------------------------------
+[INFO] [1787678587.187123956] [bt_executor]: BT NODE RUNNING: NAV_54_WP53
+[INFO] [1787678587.188471134] [bt_executor]: ACTION: NAVIGATE -> WP53
+[INFO] [1787678587.399718533] [bt_executor]: BT NODE SUCCESS: NAV_54_WP53
+[INFO] [1787678587.401558643] [bt_executor]: Completed tasks: 54/102
+[INFO] [1787678587.403569760] [bt_executor]: Completed navigation tasks: 53
+[INFO] [1787678587.406894730] [bt_executor]: ----------------------------------------
+[INFO] [1787678587.407986986] [bt_executor]: BT NODE RUNNING: NAV_55_WP54
+[INFO] [1787678587.409037828] [bt_executor]: ACTION: NAVIGATE -> WP54
+[INFO] [1787678587.619696089] [bt_executor]: BT NODE SUCCESS: NAV_55_WP54
+[INFO] [1787678587.620824595] [bt_executor]: Completed tasks: 55/102
+[INFO] [1787678587.622545070] [bt_executor]: Completed navigation tasks: 54
+[INFO] [1787678587.624697287] [bt_executor]: ----------------------------------------
+[INFO] [1787678587.626318313] [bt_executor]: BT NODE RUNNING: NAV_56_WP55
+[INFO] [1787678587.627454901] [bt_executor]: ACTION: NAVIGATE -> WP55
+[INFO] [1787678587.840557354] [bt_executor]: BT NODE SUCCESS: NAV_56_WP55
+[INFO] [1787678587.842303940] [bt_executor]: Completed tasks: 56/102
+[INFO] [1787678587.844152086] [bt_executor]: Completed navigation tasks: 55
+[INFO] [1787678587.847596014] [bt_executor]: ----------------------------------------
+[INFO] [1787678587.851073735] [bt_executor]: BT NODE RUNNING: NAV_57_WP56
+[INFO] [1787678587.853005698] [bt_executor]: ACTION: NAVIGATE -> WP56
+[INFO] [1787678588.059400088] [bt_executor]: BT NODE SUCCESS: NAV_57_WP56
+[INFO] [1787678588.060482478] [bt_executor]: Completed tasks: 57/102
+[INFO] [1787678588.061587766] [bt_executor]: Completed navigation tasks: 56
+[INFO] [1787678588.063140021] [bt_executor]: ----------------------------------------
+[INFO] [1787678588.063987918] [bt_executor]: BT NODE RUNNING: NAV_58_WP57
+[INFO] [1787678588.065440380] [bt_executor]: ACTION: NAVIGATE -> WP57
+[INFO] [1787678588.279192516] [bt_executor]: BT NODE SUCCESS: NAV_58_WP57
+[INFO] [1787678588.280073193] [bt_executor]: Completed tasks: 58/102
+[INFO] [1787678588.280971109] [bt_executor]: Completed navigation tasks: 57
+[INFO] [1787678588.283601169] [bt_executor]: ----------------------------------------
+[INFO] [1787678588.284445747] [bt_executor]: BT NODE RUNNING: NAV_59_WP58
+[INFO] [1787678588.285230028] [bt_executor]: ACTION: NAVIGATE -> WP58
+[INFO] [1787678588.499510686] [bt_executor]: BT NODE SUCCESS: NAV_59_WP58
+[INFO] [1787678588.500342535] [bt_executor]: Completed tasks: 59/102
+[INFO] [1787678588.501289805] [bt_executor]: Completed navigation tasks: 58
+[INFO] [1787678588.502851048] [bt_executor]: ----------------------------------------
+[INFO] [1787678588.504233260] [bt_executor]: BT NODE RUNNING: NAV_60_WP59
+[INFO] [1787678588.505682713] [bt_executor]: ACTION: NAVIGATE -> WP59
+[INFO] [1787678588.719247980] [bt_executor]: BT NODE SUCCESS: NAV_60_WP59
+[INFO] [1787678588.720112424] [bt_executor]: Completed tasks: 60/102
+[INFO] [1787678588.721124434] [bt_executor]: Completed navigation tasks: 59
+[INFO] [1787678588.722887846] [bt_executor]: ----------------------------------------
+[INFO] [1787678588.723977685] [bt_executor]: BT NODE RUNNING: NAV_61_WP60
+[INFO] [1787678588.725301035] [bt_executor]: ACTION: NAVIGATE -> WP60
+[INFO] [1787678588.939418277] [bt_executor]: BT NODE SUCCESS: NAV_61_WP60
+[INFO] [1787678588.939996636] [bt_executor]: Completed tasks: 61/102
+[INFO] [1787678588.940627650] [bt_executor]: Completed navigation tasks: 60
+[INFO] [1787678588.941700501] [bt_executor]: ----------------------------------------
+[INFO] [1787678588.942530159] [bt_executor]: BT NODE RUNNING: NAV_62_WP61
+[INFO] [1787678588.943504890] [bt_executor]: ACTION: NAVIGATE -> WP61
+[INFO] [1787678589.159061630] [bt_executor]: BT NODE SUCCESS: NAV_62_WP61
+[INFO] [1787678589.160350308] [bt_executor]: Completed tasks: 62/102
+[INFO] [1787678589.161646773] [bt_executor]: Completed navigation tasks: 61
+[INFO] [1787678589.163069895] [bt_executor]: ----------------------------------------
+[INFO] [1787678589.164057767] [bt_executor]: BT NODE RUNNING: NAV_63_WP62
+[INFO] [1787678589.165350241] [bt_executor]: ACTION: NAVIGATE -> WP62
+[INFO] [1787678589.380006123] [bt_executor]: BT NODE SUCCESS: NAV_63_WP62
+[INFO] [1787678589.382563686] [bt_executor]: Completed tasks: 63/102
+[INFO] [1787678589.385299938] [bt_executor]: Completed navigation tasks: 62
+[INFO] [1787678589.388159976] [bt_executor]: ----------------------------------------
+[INFO] [1787678589.390584658] [bt_executor]: BT NODE RUNNING: NAV_64_WP63
+[INFO] [1787678589.392176069] [bt_executor]: ACTION: NAVIGATE -> WP63
+[INFO] [1787678589.599916152] [bt_executor]: BT NODE SUCCESS: NAV_64_WP63
+[INFO] [1787678589.601048648] [bt_executor]: Completed tasks: 64/102
+[INFO] [1787678589.602252627] [bt_executor]: Completed navigation tasks: 63
+[INFO] [1787678589.604322549] [bt_executor]: ----------------------------------------
+[INFO] [1787678589.605536319] [bt_executor]: BT NODE RUNNING: NAV_65_WP64
+[INFO] [1787678589.606703912] [bt_executor]: ACTION: NAVIGATE -> WP64
+[INFO] [1787678589.819250355] [bt_executor]: BT NODE SUCCESS: NAV_65_WP64
+[INFO] [1787678589.820626032] [bt_executor]: Completed tasks: 65/102
+[INFO] [1787678589.822141467] [bt_executor]: Completed navigation tasks: 64
+[INFO] [1787678589.823828295] [bt_executor]: ----------------------------------------
+[INFO] [1787678589.825188569] [bt_executor]: BT NODE RUNNING: NAV_66_WP65
+[INFO] [1787678589.826751628] [bt_executor]: ACTION: NAVIGATE -> WP65
+[INFO] [1787678590.039303018] [bt_executor]: BT NODE SUCCESS: NAV_66_WP65
+[INFO] [1787678590.040968051] [bt_executor]: Completed tasks: 66/102
+[INFO] [1787678590.042609327] [bt_executor]: Completed navigation tasks: 65
+[INFO] [1787678590.044157398] [bt_executor]: ----------------------------------------
+[INFO] [1787678590.045728093] [bt_executor]: BT NODE RUNNING: NAV_67_WP66
+[INFO] [1787678590.046843083] [bt_executor]: ACTION: NAVIGATE -> WP66
+[INFO] [1787678590.258815981] [bt_executor]: BT NODE SUCCESS: NAV_67_WP66
+[INFO] [1787678590.259500584] [bt_executor]: Completed tasks: 67/102
+[INFO] [1787678590.260289260] [bt_executor]: Completed navigation tasks: 66
+[INFO] [1787678590.261541474] [bt_executor]: ----------------------------------------
+[INFO] [1787678590.262032186] [bt_executor]: BT NODE RUNNING: NAV_68_WP67
+[INFO] [1787678590.262495594] [bt_executor]: ACTION: NAVIGATE -> WP67
+[INFO] [1787678590.479502596] [bt_executor]: BT NODE SUCCESS: NAV_68_WP67
+[INFO] [1787678590.480558025] [bt_executor]: Completed tasks: 68/102
+[INFO] [1787678590.482219308] [bt_executor]: Completed navigation tasks: 67
+[INFO] [1787678590.484957433] [bt_executor]: ----------------------------------------
+[INFO] [1787678590.486019409] [bt_executor]: BT NODE RUNNING: NAV_69_WP68
+[INFO] [1787678590.487236753] [bt_executor]: ACTION: NAVIGATE -> WP68
+[INFO] [1787678590.699477560] [bt_executor]: BT NODE SUCCESS: NAV_69_WP68
+[INFO] [1787678590.700747223] [bt_executor]: Completed tasks: 69/102
+[INFO] [1787678590.702157764] [bt_executor]: Completed navigation tasks: 68
+[INFO] [1787678590.703618743] [bt_executor]: ----------------------------------------
+[INFO] [1787678590.704985170] [bt_executor]: BT NODE RUNNING: NAV_70_WP69
+[INFO] [1787678590.706262446] [bt_executor]: ACTION: NAVIGATE -> WP69
+[INFO] [1787678590.919348795] [bt_executor]: BT NODE SUCCESS: NAV_70_WP69
+[INFO] [1787678590.920546017] [bt_executor]: Completed tasks: 70/102
+[INFO] [1787678590.921490912] [bt_executor]: Completed navigation tasks: 69
+[INFO] [1787678590.923143337] [bt_executor]: ----------------------------------------
+[INFO] [1787678590.924569032] [bt_executor]: BT NODE RUNNING: NAV_71_WP70
+[INFO] [1787678590.926116533] [bt_executor]: ACTION: NAVIGATE -> WP70
+[INFO] [1787678591.140041085] [bt_executor]: BT NODE SUCCESS: NAV_71_WP70
+[INFO] [1787678591.142201345] [bt_executor]: Completed tasks: 71/102
+[INFO] [1787678591.143926156] [bt_executor]: Completed navigation tasks: 70
+[INFO] [1787678591.145771765] [bt_executor]: ----------------------------------------
+[INFO] [1787678591.147131606] [bt_executor]: BT NODE RUNNING: NAV_72_WP71
+[INFO] [1787678591.148573861] [bt_executor]: ACTION: NAVIGATE -> WP71
+[INFO] [1787678591.360821640] [bt_executor]: BT NODE SUCCESS: NAV_72_WP71
+[INFO] [1787678591.362691014] [bt_executor]: Completed tasks: 72/102
+[INFO] [1787678591.366342413] [bt_executor]: Completed navigation tasks: 71
+[INFO] [1787678591.369571956] [bt_executor]: ----------------------------------------
+[INFO] [1787678591.372581038] [bt_executor]: BT NODE RUNNING: NAV_73_WP72
+[INFO] [1787678591.375968845] [bt_executor]: ACTION: NAVIGATE -> WP72
+[INFO] [1787678591.580335231] [bt_executor]: BT NODE SUCCESS: NAV_73_WP72
+[INFO] [1787678591.583293711] [bt_executor]: Completed tasks: 73/102
+[INFO] [1787678591.585154578] [bt_executor]: Completed navigation tasks: 72
+[INFO] [1787678591.589850591] [bt_executor]: ----------------------------------------
+[INFO] [1787678591.593192726] [bt_executor]: BT NODE RUNNING: NAV_74_WP73
+[INFO] [1787678591.596263264] [bt_executor]: ACTION: NAVIGATE -> WP73
+[INFO] [1787678591.799693871] [bt_executor]: BT NODE SUCCESS: NAV_74_WP73
+[INFO] [1787678591.802008494] [bt_executor]: Completed tasks: 74/102
+[INFO] [1787678591.803985972] [bt_executor]: Completed navigation tasks: 73
+[INFO] [1787678591.806101268] [bt_executor]: ----------------------------------------
+[INFO] [1787678591.807886594] [bt_executor]: BT NODE RUNNING: NAV_75_WP74
+[INFO] [1787678591.809694329] [bt_executor]: ACTION: NAVIGATE -> WP74
+[INFO] [1787678592.019583462] [bt_executor]: BT NODE SUCCESS: NAV_75_WP74
+[INFO] [1787678592.021470020] [bt_executor]: Completed tasks: 75/102
+[INFO] [1787678592.023573990] [bt_executor]: Completed navigation tasks: 74
+[INFO] [1787678592.025790095] [bt_executor]: ----------------------------------------
+[INFO] [1787678592.027889295] [bt_executor]: BT NODE RUNNING: NAV_76_WP75
+[INFO] [1787678592.029250872] [bt_executor]: ACTION: NAVIGATE -> WP75
+[INFO] [1787678592.239583356] [bt_executor]: BT NODE SUCCESS: NAV_76_WP75
+[INFO] [1787678592.242846547] [bt_executor]: Completed tasks: 76/102
+[INFO] [1787678592.244874177] [bt_executor]: Completed navigation tasks: 75
+[INFO] [1787678592.247116893] [bt_executor]: ----------------------------------------
+[INFO] [1787678592.248622247] [bt_executor]: BT NODE RUNNING: NAV_77_WP76
+[INFO] [1787678592.249978683] [bt_executor]: ACTION: NAVIGATE -> WP76
+[INFO] [1787678592.460009500] [bt_executor]: BT NODE SUCCESS: NAV_77_WP76
+[INFO] [1787678592.461858847] [bt_executor]: Completed tasks: 77/102
+[INFO] [1787678592.463868189] [bt_executor]: Completed navigation tasks: 76
+[INFO] [1787678592.466028287] [bt_executor]: ----------------------------------------
+[INFO] [1787678592.468432828] [bt_executor]: BT NODE RUNNING: NAV_78_WP77
+[INFO] [1787678592.469754629] [bt_executor]: ACTION: NAVIGATE -> WP77
+[INFO] [1787678592.679609127] [bt_executor]: BT NODE SUCCESS: NAV_78_WP77
+[INFO] [1787678592.681602219] [bt_executor]: Completed tasks: 78/102
+[INFO] [1787678592.683100988] [bt_executor]: Completed navigation tasks: 77
+[INFO] [1787678592.685103223] [bt_executor]: ----------------------------------------
+[INFO] [1787678592.686202083] [bt_executor]: BT NODE RUNNING: NAV_79_WP78
+[INFO] [1787678592.687077097] [bt_executor]: ACTION: NAVIGATE -> WP78
+[INFO] [1787678592.898760159] [bt_executor]: BT NODE SUCCESS: NAV_79_WP78
+[INFO] [1787678592.899230784] [bt_executor]: Completed tasks: 79/102
+[INFO] [1787678592.899754329] [bt_executor]: Completed navigation tasks: 78
+[INFO] [1787678592.900593798] [bt_executor]: ----------------------------------------
+[INFO] [1787678592.901059953] [bt_executor]: BT NODE RUNNING: NAV_80_WP79
+[INFO] [1787678592.901548252] [bt_executor]: ACTION: NAVIGATE -> WP79
+[INFO] [1787678593.119273035] [bt_executor]: BT NODE SUCCESS: NAV_80_WP79
+[INFO] [1787678593.120687660] [bt_executor]: Completed tasks: 80/102
+[INFO] [1787678593.122228584] [bt_executor]: Completed navigation tasks: 79
+[INFO] [1787678593.123991460] [bt_executor]: ----------------------------------------
+[INFO] [1787678593.125284041] [bt_executor]: BT NODE RUNNING: NAV_81_WP80
+[INFO] [1787678593.126470807] [bt_executor]: ACTION: NAVIGATE -> WP80
+[INFO] [1787678593.339059450] [bt_executor]: BT NODE SUCCESS: NAV_81_WP80
+[INFO] [1787678593.339640458] [bt_executor]: Completed tasks: 81/102
+[INFO] [1787678593.340147958] [bt_executor]: Completed navigation tasks: 80
+[INFO] [1787678593.341470967] [bt_executor]: ----------------------------------------
+[INFO] [1787678593.341975637] [bt_executor]: BT NODE RUNNING: NAV_82_WP81
+[INFO] [1787678593.342535377] [bt_executor]: ACTION: NAVIGATE -> WP81
+[INFO] [1787678593.559157420] [bt_executor]: BT NODE SUCCESS: NAV_82_WP81
+[INFO] [1787678593.560280973] [bt_executor]: Completed tasks: 82/102
+[INFO] [1787678593.561509189] [bt_executor]: Completed navigation tasks: 81
+[INFO] [1787678593.563539129] [bt_executor]: ----------------------------------------
+[INFO] [1787678593.564202881] [bt_executor]: BT NODE RUNNING: NAV_83_WP82
+[INFO] [1787678593.565080223] [bt_executor]: ACTION: NAVIGATE -> WP82
+[INFO] [1787678593.779295718] [bt_executor]: BT NODE SUCCESS: NAV_83_WP82
+[INFO] [1787678593.780110535] [bt_executor]: Completed tasks: 83/102
+[INFO] [1787678593.781186878] [bt_executor]: Completed navigation tasks: 82
+[INFO] [1787678593.782463779] [bt_executor]: ----------------------------------------
+[INFO] [1787678593.783817270] [bt_executor]: BT NODE RUNNING: NAV_84_WP83
+[INFO] [1787678593.785157519] [bt_executor]: ACTION: NAVIGATE -> WP83
+[INFO] [1787678593.998987911] [bt_executor]: BT NODE SUCCESS: NAV_84_WP83
+[INFO] [1787678594.000157616] [bt_executor]: Completed tasks: 84/102
+[INFO] [1787678594.001458740] [bt_executor]: Completed navigation tasks: 83
+[INFO] [1787678594.003109949] [bt_executor]: ----------------------------------------
+[INFO] [1787678594.004174989] [bt_executor]: BT NODE RUNNING: NAV_85_WP84
+[INFO] [1787678594.005002439] [bt_executor]: ACTION: NAVIGATE -> WP84
+[INFO] [1787678594.219446280] [bt_executor]: BT NODE SUCCESS: NAV_85_WP84
+[INFO] [1787678594.220506359] [bt_executor]: Completed tasks: 85/102
+[INFO] [1787678594.221611495] [bt_executor]: Completed navigation tasks: 84
+[INFO] [1787678594.223507090] [bt_executor]: ----------------------------------------
+[INFO] [1787678594.225262191] [bt_executor]: BT NODE RUNNING: NAV_86_WP85
+[INFO] [1787678594.226986414] [bt_executor]: ACTION: NAVIGATE -> WP85
+[INFO] [1787678594.439467110] [bt_executor]: BT NODE SUCCESS: NAV_86_WP85
+[INFO] [1787678594.441143598] [bt_executor]: Completed tasks: 86/102
+[INFO] [1787678594.442909835] [bt_executor]: Completed navigation tasks: 85
+[INFO] [1787678594.444920546] [bt_executor]: ----------------------------------------
+[INFO] [1787678594.447177545] [bt_executor]: BT NODE RUNNING: NAV_87_WP86
+[INFO] [1787678594.448835186] [bt_executor]: ACTION: NAVIGATE -> WP86
+[INFO] [1787678594.658915712] [bt_executor]: BT NODE SUCCESS: NAV_87_WP86
+[INFO] [1787678594.659615140] [bt_executor]: Completed tasks: 87/102
+[INFO] [1787678594.660170739] [bt_executor]: Completed navigation tasks: 86
+[INFO] [1787678594.661127948] [bt_executor]: ----------------------------------------
+[INFO] [1787678594.662358293] [bt_executor]: BT NODE RUNNING: NAV_88_WP87
+[INFO] [1787678594.662843154] [bt_executor]: ACTION: NAVIGATE -> WP87
+[INFO] [1787678594.880351321] [bt_executor]: BT NODE SUCCESS: NAV_88_WP87
+[INFO] [1787678594.882525493] [bt_executor]: Completed tasks: 88/102
+[INFO] [1787678594.884458006] [bt_executor]: Completed navigation tasks: 87
+[INFO] [1787678594.888696419] [bt_executor]: ----------------------------------------
+[INFO] [1787678594.890699086] [bt_executor]: BT NODE RUNNING: NAV_89_WP88
+[INFO] [1787678594.892469182] [bt_executor]: ACTION: NAVIGATE -> WP88
+[INFO] [1787678595.100616232] [bt_executor]: BT NODE SUCCESS: NAV_89_WP88
+[INFO] [1787678595.102365585] [bt_executor]: Completed tasks: 89/102
+[INFO] [1787678595.104187677] [bt_executor]: Completed navigation tasks: 88
+[INFO] [1787678595.107346688] [bt_executor]: ----------------------------------------
+[INFO] [1787678595.110191504] [bt_executor]: BT NODE RUNNING: NAV_90_WP89
+[INFO] [1787678595.112081419] [bt_executor]: ACTION: NAVIGATE -> WP89
+[INFO] [1787678595.320349966] [bt_executor]: BT NODE SUCCESS: NAV_90_WP89
+[INFO] [1787678595.322089512] [bt_executor]: Completed tasks: 90/102
+[INFO] [1787678595.324013254] [bt_executor]: Completed navigation tasks: 89
+[INFO] [1787678595.327088262] [bt_executor]: ----------------------------------------
+[INFO] [1787678595.329624037] [bt_executor]: BT NODE RUNNING: NAV_91_WP90
+[INFO] [1787678595.331905384] [bt_executor]: ACTION: NAVIGATE -> WP90
+[INFO] [1787678595.540345594] [bt_executor]: BT NODE SUCCESS: NAV_91_WP90
+[INFO] [1787678595.543352548] [bt_executor]: Completed tasks: 91/102
+[INFO] [1787678595.546807319] [bt_executor]: Completed navigation tasks: 90
+[INFO] [1787678595.551688660] [bt_executor]: ----------------------------------------
+[INFO] [1787678595.553481274] [bt_executor]: BT NODE RUNNING: NAV_92_WP91
+[INFO] [1787678595.555252028] [bt_executor]: ACTION: NAVIGATE -> WP91
+[INFO] [1787678595.762164430] [bt_executor]: BT NODE SUCCESS: NAV_92_WP91
+[INFO] [1787678595.764150103] [bt_executor]: Completed tasks: 92/102
+[INFO] [1787678595.766640873] [bt_executor]: Completed navigation tasks: 91
+[INFO] [1787678595.769743877] [bt_executor]: ----------------------------------------
+[INFO] [1787678595.771563483] [bt_executor]: BT NODE RUNNING: NAV_93_WP92
+[INFO] [1787678595.773258092] [bt_executor]: ACTION: NAVIGATE -> WP92
+[INFO] [1787678595.980154273] [bt_executor]: BT NODE SUCCESS: NAV_93_WP92
+[INFO] [1787678595.982727293] [bt_executor]: Completed tasks: 93/102
+[INFO] [1787678595.985482497] [bt_executor]: Completed navigation tasks: 92
+[INFO] [1787678595.988424455] [bt_executor]: ----------------------------------------
+[INFO] [1787678595.991071063] [bt_executor]: BT NODE RUNNING: NAV_94_WP93
+[INFO] [1787678595.992884413] [bt_executor]: ACTION: NAVIGATE -> WP93
+[INFO] [1787678596.198765009] [bt_executor]: BT NODE SUCCESS: NAV_94_WP93
+[INFO] [1787678596.199273343] [bt_executor]: Completed tasks: 94/102
+[INFO] [1787678596.199811612] [bt_executor]: Completed navigation tasks: 93
+[INFO] [1787678596.201156801] [bt_executor]: ----------------------------------------
+[INFO] [1787678596.201933202] [bt_executor]: BT NODE RUNNING: NAV_95_WP94
+[INFO] [1787678596.202824058] [bt_executor]: ACTION: NAVIGATE -> WP94
+[INFO] [1787678596.419210669] [bt_executor]: BT NODE SUCCESS: NAV_95_WP94
+[INFO] [1787678596.420614893] [bt_executor]: Completed tasks: 95/102
+[INFO] [1787678596.422172192] [bt_executor]: Completed navigation tasks: 94
+[INFO] [1787678596.423981584] [bt_executor]: ----------------------------------------
+[INFO] [1787678596.425363116] [bt_executor]: BT NODE RUNNING: NAV_96_WP95
+[INFO] [1787678596.427222188] [bt_executor]: ACTION: NAVIGATE -> WP95
+[INFO] [1787678596.639196416] [bt_executor]: BT NODE SUCCESS: NAV_96_WP95
+[INFO] [1787678596.640999259] [bt_executor]: Completed tasks: 96/102
+[INFO] [1787678596.642536487] [bt_executor]: Completed navigation tasks: 95
+[INFO] [1787678596.644184854] [bt_executor]: ----------------------------------------
+[INFO] [1787678596.645514467] [bt_executor]: BT NODE RUNNING: NAV_97_WP96
+[INFO] [1787678596.646566699] [bt_executor]: ACTION: NAVIGATE -> WP96
+[INFO] [1787678596.859185350] [bt_executor]: BT NODE SUCCESS: NAV_97_WP96
+[INFO] [1787678596.860593367] [bt_executor]: Completed tasks: 97/102
+[INFO] [1787678596.862086079] [bt_executor]: Completed navigation tasks: 96
+[INFO] [1787678596.863724479] [bt_executor]: ----------------------------------------
+[INFO] [1787678596.864989597] [bt_executor]: BT NODE RUNNING: NAV_98_WP97
+[INFO] [1787678596.866106880] [bt_executor]: ACTION: NAVIGATE -> WP97
+[INFO] [1787678597.079530822] [bt_executor]: BT NODE SUCCESS: NAV_98_WP97
+[INFO] [1787678597.081412169] [bt_executor]: Completed tasks: 98/102
+[INFO] [1787678597.083521217] [bt_executor]: Completed navigation tasks: 97
+[INFO] [1787678597.085654781] [bt_executor]: ----------------------------------------
+[INFO] [1787678597.087492939] [bt_executor]: BT NODE RUNNING: NAV_99_WP98
+[INFO] [1787678597.088692669] [bt_executor]: ACTION: NAVIGATE -> WP98
+[INFO] [1787678597.299426786] [bt_executor]: BT NODE SUCCESS: NAV_99_WP98
+[INFO] [1787678597.300483438] [bt_executor]: Completed tasks: 99/102
+[INFO] [1787678597.301683997] [bt_executor]: Completed navigation tasks: 98
+[INFO] [1787678597.302809450] [bt_executor]: ----------------------------------------
+[INFO] [1787678597.303760161] [bt_executor]: BT NODE RUNNING: NAV_100_WP99
+[INFO] [1787678597.304719931] [bt_executor]: ACTION: NAVIGATE -> WP99
+[INFO] [1787678597.518878581] [bt_executor]: BT NODE SUCCESS: NAV_100_WP99
+[INFO] [1787678597.520150805] [bt_executor]: Completed tasks: 100/102
+[INFO] [1787678597.521874218] [bt_executor]: Completed navigation tasks: 99
+[INFO] [1787678597.523555661] [bt_executor]: ----------------------------------------
+[INFO] [1787678597.524558624] [bt_executor]: BT NODE RUNNING: NAV_101_WP100
+[INFO] [1787678597.525947289] [bt_executor]: ACTION: NAVIGATE -> WP100
+[INFO] [1787678597.739150797] [bt_executor]: BT NODE SUCCESS: NAV_101_WP100
+[INFO] [1787678597.740434873] [bt_executor]: Completed tasks: 101/102
+[INFO] [1787678597.742608145] [bt_executor]: Completed navigation tasks: 100
+[INFO] [1787678597.744094809] [bt_executor]: ----------------------------------------
+[INFO] [1787678597.745160779] [bt_executor]: BT NODE RUNNING: LAND_102
+[INFO] [1787678597.747827488] [bt_executor]: ACTION: LAND
+[INFO] [1787678597.958861932] [bt_executor]: BT NODE SUCCESS: LAND_102
+[INFO] [1787678597.959695851] [bt_executor]: Completed tasks: 102/102
+[INFO] [1787678597.960648005] [bt_executor]: Completed navigation tasks: 100
+[INFO] [1787678597.962135574] [bt_executor]: ========================================
+[INFO] [1787678597.963004567] [bt_executor]: MISSION COMPLETED
+[INFO] [1787678597.964843031] [bt_executor]: Completed tasks: 102
+[INFO] [1787678597.967561936] [bt_executor]: Completed navigation tasks: 100
+[INFO] [1787678597.968323573] [bt_executor]: ========================================

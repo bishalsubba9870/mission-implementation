@@ -1,0 +1,12 @@
+metrics/snapshots/scenario_capable/fsm/final/fsm_executor.py
+    LOC: 1352
+    LLOC: 326
+    SLOC: 886
+    Comments: 125
+    Single comments: 137
+    Multi: 10
+    Blank: 319
+    - Comment Stats
+        (C % L): 9%
+        (C % S): 14%
+        (C + M % L): 10%

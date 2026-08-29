@@ -1,0 +1,67 @@
+[INFO] [1787520167.398588344] [bt_executor]: ========================================
+[INFO] [1787520167.399487923] [bt_executor]: Behavior Tree Mission Executor
+[INFO] [1787520167.400432083] [bt_executor]: Mode: FINAL SCENARIO CAPABLE
+[INFO] [1787520167.401062561] [bt_executor]: ========================================
+[INFO] [1787520167.407182800] [bt_executor]: Mission ID: M2
+[INFO] [1787520167.407928915] [bt_executor]: Mission items: 13
+[INFO] [1787520167.408993243] [bt_executor]: ========================================
+[INFO] [1787520167.409678417] [bt_executor]: BEHAVIOR TREE STRUCTURE
+[INFO] [1787520167.410123755] [bt_executor]: BT total nodes: 21
+[INFO] [1787520167.410605200] [bt_executor]: BT composite nodes: 2
+[INFO] [1787520167.411043145] [bt_executor]: BT leaf/action nodes: 19
+[INFO] [1787520167.411580769] [bt_executor]: Runtime controllers: GPS + Propulsion + Communication + Wind + Battery + Abort
+[INFO] [1787520167.412035245] [bt_executor]: ========================================
+[INFO] [1787520167.432974142] [bt_executor]: ----------------------------------------
+[INFO] [1787520167.433512582] [bt_executor]: BT NODE RUNNING: TAKEOFF_1
+[INFO] [1787520167.433922743] [bt_executor]: ACTION: TAKEOFF
+[INFO] [1787520167.653265054] [bt_executor]: BT NODE SUCCESS: TAKEOFF_1
+[INFO] [1787520167.654017260] [bt_executor]: Completed tasks: 1/13
+[INFO] [1787520167.654805643] [bt_executor]: Completed navigation tasks: 0
+[INFO] [1787520167.655919331] [bt_executor]: ----------------------------------------
+[INFO] [1787520167.657133880] [bt_executor]: BT NODE RUNNING: NAV_2_WP1
+[INFO] [1787520167.658466496] [bt_executor]: ACTION: NAVIGATE -> WP1
+[INFO] [1787520167.874788206] [bt_executor]: BT NODE SUCCESS: NAV_2_WP1
+[INFO] [1787520167.876920564] [bt_executor]: Completed tasks: 2/13
+[INFO] [1787520167.879386346] [bt_executor]: Completed navigation tasks: 1
+[INFO] [1787520167.881079952] [bt_executor]: ----------------------------------------
+[INFO] [1787520167.882624671] [bt_executor]: BT NODE RUNNING: NAV_3_WP2
+[INFO] [1787520167.884129312] [bt_executor]: ACTION: NAVIGATE -> WP2
+[INFO] [1787520168.093458645] [bt_executor]: BT NODE SUCCESS: NAV_3_WP2
+[INFO] [1787520168.095172041] [bt_executor]: Completed tasks: 3/13
+[INFO] [1787520168.097071560] [bt_executor]: Completed navigation tasks: 2
+[INFO] [1787520168.099281082] [bt_executor]: ----------------------------------------
+[INFO] [1787520168.100557450] [bt_executor]: BT NODE RUNNING: NAV_4_WP1
+[INFO] [1787520168.101722648] [bt_executor]: ACTION: NAVIGATE -> WP1
+[INFO] [1787520168.314564513] [bt_executor]: BT NODE SUCCESS: NAV_4_WP1
+[INFO] [1787520168.316585978] [bt_executor]: Completed tasks: 4/13
+[INFO] [1787520168.317986661] [bt_executor]: Completed navigation tasks: 3
+[INFO] [1787520168.651541485] [bt_executor]: ----------------------------------------
+[INFO] [1787520168.652230972] [bt_executor]: BT NODE RUNNING: NAV_5_WP3
+[INFO] [1787520168.653029014] [bt_executor]: ACTION: NAVIGATE -> WP3
+[INFO] [1787520168.853257838] [bt_executor]: BT NODE SUCCESS: NAV_5_WP3
+[INFO] [1787520168.853978446] [bt_executor]: Completed tasks: 5/13
+[INFO] [1787520168.854684297] [bt_executor]: Completed navigation tasks: 4
+[INFO] [1787520168.856128295] [bt_executor]: ----------------------------------------
+[INFO] [1787520168.856904922] [bt_executor]: BT NODE RUNNING: NAV_6_WP1
+[INFO] [1787520168.857609482] [bt_executor]: ACTION: NAVIGATE -> WP1
+[INFO] [1787520169.073468911] [bt_executor]: BT NODE SUCCESS: NAV_6_WP1
+[INFO] [1787520169.074435881] [bt_executor]: Completed tasks: 6/13
+[INFO] [1787520169.075340745] [bt_executor]: Completed navigation tasks: 5
+[INFO] [1787520169.076730749] [bt_executor]: ----------------------------------------
+[INFO] [1787520169.078119510] [bt_executor]: BT NODE RUNNING: NAV_7_WP4
+[INFO] [1787520169.078672156] [bt_executor]: ACTION: NAVIGATE -> WP4
+[WARN] [1787520169.083262607] [bt_executor]: RUNTIME EVENT RECEIVED: ABORT_REQUESTED
+[WARN] [1787520169.084461509] [bt_executor]: ABORT REQUEST RECEIVED
+[WARN] [1787520169.085983968] [bt_executor]: Normal mission execution will be aborted.
+[WARN] [1787520169.093578233] [bt_executor]: BT ABORT REQUEST HANDLER ACTIVE
+[WARN] [1787520169.094356134] [bt_executor]: ACTION: ABORT_MISSION
+[WARN] [1787520169.095215405] [bt_executor]: BT NODE PAUSED: NAV_7_WP4 | Reason: ABORT_REQUESTED
+[INFO] [1787520169.312931531] [bt_executor]: BT ABORT_MISSION COMPLETED
+[WARN] [1787520169.313747529] [bt_executor]: ACTION: RETURN_TO_HOME
+[INFO] [1787520169.513198454] [bt_executor]: BT RETURN_TO_HOME COMPLETED
+[INFO] [1787520169.514245497] [bt_executor]: ========================================
+[INFO] [1787520169.514792610] [bt_executor]: MISSION SAFE TERMINATED
+[INFO] [1787520169.516172913] [bt_executor]: Reason: ABORT_REQUESTED
+[INFO] [1787520169.517026756] [bt_executor]: Completed tasks: 6
+[INFO] [1787520169.517736451] [bt_executor]: Completed navigation tasks: 5
+[INFO] [1787520169.518483035] [bt_executor]: ========================================

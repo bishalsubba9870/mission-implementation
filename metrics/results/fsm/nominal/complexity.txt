@@ -1,0 +1,14 @@
+metrics/snapshots/nominal/fsm/fsm_executor.py
+    M 80:4 FSMExecutor._load_mission - B (7)
+    M 218:4 FSMExecutor._enter_state - B (6)
+    M 158:4 FSMExecutor._create_state_name - A (5)
+    F 285:0 main - A (4)
+    C 11:0 FSMExecutor - A (4)
+    M 121:4 FSMExecutor._build_fsm - A (4)
+    M 252:4 FSMExecutor._timer_callback - A (3)
+    M 189:4 FSMExecutor._handle_event - A (2)
+    M 271:4 FSMExecutor._finish_mission - A (2)
+    M 14:4 FSMExecutor.__init__ - A (1)
+
+10 blocks (classes, functions, methods) analyzed.
+Average complexity: A (3.8)

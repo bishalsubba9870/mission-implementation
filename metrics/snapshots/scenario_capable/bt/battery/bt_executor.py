@@ -19,13 +19,7 @@ class BehaviorTreeExecutor(Node):
 
     def __init__(self):
 
-        super().__init__(
-            "bt_executor"
-        )
-
-        # ==========================================================
-        # Parameters
-        # ==========================================================
+        super().__init__("bt_executor")
 
         self.declare_parameter(
             "mission_file",
@@ -59,7 +53,7 @@ class BehaviorTreeExecutor(Node):
         )
 
         # ==========================================================
-        # ROS interfaces
+        # ROS
         # ==========================================================
 
         self.progress_pub = self.create_publisher(
@@ -76,7 +70,7 @@ class BehaviorTreeExecutor(Node):
         )
 
         # ==========================================================
-        # Mission runtime
+        # Mission
         # ==========================================================
 
         self.mission_id = ""
@@ -129,14 +123,7 @@ class BehaviorTreeExecutor(Node):
         self.battery_critical_active = False
 
         # ==========================================================
-        # Abort requested
-        # ==========================================================
-
-        self.abort_requested_active = False
-        self.abort_rtl_active = False
-
-        # ==========================================================
-        # Load mission
+        # Mission loading
         # ==========================================================
 
         mission_path = self.resolve_mission_file(
@@ -152,7 +139,8 @@ class BehaviorTreeExecutor(Node):
         )
 
         self.get_logger().info(
-            "Mode: FINAL SCENARIO CAPABLE"
+            "Mode: GPS + PROPULSION + "
+            "COMMUNICATION + WIND + BATTERY"
         )
 
         self.get_logger().info(
@@ -180,7 +168,7 @@ class BehaviorTreeExecutor(Node):
         )
 
     # ==============================================================
-    # Mission file resolution
+    # Mission file
     # ==============================================================
 
     def resolve_mission_file(
@@ -188,13 +176,9 @@ class BehaviorTreeExecutor(Node):
         mission_file,
     ):
 
-        if os.path.isabs(
-            mission_file
-        ):
+        if os.path.isabs(mission_file):
 
-            if os.path.isfile(
-                mission_file
-            ):
+            if os.path.isfile(mission_file):
                 return mission_file
 
             raise FileNotFoundError(
@@ -219,9 +203,7 @@ class BehaviorTreeExecutor(Node):
 
         for path in candidates:
 
-            if os.path.isfile(
-                path
-            ):
+            if os.path.isfile(path):
                 return path
 
         raise FileNotFoundError(
@@ -247,10 +229,7 @@ class BehaviorTreeExecutor(Node):
                 file
             )
 
-        if not isinstance(
-            data,
-            dict,
-        ):
+        if not isinstance(data, dict):
 
             raise ValueError(
                 "Mission YAML root must be a dictionary."
@@ -277,13 +256,11 @@ class BehaviorTreeExecutor(Node):
         )
 
         if match:
-
             self.mission_id = (
                 f"M{match.group(1)}"
             )
 
         else:
-
             self.mission_id = (
                 raw_mission_id.upper()
             )
@@ -314,12 +291,6 @@ class BehaviorTreeExecutor(Node):
             )
         ]
 
-        if not self.tasks:
-
-            raise ValueError(
-                "Mission contains zero tasks."
-            )
-
         self.get_logger().info(
             f"Mission ID: {self.mission_id}"
         )
@@ -329,9 +300,7 @@ class BehaviorTreeExecutor(Node):
         )
 
     @staticmethod
-    def find_task_list(
-        data,
-    ):
+    def find_task_list(data):
 
         for key in [
             "tasks",
@@ -341,15 +310,9 @@ class BehaviorTreeExecutor(Node):
             "mission",
         ]:
 
-            value = data.get(
-                key
-            )
+            value = data.get(key)
 
-            if isinstance(
-                value,
-                list,
-            ):
-
+            if isinstance(value, list):
                 return value
 
         raise ValueError(
@@ -362,23 +325,15 @@ class BehaviorTreeExecutor(Node):
         raw_task,
     ):
 
-        if isinstance(
-            raw_task,
-            str,
-        ):
+        if isinstance(raw_task, str):
 
             raw = {
                 "name": raw_task
             }
 
-        elif isinstance(
-            raw_task,
-            dict,
-        ):
+        elif isinstance(raw_task, dict):
 
-            raw = dict(
-                raw_task
-            )
+            raw = dict(raw_task)
 
         else:
 
@@ -501,27 +456,20 @@ class BehaviorTreeExecutor(Node):
         return "task"
 
     @staticmethod
-    def normalize_task_type(
-        value,
-    ):
+    def normalize_task_type(value):
 
-        value = str(
-            value
-        ).strip().lower()
+        value = str(value).strip().lower()
 
         aliases = {
             "take_off": "takeoff",
             "take-off": "takeoff",
-
             "nav": "navigate",
             "navigation": "navigate",
             "goto": "navigate",
             "go_to": "navigate",
             "waypoint": "navigate",
-
             "inspection": "inspect",
             "landing": "land",
-
             "return_to_home": "rtl",
         }
 
@@ -531,9 +479,7 @@ class BehaviorTreeExecutor(Node):
         )
 
     @staticmethod
-    def extract_waypoint(
-        text,
-    ):
+    def extract_waypoint(text):
 
         match = re.search(
             r"\bWP\s*([0-9]+)\b",
@@ -542,15 +488,12 @@ class BehaviorTreeExecutor(Node):
         )
 
         if match:
-
-            return (
-                f"WP{match.group(1)}"
-            )
+            return f"WP{match.group(1)}"
 
         return ""
 
     # ==============================================================
-    # Runtime event callback
+    # Runtime events
     # ==============================================================
 
     def event_callback(
@@ -569,10 +512,7 @@ class BehaviorTreeExecutor(Node):
                 raw_message
             )
 
-            if isinstance(
-                event_data,
-                dict,
-            ):
+            if isinstance(event_data, dict):
 
                 event = str(
                     event_data.get(
@@ -588,10 +528,7 @@ class BehaviorTreeExecutor(Node):
                     )
                 ).upper()
 
-            elif isinstance(
-                event_data,
-                str,
-            ):
+            elif isinstance(event_data, str):
 
                 event = event_data.strip()
 
@@ -647,7 +584,6 @@ class BehaviorTreeExecutor(Node):
         if event == "GPS_AVAILABLE":
 
             if self.gps_recovery_active:
-
                 self.gps_recovery_result = (
                     "GPS_AVAILABLE"
                 )
@@ -657,7 +593,6 @@ class BehaviorTreeExecutor(Node):
         if event == "GPS_RECOVERY_FAILED":
 
             if self.gps_recovery_active:
-
                 self.gps_recovery_result = (
                     "GPS_RECOVERY_FAILED"
                 )
@@ -703,7 +638,6 @@ class BehaviorTreeExecutor(Node):
         if event == "COMMUNICATION_RESTORED":
 
             if self.communication_loss_active:
-
                 self.communication_recovery_result = (
                     "COMMUNICATION_RESTORED"
                 )
@@ -713,7 +647,6 @@ class BehaviorTreeExecutor(Node):
         if event == "COMMUNICATION_RECOVERY_FAILED":
 
             if self.communication_loss_active:
-
                 self.communication_recovery_result = (
                     "COMMUNICATION_RECOVERY_FAILED"
                 )
@@ -738,7 +671,7 @@ class BehaviorTreeExecutor(Node):
             return
 
         # ==========================================================
-        # Battery
+        # Battery critical
         # ==========================================================
 
         if event == "BATTERY_CRITICAL":
@@ -752,25 +685,8 @@ class BehaviorTreeExecutor(Node):
                 "BATTERY CRITICAL DETECTED"
             )
 
-            return
-
-        # ==========================================================
-        # Abort requested
-        # ==========================================================
-
-        if event == "ABORT_REQUESTED":
-
-            if self.abort_requested_active:
-                return
-
-            self.abort_requested_active = True
-
             self.get_logger().warning(
-                "ABORT REQUEST RECEIVED"
-            )
-
-            self.get_logger().warning(
-                "Normal mission execution will be aborted."
+                "Normal mission execution interrupted."
             )
 
             return
@@ -783,9 +699,7 @@ class BehaviorTreeExecutor(Node):
     # BT tick
     # ==============================================================
 
-    def tick_tree(
-        self,
-    ):
+    def tick_tree(self):
 
         if self.finished:
             return
@@ -813,8 +727,7 @@ class BehaviorTreeExecutor(Node):
             )
 
             self.get_logger().info(
-                f"Completed tasks: "
-                f"{self.completed_tasks}"
+                f"Completed tasks: {self.completed_tasks}"
             )
 
             self.get_logger().info(
@@ -832,13 +745,9 @@ class BehaviorTreeExecutor(Node):
 
         status = self.tree.root.status
 
-        # ==========================================================
-        # Continuous runtime-state publication
-        # ==========================================================
-
+        # Continuous RUNNING progress publication
         if (
-            status
-            == py_trees.common.Status.RUNNING
+            status == py_trees.common.Status.RUNNING
             and self.current_task is not None
         ):
 
@@ -846,10 +755,6 @@ class BehaviorTreeExecutor(Node):
                 self.current_task,
                 "RUNNING",
             )
-
-        # ==========================================================
-        # Nominal completion
-        # ==========================================================
 
         if status == py_trees.common.Status.SUCCESS:
 
@@ -898,7 +803,7 @@ class BehaviorTreeExecutor(Node):
             self.timer.cancel()
 
     # ==============================================================
-    # Mission-action callbacks
+    # Mission callbacks
     # ==============================================================
 
     def on_task_started(
@@ -956,9 +861,7 @@ class BehaviorTreeExecutor(Node):
             f"| Reason: {reason}"
         )
 
-    def on_gps_recovered(
-        self,
-    ):
+    def on_gps_recovered(self):
 
         if self.current_task is not None:
 
@@ -967,9 +870,7 @@ class BehaviorTreeExecutor(Node):
                 f"{self.node_name(self.current_task)}"
             )
 
-    def on_communication_recovered(
-        self,
-    ):
+    def on_communication_recovered(self):
 
         if self.current_task is not None:
 
@@ -986,7 +887,6 @@ class BehaviorTreeExecutor(Node):
         self.completed_tasks += 1
 
         if task["type"] == "navigate":
-
             self.completed_navigation_tasks += 1
 
         self.get_logger().info(
@@ -1011,7 +911,7 @@ class BehaviorTreeExecutor(Node):
         )
 
     # ==============================================================
-    # Safe termination
+    # Termination
     # ==============================================================
 
     def mark_safe_terminated(
@@ -1052,10 +952,7 @@ class BehaviorTreeExecutor(Node):
             return "TAKEOFF"
 
         if task_type == "navigate":
-            return (
-                f"NAVIGATE -> "
-                f"{task['target']}"
-            )
+            return f"NAVIGATE -> {task['target']}"
 
         if task_type == "hover":
             return "HOVER"
@@ -1072,7 +969,7 @@ class BehaviorTreeExecutor(Node):
         return task["name"]
 
     # ==============================================================
-    # Common experiment interface
+    # Common progress interface
     # ==============================================================
 
     def publish_task_progress(
@@ -1164,9 +1061,7 @@ class BehaviorTreeExecutor(Node):
     # Structural output
     # ==============================================================
 
-    def print_tree_structure(
-        self,
-    ):
+    def print_tree_structure(self):
 
         nodes = list(
             self.tree.root.iterate()
@@ -1181,8 +1076,7 @@ class BehaviorTreeExecutor(Node):
         )
 
         composite_nodes = (
-            total_nodes
-            - leaf_nodes
+            total_nodes - leaf_nodes
         )
 
         self.get_logger().info(
@@ -1207,8 +1101,7 @@ class BehaviorTreeExecutor(Node):
 
         self.get_logger().info(
             "Runtime controllers: "
-            "GPS + Propulsion + Communication + "
-            "Wind + Battery + Abort"
+            "GPS + Propulsion + Communication + Wind + Battery"
         )
 
         self.get_logger().info(
@@ -1216,35 +1109,24 @@ class BehaviorTreeExecutor(Node):
         )
 
 
-def main(
-    args=None,
-):
+def main(args=None):
 
-    rclpy.init(
-        args=args
-    )
+    rclpy.init(args=args)
 
     node = BehaviorTreeExecutor()
 
     try:
-
-        rclpy.spin(
-            node
-        )
+        rclpy.spin(node)
 
     except KeyboardInterrupt:
-
         pass
 
     finally:
-
         node.destroy_node()
 
         if rclpy.ok():
-
             rclpy.shutdown()
 
 
 if __name__ == "__main__":
-
     main()

@@ -96,6 +96,14 @@ setup(
             'fsm_executor = '
             'mission_formalism_evaluation.'
             'fsm.fsm_executor:main',
+            
+            'bt_executor = '
+            'mission_formalism_evaluation.'
+            'bt.bt_executor:main',
+            
+            'htn_executor = '
+            'mission_formalism_evaluation.'
+            'htn.htn_executor:main',
 
             'scenario_injector = '
             'mission_formalism_evaluation.'

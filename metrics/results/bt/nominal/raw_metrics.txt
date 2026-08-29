@@ -1,0 +1,48 @@
+metrics/snapshots/nominal/bt/bt_executor.py
+    LOC: 856
+    LLOC: 214
+    SLOC: 646
+    Comments: 34
+    Single comments: 34
+    Multi: 12
+    Blank: 164
+    - Comment Stats
+        (C % L): 4%
+        (C % S): 5%
+        (C + M % L): 5%
+metrics/snapshots/nominal/bt/tree_builder.py
+    LOC: 62
+    LLOC: 17
+    SLOC: 38
+    Comments: 1
+    Single comments: 1
+    Multi: 10
+    Blank: 13
+    - Comment Stats
+        (C % L): 2%
+        (C % S): 3%
+        (C + M % L): 18%
+metrics/snapshots/nominal/bt/nodes/mission_action.py
+    LOC: 61
+    LLOC: 25
+    SLOC: 37
+    Comments: 1
+    Single comments: 1
+    Multi: 7
+    Blank: 16
+    - Comment Stats
+        (C % L): 2%
+        (C % S): 3%
+        (C + M % L): 13%
+** Total **
+    LOC: 979
+    LLOC: 256
+    SLOC: 721
+    Comments: 36
+    Single comments: 36
+    Multi: 29
+    Blank: 193
+    - Comment Stats
+        (C % L): 4%
+        (C % S): 5%
+        (C + M % L): 7%

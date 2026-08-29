@@ -1,0 +1,48 @@
+metrics/snapshots/scenario_capable/htn/final/htn_domain.py
+    LOC: 1055
+    LLOC: 166
+    SLOC: 779
+    Comments: 36
+    Single comments: 40
+    Multi: 5
+    Blank: 231
+    - Comment Stats
+        (C % L): 3%
+        (C % S): 5%
+        (C + M % L): 4%
+metrics/snapshots/scenario_capable/htn/final/htn_planner.py
+    LOC: 303
+    LLOC: 71
+    SLOC: 222
+    Comments: 6
+    Single comments: 9
+    Multi: 9
+    Blank: 63
+    - Comment Stats
+        (C % L): 2%
+        (C % S): 3%
+        (C + M % L): 5%
+metrics/snapshots/scenario_capable/htn/final/htn_executor.py
+    LOC: 1160
+    LLOC: 278
+    SLOC: 830
+    Comments: 45
+    Single comments: 46
+    Multi: 5
+    Blank: 279
+    - Comment Stats
+        (C % L): 4%
+        (C % S): 5%
+        (C + M % L): 4%
+** Total **
+    LOC: 2518
+    LLOC: 515
+    SLOC: 1831
+    Comments: 87
+    Single comments: 95
+    Multi: 19
+    Blank: 573
+    - Comment Stats
+        (C % L): 3%
+        (C % S): 5%
+        (C + M % L): 4%
