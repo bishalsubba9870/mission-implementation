@@ -1,0 +1,40 @@
+[INFO] [1788099888.788098087] [expert_system_executor]: Loading mission: /home/bishal/ros2_ws/install/mission_formalism_evaluation/share/mission_formalism_evaluation/missions/mission_1.yaml
+[INFO] [1788099888.790814024] [expert_system_executor]: ========================================
+[INFO] [1788099888.791704566] [expert_system_executor]: Expert System Mission Executor
+[INFO] [1788099888.792668829] [expert_system_executor]: Mode: NOMINAL
+[INFO] [1788099888.793255726] [expert_system_executor]: ========================================
+[INFO] [1788099888.793815887] [expert_system_executor]: Mission ID: M1
+[INFO] [1788099888.794659372] [expert_system_executor]: Mission Name: Basic Navigation
+[INFO] [1788099888.795529327] [expert_system_executor]: Mission Items: 4
+[INFO] [1788099888.796486022] [expert_system_executor]: Knowledge Base Rules: 5
+[INFO] [1788099888.999303627] [expert_system_executor]: INFERENCE CYCLE: 1
+[INFO] [1788099889.002462939] [expert_system_executor]: Conflict Set: ['r_takeoff']
+[INFO] [1788099889.005980008] [expert_system_executor]: Selected Rule: r_takeoff
+[INFO] [1788099889.008682902] [expert_system_executor]: Decision: TAKEOFF
+[INFO] [1788099889.011031569] [expert_system_executor]: ES RUNNING: TAKEOFF_0
+[INFO] [1788099889.199513687] [expert_system_executor]: ES COMPLETED: TAKEOFF_0
+[INFO] [1788099889.399259269] [expert_system_executor]: INFERENCE CYCLE: 2
+[INFO] [1788099889.401182976] [expert_system_executor]: Conflict Set: ['r_navigate']
+[INFO] [1788099889.403211760] [expert_system_executor]: Selected Rule: r_navigate
+[INFO] [1788099889.405512520] [expert_system_executor]: Decision: NAVIGATE
+[INFO] [1788099889.409472603] [expert_system_executor]: ES RUNNING: NAVIGATE_1_WP1
+[INFO] [1788099889.599188794] [expert_system_executor]: ES COMPLETED: NAVIGATE_1_WP1
+[INFO] [1788099889.800457311] [expert_system_executor]: INFERENCE CYCLE: 3
+[INFO] [1788099889.803866648] [expert_system_executor]: Conflict Set: ['r_navigate']
+[INFO] [1788099889.807588800] [expert_system_executor]: Selected Rule: r_navigate
+[INFO] [1788099889.810512659] [expert_system_executor]: Decision: NAVIGATE
+[INFO] [1788099889.812738188] [expert_system_executor]: ES RUNNING: NAVIGATE_2_WP2
+[INFO] [1788099889.999154215] [expert_system_executor]: ES COMPLETED: NAVIGATE_2_WP2
+[INFO] [1788099890.199219417] [expert_system_executor]: INFERENCE CYCLE: 4
+[INFO] [1788099890.201140906] [expert_system_executor]: Conflict Set: ['r_land']
+[INFO] [1788099890.203216173] [expert_system_executor]: Selected Rule: r_land
+[INFO] [1788099890.205725476] [expert_system_executor]: Decision: LAND
+[INFO] [1788099890.209626745] [expert_system_executor]: ES RUNNING: LAND_3
+[INFO] [1788099890.397576467] [expert_system_executor]: ES COMPLETED: LAND_3
+[INFO] [1788099890.598962223] [expert_system_executor]: ========================================
+[INFO] [1788099890.601753250] [expert_system_executor]: MISSION COMPLETED
+[INFO] [1788099890.604913164] [expert_system_executor]: Completed tasks: 4
+[INFO] [1788099890.607732537] [expert_system_executor]: Completed navigation tasks: 2
+[INFO] [1788099890.609919823] [expert_system_executor]: Inference cycles: 5
+[INFO] [1788099890.612442239] [expert_system_executor]: Rules fired: 5
+[INFO] [1788099890.615871540] [expert_system_executor]: ========================================

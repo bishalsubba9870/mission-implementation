@@ -1,0 +1,9 @@
+[INFO] [1788194688.344626509] [waypoint_executor]: Loading mission: /home/bishal/ros2_ws/install/mission_formalism_evaluation/share/mission_formalism_evaluation/missions/mission_1.yaml
+[INFO] [1788194688.346560154] [waypoint_executor]: Mission ID: M1
+[INFO] [1788194688.347517996] [waypoint_executor]: Mission Name: Basic Navigation
+[INFO] [1788194688.348427099] [waypoint_executor]: Mission Items: 4
+[INFO] [1788194688.349201507] [waypoint_executor]: [1/4] TAKEOFF
+[INFO] [1788194688.349975324] [waypoint_executor]: [2/4] NAVIGATE -> WP1
+[INFO] [1788194688.351029587] [waypoint_executor]: [3/4] NAVIGATE -> WP2
+[INFO] [1788194688.352143611] [waypoint_executor]: [4/4] LAND
+[INFO] [1788194688.352863226] [waypoint_executor]: Mission completed.

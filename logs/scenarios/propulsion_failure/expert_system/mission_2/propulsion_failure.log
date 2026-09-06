@@ -1,0 +1,65 @@
+[INFO] [1788104771.971310108] [expert_system_executor]: Loading mission: /home/bishal/ros2_ws/install/mission_formalism_evaluation/share/mission_formalism_evaluation/missions/mission_2.yaml
+[INFO] [1788104771.977876765] [expert_system_executor]: ========================================
+[INFO] [1788104771.978440480] [expert_system_executor]: Expert System Mission Executor
+[INFO] [1788104771.978936564] [expert_system_executor]: Mode: GPS + PROPULSION CAPABLE
+[INFO] [1788104771.979441586] [expert_system_executor]: ========================================
+[INFO] [1788104771.979949543] [expert_system_executor]: Mission ID: M2
+[INFO] [1788104771.980480628] [expert_system_executor]: Mission Name: Branch and Return
+[INFO] [1788104771.981013587] [expert_system_executor]: Mission Items: 13
+[INFO] [1788104771.981576345] [expert_system_executor]: Knowledge Base Rules: 10
+[INFO] [1788104772.183847525] [expert_system_executor]: INFERENCE CYCLE: 1
+[INFO] [1788104772.186160467] [expert_system_executor]: Conflict Set: ['r_takeoff']
+[INFO] [1788104772.188744605] [expert_system_executor]: Selected Rule: r_takeoff
+[INFO] [1788104772.191364699] [expert_system_executor]: Decision: TAKEOFF
+[INFO] [1788104772.193285418] [expert_system_executor]: ES RUNNING: TAKEOFF_0
+[INFO] [1788104772.384982726] [expert_system_executor]: ES COMPLETED: TAKEOFF_0
+[INFO] [1788104772.583647910] [expert_system_executor]: INFERENCE CYCLE: 2
+[INFO] [1788104772.585921330] [expert_system_executor]: Conflict Set: ['r_navigate']
+[INFO] [1788104772.588575088] [expert_system_executor]: Selected Rule: r_navigate
+[INFO] [1788104772.591360912] [expert_system_executor]: Decision: NAVIGATE
+[INFO] [1788104772.593471278] [expert_system_executor]: ES RUNNING: NAVIGATE_1_WP1
+[INFO] [1788104772.784396526] [expert_system_executor]: ES COMPLETED: NAVIGATE_1_WP1
+[INFO] [1788104772.982882859] [expert_system_executor]: INFERENCE CYCLE: 3
+[INFO] [1788104772.983653273] [expert_system_executor]: Conflict Set: ['r_navigate']
+[INFO] [1788104772.984429547] [expert_system_executor]: Selected Rule: r_navigate
+[INFO] [1788104772.985251360] [expert_system_executor]: Decision: NAVIGATE
+[INFO] [1788104772.986380231] [expert_system_executor]: ES RUNNING: NAVIGATE_2_WP2
+[INFO] [1788104773.184363221] [expert_system_executor]: ES COMPLETED: NAVIGATE_2_WP2
+[INFO] [1788104773.383965949] [expert_system_executor]: INFERENCE CYCLE: 4
+[INFO] [1788104773.385628290] [expert_system_executor]: Conflict Set: ['r_navigate']
+[INFO] [1788104773.387530248] [expert_system_executor]: Selected Rule: r_navigate
+[INFO] [1788104773.389278791] [expert_system_executor]: Decision: NAVIGATE
+[INFO] [1788104773.391845362] [expert_system_executor]: ES RUNNING: NAVIGATE_3_WP1
+[INFO] [1788104773.582798152] [expert_system_executor]: ES COMPLETED: NAVIGATE_3_WP1
+[INFO] [1788104773.783457449] [expert_system_executor]: INFERENCE CYCLE: 5
+[INFO] [1788104773.785541823] [expert_system_executor]: Conflict Set: ['r_navigate']
+[INFO] [1788104773.787912221] [expert_system_executor]: Selected Rule: r_navigate
+[INFO] [1788104773.790318991] [expert_system_executor]: Decision: NAVIGATE
+[INFO] [1788104773.792246613] [expert_system_executor]: ES RUNNING: NAVIGATE_4_WP3
+[INFO] [1788104773.985432431] [expert_system_executor]: ES COMPLETED: NAVIGATE_4_WP3
+[INFO] [1788104774.183918758] [expert_system_executor]: INFERENCE CYCLE: 6
+[INFO] [1788104774.185582764] [expert_system_executor]: Conflict Set: ['r_navigate']
+[INFO] [1788104774.187356107] [expert_system_executor]: Selected Rule: r_navigate
+[INFO] [1788104774.189033475] [expert_system_executor]: Decision: NAVIGATE
+[INFO] [1788104774.191580241] [expert_system_executor]: ES RUNNING: NAVIGATE_5_WP1
+[INFO] [1788104774.385496709] [expert_system_executor]: ES COMPLETED: NAVIGATE_5_WP1
+[INFO] [1788104774.583907255] [expert_system_executor]: INFERENCE CYCLE: 7
+[INFO] [1788104774.586524153] [expert_system_executor]: Conflict Set: ['r_navigate']
+[INFO] [1788104774.589453510] [expert_system_executor]: Selected Rule: r_navigate
+[INFO] [1788104774.592525975] [expert_system_executor]: Decision: NAVIGATE
+[INFO] [1788104774.594762080] [expert_system_executor]: ES RUNNING: NAVIGATE_6_WP4
+[WARN] [1788104774.602150352] [expert_system_executor]: RUNTIME EVENT RECEIVED: PROPULSION_FAILURE
+[INFO] [1788104774.604948744] [expert_system_executor]: INFERENCE CYCLE: 8
+[INFO] [1788104774.607713231] [expert_system_executor]: Conflict Set: ['r_propulsion_failure']
+[INFO] [1788104774.610907579] [expert_system_executor]: Selected Rule: r_propulsion_failure
+[INFO] [1788104774.613534835] [expert_system_executor]: Decision: EMERGENCY_LAND
+[WARN] [1788104774.615447224] [expert_system_executor]: ES RECOVERY RUNNING: EMERGENCY_LAND
+[WARN] [1788104774.784403560] [expert_system_executor]: ES RECOVERY COMPLETED: EMERGENCY_LAND
+[INFO] [1788104774.786088776] [expert_system_executor]: INFERENCE CYCLE: 9
+[INFO] [1788104774.787720031] [expert_system_executor]: Conflict Set: ['r_safe_terminate', 'r_navigate']
+[INFO] [1788104774.789397057] [expert_system_executor]: Selected Rule: r_safe_terminate
+[INFO] [1788104774.791724078] [expert_system_executor]: Decision: SAFE_TERMINATE
+[WARN] [1788104774.793523743] [expert_system_executor]: ========================================
+[WARN] [1788104774.795307270] [expert_system_executor]: MISSION SAFE TERMINATED
+[WARN] [1788104774.798475216] [expert_system_executor]: Reason: PROPULSION_FAILURE
+[WARN] [1788104774.800782687] [expert_system_executor]: ========================================

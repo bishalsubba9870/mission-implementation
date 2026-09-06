@@ -1,0 +1,18 @@
+[INFO] [1788194722.320635091] [waypoint_executor]: Loading mission: /home/bishal/ros2_ws/install/mission_formalism_evaluation/share/mission_formalism_evaluation/missions/mission_2.yaml
+[INFO] [1788194722.325955921] [waypoint_executor]: Mission ID: M2
+[INFO] [1788194722.326514482] [waypoint_executor]: Mission Name: Branch and Return
+[INFO] [1788194722.326956332] [waypoint_executor]: Mission Items: 13
+[INFO] [1788194722.327385053] [waypoint_executor]: [1/13] TAKEOFF
+[INFO] [1788194722.327886992] [waypoint_executor]: [2/13] NAVIGATE -> WP1
+[INFO] [1788194722.328369312] [waypoint_executor]: [3/13] NAVIGATE -> WP2
+[INFO] [1788194722.329261457] [waypoint_executor]: [4/13] NAVIGATE -> WP1
+[INFO] [1788194722.330232207] [waypoint_executor]: [5/13] NAVIGATE -> WP3
+[INFO] [1788194722.331156266] [waypoint_executor]: [6/13] NAVIGATE -> WP1
+[INFO] [1788194722.331894224] [waypoint_executor]: [7/13] NAVIGATE -> WP4
+[INFO] [1788194722.332433143] [waypoint_executor]: [8/13] NAVIGATE -> WP5
+[INFO] [1788194722.332967734] [waypoint_executor]: [9/13] NAVIGATE -> WP4
+[INFO] [1788194722.333751861] [waypoint_executor]: [10/13] NAVIGATE -> WP6
+[INFO] [1788194722.334189736] [waypoint_executor]: [11/13] NAVIGATE -> WP4
+[INFO] [1788194722.334749187] [waypoint_executor]: [12/13] NAVIGATE -> WP1
+[INFO] [1788194722.335241578] [waypoint_executor]: [13/13] LAND
+[INFO] [1788194722.335772715] [waypoint_executor]: Mission completed.

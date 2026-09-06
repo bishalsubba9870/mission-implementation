@@ -104,6 +104,10 @@ setup(
             'htn_executor = '
             'mission_formalism_evaluation.'
             'htn.htn_executor:main',
+            
+            'expert_system_executor = '
+            'mission_formalism_evaluation.'
+            'expert_system.es_executor:main',
 
             'scenario_injector = '
             'mission_formalism_evaluation.'

@@ -1,0 +1,12 @@
+metrics/snapshots/nominal/waypoint/waypoint_executor.py
+    LOC: 109
+    LLOC: 42
+    SLOC: 74
+    Comments: 0
+    Single comments: 0
+    Multi: 0
+    Blank: 35
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
