@@ -1,0 +1,60 @@
+metrics/snapshots/refactored/gps/htn/htn_domain.py
+    LOC: 677
+    LLOC: 151
+    SLOC: 494
+    Comments: 0
+    Single comments: 35
+    Multi: 0
+    Blank: 148
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/gps/htn/htn_executor.py
+    LOC: 927
+    LLOC: 258
+    SLOC: 684
+    Comments: 0
+    Single comments: 21
+    Multi: 0
+    Blank: 222
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/gps/htn/htn_planner.py
+    LOC: 335
+    LLOC: 89
+    SLOC: 257
+    Comments: 0
+    Single comments: 10
+    Multi: 0
+    Blank: 68
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/gps/htn/mission_loader.py
+    LOC: 81
+    LLOC: 26
+    SLOC: 62
+    Comments: 0
+    Single comments: 2
+    Multi: 0
+    Blank: 17
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/gps/htn/runtime_condition.py
+    LOC: 34
+    LLOC: 11
+    SLOC: 25
+    Comments: 0
+    Single comments: 2
+    Multi: 0
+    Blank: 7
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%

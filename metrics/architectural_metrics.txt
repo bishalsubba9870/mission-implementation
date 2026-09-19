@@ -1,0 +1,258 @@
+Project root: /home/bishal/ros2_ws/src/mission_formalism_evaluation
+Snapshot root: /home/bishal/ros2_ws/src/mission_formalism_evaluation/metrics/snapshots/refactored
+Radon executable: /home/bishal/.local/bin/radon
+
+==============================================================================
+FSM
+==============================================================================
+
+STAGE SIZE
+------------------------------------------------------------------------------
+nominal        SLOC=268    Blocks=12
+gps            SLOC=539    Blocks=19
+propulsion     SLOC=553    Blocks=20
+communication  SLOC=601    Blocks=25
+wind           SLOC=613    Blocks=29
+battery        SLOC=606    Blocks=30
+abort          SLOC=618    Blocks=31
+
+INCREMENTAL MODIFICATION COST / CHANGE PROPAGATION
+------------------------------------------------------------------------------
+      nominal -> gps           added=310   deleted=32    edit_cost=342   changed_files=1/1 propagation=1.000
+          gps -> propulsion    added=37    deleted=22    edit_cost=59    changed_files=1/1 propagation=1.000
+   propulsion -> communication added=178   deleted=125   edit_cost=303   changed_files=1/1 propagation=1.000
+communication -> wind          added=183   deleted=167   edit_cost=350   changed_files=1/1 propagation=1.000
+         wind -> battery       added=40    deleted=46    edit_cost=86    changed_files=1/1 propagation=1.000
+      battery -> abort         added=15    deleted=11    edit_cost=26    changed_files=1/1 propagation=1.000
+
+OVERALL REACTIVITY COST
+------------------------------------------------------------------------------
+Nominal stage:          nominal
+Final stage:            abort
+Nominal SLOC:           268
+Final SLOC:             618
+Delta SLOC:             +350
+Nominal blocks:         12
+Final blocks:           31
+Delta blocks:           +19
+Direct edit cost:       556
+Files changed overall:  1/1
+Overall propagation:    1.000
+Reuse similarity ratio: 0.394 (39.4%)
+
+RECOVERY LOCALITY IN FINAL SNAPSHOT
+------------------------------------------------------------------------------
+GPS             files=1   functions/methods=6
+Propulsion      files=1   functions/methods=3
+Communication   files=1   functions/methods=7
+Wind            files=1   functions/methods=5
+Battery         files=1   functions/methods=3
+Abort           files=1   functions/methods=5
+
+==============================================================================
+Behavior Tree
+==============================================================================
+
+STAGE SIZE
+------------------------------------------------------------------------------
+nominal        SLOC=583    Blocks=29
+gps            SLOC=869    Blocks=48
+propulsion     SLOC=943    Blocks=55
+communication  SLOC=1097   Blocks=66
+wind           SLOC=1214   Blocks=74
+battery        SLOC=1296   Blocks=80
+abort          SLOC=1376   Blocks=86
+
+INCREMENTAL MODIFICATION COST / CHANGE PROPAGATION
+------------------------------------------------------------------------------
+      nominal -> gps           added=379   deleted=74    edit_cost=453   changed_files=4/5 propagation=0.800
+          gps -> propulsion    added=167   deleted=86    edit_cost=253   changed_files=4/6 propagation=0.667
+   propulsion -> communication added=188   deleted=23    edit_cost=211   changed_files=4/7 propagation=0.571
+communication -> wind          added=129   deleted=4     edit_cost=133   changed_files=4/8 propagation=0.500
+         wind -> battery       added=93    deleted=5     edit_cost=98    changed_files=4/9 propagation=0.444
+      battery -> abort         added=88    deleted=2     edit_cost=90    changed_files=4/10 propagation=0.400
+
+OVERALL REACTIVITY COST
+------------------------------------------------------------------------------
+Nominal stage:          nominal
+Final stage:            abort
+Nominal SLOC:           583
+Final SLOC:             1376
+Delta SLOC:             +793
+Nominal blocks:         29
+Final blocks:           86
+Delta blocks:           +57
+Direct edit cost:       986
+Files changed overall:  9/10
+Overall propagation:    0.900
+Reuse similarity ratio: 0.525 (52.5%)
+
+RECOVERY LOCALITY IN FINAL SNAPSHOT
+------------------------------------------------------------------------------
+GPS             files=3   functions/methods=7
+Propulsion      files=6   functions/methods=12
+Communication   files=5   functions/methods=12
+Wind            files=4   functions/methods=9
+Battery         files=6   functions/methods=12
+Abort           files=7   functions/methods=12
+
+==============================================================================
+HTN
+==============================================================================
+
+STAGE SIZE
+------------------------------------------------------------------------------
+nominal        SLOC=1018   Blocks=48
+gps            SLOC=1435   Blocks=66
+propulsion     SLOC=1485   Blocks=68
+communication  SLOC=1632   Blocks=75
+wind           SLOC=1716   Blocks=79
+battery        SLOC=1758   Blocks=81
+abort          SLOC=1791   Blocks=85
+
+INCREMENTAL MODIFICATION COST / CHANGE PROPAGATION
+------------------------------------------------------------------------------
+      nominal -> gps           added=524   deleted=89    edit_cost=613   changed_files=2/3 propagation=0.667
+          gps -> propulsion    added=64    deleted=12    edit_cost=76    changed_files=2/3 propagation=0.667
+   propulsion -> communication added=165   deleted=11    edit_cost=176   changed_files=2/3 propagation=0.667
+communication -> wind          added=110   deleted=22    edit_cost=132   changed_files=2/3 propagation=0.667
+         wind -> battery       added=56    deleted=12    edit_cost=68    changed_files=2/3 propagation=0.667
+      battery -> abort         added=169   deleted=132   edit_cost=301   changed_files=3/3 propagation=1.000
+
+OVERALL REACTIVITY COST
+------------------------------------------------------------------------------
+Nominal stage:          nominal
+Final stage:            abort
+Nominal SLOC:           1018
+Final SLOC:             1791
+Delta SLOC:             +773
+Nominal blocks:         48
+Final blocks:           85
+Delta blocks:           +37
+Direct edit cost:       1242
+Files changed overall:  3/3
+Overall propagation:    1.000
+Reuse similarity ratio: 0.578 (57.8%)
+
+RECOVERY LOCALITY IN FINAL SNAPSHOT
+------------------------------------------------------------------------------
+GPS             files=2   functions/methods=11
+Propulsion      files=2   functions/methods=15
+Communication   files=2   functions/methods=12
+Wind            files=2   functions/methods=13
+Battery         files=2   functions/methods=15
+Abort           files=2   functions/methods=15
+
+==============================================================================
+Expert System
+==============================================================================
+
+STAGE SIZE
+------------------------------------------------------------------------------
+nominal        SLOC=703    Blocks=37
+gps            SLOC=1004   Blocks=53
+propulsion     SLOC=993    Blocks=55
+communication  SLOC=1148   Blocks=62
+wind           SLOC=1240   Blocks=67
+battery        SLOC=1276   Blocks=69
+abort          SLOC=1342   Blocks=73
+
+INCREMENTAL MODIFICATION COST / CHANGE PROPAGATION
+------------------------------------------------------------------------------
+      nominal -> gps           added=346   deleted=29    edit_cost=375   changed_files=2/3 propagation=0.667
+          gps -> propulsion    added=82    deleted=91    edit_cost=173   changed_files=2/3 propagation=0.667
+   propulsion -> communication added=199   deleted=37    edit_cost=236   changed_files=2/3 propagation=0.667
+communication -> wind          added=138   deleted=41    edit_cost=179   changed_files=2/3 propagation=0.667
+         wind -> battery       added=55    deleted=17    edit_cost=72    changed_files=2/3 propagation=0.667
+      battery -> abort         added=106   deleted=36    edit_cost=142   changed_files=2/3 propagation=0.667
+
+OVERALL REACTIVITY COST
+------------------------------------------------------------------------------
+Nominal stage:          nominal
+Final stage:            abort
+Nominal SLOC:           703
+Final SLOC:             1342
+Delta SLOC:             +639
+Nominal blocks:         37
+Final blocks:           73
+Delta blocks:           +36
+Direct edit cost:       819
+Files changed overall:  2/3
+Overall propagation:    0.667
+Reuse similarity ratio: 0.617 (61.7%)
+
+RECOVERY LOCALITY IN FINAL SNAPSHOT
+------------------------------------------------------------------------------
+GPS             files=2   functions/methods=11
+Propulsion      files=2   functions/methods=18
+Communication   files=2   functions/methods=12
+Wind            files=2   functions/methods=16
+Battery         files=2   functions/methods=17
+Abort           files=2   functions/methods=18
+
+==============================================================================
+BEHAVIORAL COVERAGE
+==============================================================================
+Waypoint          0/6     0.0%  N/A / unsupported by baseline
+FSM               6/6   100.0%  supported
+Behavior Tree     6/6   100.0%  supported
+HTN               6/6   100.0%  supported
+Expert System     6/6   100.0%  supported
+
+==============================================================================
+STRUCTURAL GROWTH - CURRENTLY ESTABLISHED VALUES
+==============================================================================
+
+Waypoint
+------------------------------------------------------------------------------
+Executor structure remains fixed; mission data grows with mission items.
+M1: mission_items=4
+M2: mission_items=13
+M3: mission_items=102
+M4: mission_items=201
+
+FSM
+------------------------------------------------------------------------------
+Established relation: states = N + 8, transitions = 7N - 6
+M1: items=4    states=12   transitions=22
+M2: items=13   states=21   transitions=85
+M3: items=102  states=110  transitions=708
+M4: items=201  states=209  transitions=1401
+
+Expert System
+------------------------------------------------------------------------------
+Final scenario-capable rule base: 18 rules; rule count remains independent of M1-M4 mission size.
+M1: items=4    rules=18
+M2: items=13   rules=18
+M3: items=102  rules=18
+M4: items=201  rules=18
+
+Behavior Tree / HTN
+------------------------------------------------------------------------------
+Exact M1-M4 tree/plan structural counts are intentionally not guessed here.
+They should be measured from the generated BT/HTN runtime structures.
+
+==============================================================================
+OPERATIONAL DEFINITIONS
+==============================================================================
+Modification Cost:
+  added normalized source lines + deleted normalized source lines
+  between consecutive scenario snapshots.
+
+Change Propagation:
+  changed formalism-specific files / total formalism-specific files
+  involved in the compared snapshots.
+
+Reactivity Cost:
+  nominal-to-final Delta SLOC, Delta Radon blocks, and direct edit cost.
+
+Recovery Locality:
+  number of formalism-specific files and functions/methods that contain
+  scenario/recovery event knowledge in the final snapshot.
+
+Reuse Evidence:
+  similarity ratio between normalized nominal and final
+  formalism-specific source lines.
+
+Behavioral Coverage:
+  supported required runtime scenarios / 6.

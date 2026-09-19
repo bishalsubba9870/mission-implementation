@@ -1,0 +1,8 @@
+Mission: M4
+Trigger: 149
+
+COMMUNICATION_AVAILABLE:
+PASS - communication restored, interrupted navigation resumed, mission completed successfully.
+
+COMMUNICATION_RECOVERY_FAILED:
+PASS - COMMUNICATION_RECOVERY -> RETURN_TO_HOME -> RTL_COMPLETED -> SAFE_TERMINATED.

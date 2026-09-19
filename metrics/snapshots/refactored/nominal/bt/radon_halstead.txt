@@ -1,0 +1,65 @@
+metrics/snapshots/refactored/nominal/bt/bt_executor.py:
+    h1: 5
+    h2: 23
+    N1: 13
+    N2: 25
+    vocabulary: 28
+    length: 38
+    calculated_length: 115.65156546374811
+    volume: 182.67948703818894
+    difficulty: 2.717391304347826
+    effort: 496.41164956029604
+    time: 27.578424975572002
+    bugs: 0.06089316234606298
+metrics/snapshots/refactored/nominal/bt/mission_action.py:
+    h1: 3
+    h2: 5
+    N1: 3
+    N2: 5
+    vocabulary: 8
+    length: 8
+    calculated_length: 16.36452797660028
+    volume: 24.0
+    difficulty: 1.5
+    effort: 36.0
+    time: 2.0
+    bugs: 0.008
+metrics/snapshots/refactored/nominal/bt/mission_loader.py:
+    h1: 3
+    h2: 11
+    N1: 9
+    N2: 13
+    vocabulary: 14
+    length: 22
+    calculated_length: 42.808635307173745
+    volume: 83.76180828526728
+    difficulty: 1.7727272727272727
+    effort: 148.48684196024655
+    time: 8.249268997791475
+    bugs: 0.02792060276175576
+metrics/snapshots/refactored/nominal/bt/task_adapter.py:
+    h1: 7
+    h2: 24
+    N1: 16
+    N2: 31
+    vocabulary: 31
+    length: 47
+    calculated_length: 129.690584471711
+    volume: 232.84722658818316
+    difficulty: 4.520833333333333
+    effort: 1052.663503534078
+    time: 58.481305751893224
+    bugs: 0.07761574219606106
+metrics/snapshots/refactored/nominal/bt/tree_builder.py:
+    h1: 1
+    h2: 2
+    N1: 1
+    N2: 2
+    vocabulary: 3
+    length: 3
+    calculated_length: 2.0
+    volume: 4.754887502163469
+    difficulty: 0.5
+    effort: 2.3774437510817346
+    time: 0.1320802083934297
+    bugs: 0.0015849625007211565

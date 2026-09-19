@@ -1,0 +1,5 @@
+metrics/snapshots/refactored/abort/htn/htn_domain.py - A (19.69)
+metrics/snapshots/refactored/abort/htn/htn_executor.py - B (18.51)
+metrics/snapshots/refactored/abort/htn/htn_planner.py - A (39.63)
+metrics/snapshots/refactored/abort/htn/mission_loader.py - A (54.59)
+metrics/snapshots/refactored/abort/htn/runtime_condition.py - A (100.00)

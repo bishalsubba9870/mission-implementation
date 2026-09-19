@@ -1,0 +1,132 @@
+metrics/snapshots/refactored/battery/bt/battery_critical.py
+    LOC: 80
+    LLOC: 37
+    SLOC: 52
+    Comments: 0
+    Single comments: 5
+    Multi: 0
+    Blank: 23
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/battery/bt/bt_executor.py
+    LOC: 787
+    LLOC: 257
+    SLOC: 575
+    Comments: 0
+    Single comments: 31
+    Multi: 0
+    Blank: 181
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/battery/bt/communication_recovery.py
+    LOC: 107
+    LLOC: 54
+    SLOC: 68
+    Comments: 0
+    Single comments: 6
+    Multi: 0
+    Blank: 33
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/battery/bt/gps_recovery.py
+    LOC: 103
+    LLOC: 50
+    SLOC: 67
+    Comments: 0
+    Single comments: 5
+    Multi: 0
+    Blank: 31
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/battery/bt/mission_action.py
+    LOC: 164
+    LLOC: 80
+    SLOC: 108
+    Comments: 0
+    Single comments: 9
+    Multi: 0
+    Blank: 47
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/battery/bt/mission_loader.py
+    LOC: 81
+    LLOC: 26
+    SLOC: 62
+    Comments: 0
+    Single comments: 2
+    Multi: 0
+    Blank: 17
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/battery/bt/propulsion_failure.py
+    LOC: 85
+    LLOC: 38
+    SLOC: 55
+    Comments: 0
+    Single comments: 5
+    Multi: 0
+    Blank: 25
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/battery/bt/runtime_condition.py
+    LOC: 34
+    LLOC: 11
+    SLOC: 25
+    Comments: 0
+    Single comments: 2
+    Multi: 0
+    Blank: 7
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/battery/bt/task_adapter.py
+    LOC: 203
+    LLOC: 50
+    SLOC: 162
+    Comments: 0
+    Single comments: 6
+    Multi: 0
+    Blank: 35
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/battery/bt/tree_builder.py
+    LOC: 149
+    LLOC: 34
+    SLOC: 119
+    Comments: 0
+    Single comments: 6
+    Multi: 0
+    Blank: 24
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/battery/bt/wind_unsafe.py
+    LOC: 136
+    LLOC: 62
+    SLOC: 90
+    Comments: 0
+    Single comments: 7
+    Multi: 0
+    Blank: 39
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%

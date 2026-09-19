@@ -1,0 +1,14 @@
+Mission: M3
+Mission Items: 102
+FSM States: 110
+FSM Transitions: 708
+Trigger: 49
+
+Nominal:
+PASS
+
+GPS_AVAILABLE:
+PASS
+
+GPS_RECOVERY_FAILED:
+PASS

@@ -9,40 +9,10 @@ from std_msgs.msg import String
 
 
 class GazeboExecutor(Node):
-    """
-    Shared Gazebo execution adapter for all mission formalisms.
-
-    Mission layer decides WHAT to do:
-        TAKEOFF
-        NAVIGATE WPx
-        RETURN_TO_HOME / RTL
-        LAND
-
-    This executor handles HOW the simulated multicopter moves.
-
-    ROS interfaces
-    --------------
-    Subscribe:
-        /mission/action
-            std_msgs/String
-
-        /model/x3/odometry
-            nav_msgs/Odometry
-
-    Publish:
-        /X3/gazebo/command/twist
-            geometry_msgs/Twist
-
-        /gazebo_executor/status
-            std_msgs/String
-    """
+    """Shared Gazebo execution adapter for all mission formalisms."""
 
     def __init__(self) -> None:
         super().__init__('gazebo_executor')
-
-        # =========================================================
-        # Parameters
-        # =========================================================
 
         self.declare_parameter(
             'cruise_speed',
@@ -99,20 +69,41 @@ class GazeboExecutor(Node):
             ).value
         )
 
-        # =========================================================
-        # Waypoint database
-        # =========================================================
-
         self.waypoints: Dict[
             str,
             Tuple[float, float, float],
-        ] = {}
-
-        self._generate_waypoints()
-
-        # =========================================================
-        # Vehicle state
-        # =========================================================
+        ] = {
+            'WP1': (
+                2.0,
+                0.0,
+                self.takeoff_altitude,
+            ),
+            'WP2': (
+                4.0,
+                2.0,
+                self.takeoff_altitude,
+            ),
+            'WP3': (
+                4.0,
+                -2.0,
+                self.takeoff_altitude,
+            ),
+            'WP4': (
+                6.0,
+                0.0,
+                self.takeoff_altitude,
+            ),
+            'WP5': (
+                8.0,
+                2.0,
+                self.takeoff_altitude,
+            ),
+            'WP6': (
+                8.0,
+                -2.0,
+                self.takeoff_altitude,
+            ),
+        }
 
         self.current_position = [
             0.0,
@@ -121,17 +112,11 @@ class GazeboExecutor(Node):
         ]
 
         self.current_yaw = 0.0
-
         self.have_odometry = False
 
-        # Home is captured from the first odometry message.
         self.home_ground_position: Optional[
             Tuple[float, float, float]
         ] = None
-
-        # =========================================================
-        # Mission action state
-        # =========================================================
 
         self.current_action = 'IDLE'
 
@@ -140,14 +125,7 @@ class GazeboExecutor(Node):
         ] = None
 
         self.active_waypoint = ''
-
-        # Prevent repeated identical action commands from
-        # restarting an action unnecessarily.
         self.last_received_command = ''
-
-        # =========================================================
-        # ROS publishers
-        # =========================================================
 
         self.velocity_publisher = self.create_publisher(
             Twist,
@@ -160,10 +138,6 @@ class GazeboExecutor(Node):
             '/gazebo_executor/status',
             10,
         )
-
-        # =========================================================
-        # ROS subscribers
-        # =========================================================
 
         self.action_subscription = self.create_subscription(
             String,
@@ -178,10 +152,6 @@ class GazeboExecutor(Node):
             self._odometry_callback,
             10,
         )
-
-        # =========================================================
-        # Controller timer
-        # =========================================================
 
         self.timer = self.create_timer(
             0.05,
@@ -202,90 +172,42 @@ class GazeboExecutor(Node):
             '/mission/action'
         )
 
-    # =============================================================
-    # Waypoint generation
-    # =============================================================
+        self._log_waypoints()
 
-    def _generate_waypoints(self) -> None:
-        """
-        Generate WP1 ... WP100.
+    def _log_waypoints(self) -> None:
+        """Log configured Gazebo waypoint coordinates."""
 
-        For now this creates a simple zigzag:
+        self.get_logger().info(
+            'Configured Gazebo waypoints:'
+        )
 
-            WP1   (2,   0, 3)
-            WP2   (4,   2, 3)
-            WP3   (6,   0, 3)
-            WP4   (8,   2, 3)
-            ...
-            WP100 (200, 2, 3)
-
-        The mapping belongs to the common Gazebo execution
-        environment, not to any specific mission formalism.
-        """
-
-        for index in range(
-            1,
-            101,
-        ):
-
-            x = float(
-                index * 2
+        for name, position in self.waypoints.items():
+            self.get_logger().info(
+                f'{name}: '
+                f'x={position[0]:.1f}, '
+                f'y={position[1]:.1f}, '
+                f'z={position[2]:.1f}'
             )
-
-            if index % 2 == 0:
-                y = 2.0
-            else:
-                y = 0.0
-
-            z = self.takeoff_altitude
-
-            waypoint_name = (
-                f'WP{index}'
-            )
-
-            self.waypoints[
-                waypoint_name
-            ] = (
-                x,
-                y,
-                z,
-            )
-
-    # =============================================================
-    # Odometry
-    # =============================================================
 
     def _odometry_callback(
         self,
         message: Odometry,
     ) -> None:
-        """
-        Store current simulated position and yaw.
-        """
+        """Update current multicopter position."""
 
         position = (
             message.pose.pose.position
         )
 
+        self.current_position = [
+            float(position.x),
+            float(position.y),
+            float(position.z),
+        ]
+
         orientation = (
             message.pose.pose.orientation
         )
-
-        self.current_position[0] = (
-            position.x
-        )
-
-        self.current_position[1] = (
-            position.y
-        )
-
-        self.current_position[2] = (
-            position.z
-        )
-
-        # ---------------------------------------------------------
-        # Quaternion -> yaw
-        # ---------------------------------------------------------
 
         siny_cosp = (
             2.0
@@ -313,39 +235,31 @@ class GazeboExecutor(Node):
             cosy_cosp,
         )
 
-        # ---------------------------------------------------------
-        # First odometry message
-        # ---------------------------------------------------------
-
         if not self.have_odometry:
-
             self.have_odometry = True
 
             self.home_ground_position = (
-                position.x,
-                position.y,
-                position.z,
+                self.current_position[0],
+                self.current_position[1],
+                self.current_position[2],
             )
 
             self.get_logger().info(
-                'X3 odometry received.'
+                'Initial odometry received.'
             )
 
             self.get_logger().info(
                 'Home position captured: '
-                f'({position.x:.2f}, '
-                f'{position.y:.2f}, '
-                f'{position.z:.2f})'
+                f'x={self.home_ground_position[0]:.2f}, '
+                f'y={self.home_ground_position[1]:.2f}, '
+                f'z={self.home_ground_position[2]:.2f}'
             )
-
-    # =============================================================
-    # Mission action callback
-    # =============================================================
 
     def _action_callback(
         self,
         message: String,
     ) -> None:
+        """Receive mission-level action commands."""
 
         command = (
             message.data
@@ -356,486 +270,242 @@ class GazeboExecutor(Node):
         if not command:
             return
 
+        if command == self.last_received_command:
+            return
+
+        self.last_received_command = command
+
         self.get_logger().info(
-            f'MISSION ACTION RECEIVED: '
-            f'{command}'
+            f'Received mission action: {command}'
         )
 
-        if not self.have_odometry:
-
-            self.get_logger().warning(
-                'Cannot execute mission action: '
-                'odometry has not been received yet.'
-            )
-
-            return
-
-        # =========================================================
-        # TAKEOFF
-        # =========================================================
-
         if command == 'TAKEOFF':
-
-            self.current_action = (
-                'TAKEOFF'
-            )
-
-            self.target_position = (
-                self.current_position[0],
-                self.current_position[1],
-                self.takeoff_altitude,
-            )
-
-            self.active_waypoint = ''
-
-            self.last_received_command = (
-                command
-            )
-
-            self._publish_status(
-                'TAKEOFF_RUNNING'
-            )
-
-            self.get_logger().info(
-                'Executing TAKEOFF -> '
-                f'{self.takeoff_altitude:.2f} m'
-            )
-
+            self._start_takeoff()
             return
 
-        # =========================================================
-        # NAVIGATE WPx
-        # =========================================================
-
-        if command.startswith(
-            'NAVIGATE '
-        ):
-
-            parts = (
-                command.split()
-            )
-
-            if len(parts) != 2:
-
-                self.get_logger().error(
-                    f'Invalid NAVIGATE command: '
-                    f'{command}'
-                )
-
-                return
-
-            waypoint_name = (
-                parts[1]
-            )
-
-            if (
-                waypoint_name
-                not in self.waypoints
-            ):
-
-                self.get_logger().error(
-                    f'Unknown waypoint: '
-                    f'{waypoint_name}'
-                )
-
-                return
-
-            self.current_action = (
-                'NAVIGATE'
-            )
-
-            self.active_waypoint = (
-                waypoint_name
-            )
-
-            self.target_position = (
-                self.waypoints[
-                    waypoint_name
-                ]
-            )
-
-            self.last_received_command = (
+        if command.startswith('NAVIGATE'):
+            self._start_navigation(
                 command
             )
-
-            target_x = (
-                self.target_position[0]
-            )
-
-            target_y = (
-                self.target_position[1]
-            )
-
-            target_z = (
-                self.target_position[2]
-            )
-
-            self.get_logger().info(
-                f'Navigating to '
-                f'{waypoint_name}: '
-                f'({target_x:.2f}, '
-                f'{target_y:.2f}, '
-                f'{target_z:.2f})'
-            )
-
-            self._publish_status(
-                f'NAVIGATION_RUNNING '
-                f'{waypoint_name}'
-            )
-
             return
-
-        # =========================================================
-        # RETURN TO HOME / RTL
-        # =========================================================
 
         if command in {
             'RTL',
             'RETURN_TO_HOME',
         }:
-
-            if (
-                self.home_ground_position
-                is None
-            ):
-
-                self.get_logger().error(
-                    'Cannot RTL: home position '
-                    'has not been captured.'
-                )
-
-                return
-
-            home_x = (
-                self.home_ground_position[0]
-            )
-
-            home_y = (
-                self.home_ground_position[1]
-            )
-
-            # Return home while remaining airborne.
-            home_z = (
-                self.takeoff_altitude
-            )
-
-            self.current_action = (
-                'RETURN_TO_HOME'
-            )
-
-            self.target_position = (
-                home_x,
-                home_y,
-                home_z,
-            )
-
-            self.active_waypoint = ''
-
-            self.last_received_command = (
-                command
-            )
-
-            self.get_logger().info(
-                'Executing RETURN_TO_HOME.'
-            )
-
-            self._publish_status(
-                'RTL_RUNNING'
-            )
-
+            self._start_return_home()
             return
 
-        # =========================================================
-        # LAND
-        # =========================================================
-
-        if command in {
-            'LAND',
-            'SAFE_LAND',
-            'EMERGENCY_LAND',
-        }:
-
-            self.current_action = (
-                'LAND'
-            )
-
-            self.target_position = (
-                self.current_position[0],
-                self.current_position[1],
-                self.landing_altitude,
-            )
-
-            self.active_waypoint = ''
-
-            self.last_received_command = (
-                command
-            )
-
-            self.get_logger().info(
-                'Executing LAND.'
-            )
-
-            self._publish_status(
-                'LAND_RUNNING'
-            )
-
+        if command == 'LAND':
+            self._start_landing()
             return
-
-        # =========================================================
-        # ABORT_MISSION
-        # =========================================================
-
-        if command == 'ABORT_MISSION':
-
-            self.current_action = (
-                'IDLE'
-            )
-
-            self.target_position = None
-
-            self.active_waypoint = ''
-
-            self.last_received_command = (
-                command
-            )
-
-            self._publish_stop()
-
-            self.get_logger().warning(
-                'Nominal mission execution aborted.'
-            )
-
-            self._publish_status(
-                'ABORT_COMPLETED'
-            )
-
-            return
-
-        # =========================================================
-        # STOP
-        # =========================================================
 
         if command == 'STOP':
-
-            self.current_action = (
-                'IDLE'
-            )
-
-            self.target_position = None
-
-            self.active_waypoint = ''
-
-            self.last_received_command = (
-                command
-            )
-
-            self._publish_stop()
-
-            self.get_logger().info(
-                'Vehicle motion stopped.'
-            )
-
-            self._publish_status(
-                'STOPPED'
-            )
-
+            self._stop_vehicle()
             return
 
         self.get_logger().warning(
-            f'Unsupported mission action: '
-            f'{command}'
+            f'Unknown mission action: {command}'
         )
 
-    # =============================================================
-    # Main control loop
-    # =============================================================
-
-    def _control_loop(
-        self,
-    ) -> None:
+    def _start_takeoff(self) -> None:
+        """Start takeoff to configured altitude."""
 
         if not self.have_odometry:
+            self.get_logger().warning(
+                'Cannot TAKEOFF: no odometry yet.'
+            )
+            self.last_received_command = ''
+            return
+
+        self.current_action = 'TAKEOFF'
+
+        self.target_position = (
+            self.current_position[0],
+            self.current_position[1],
+            self.takeoff_altitude,
+        )
+
+        self.active_waypoint = ''
+
+        self._publish_status(
+            'TAKEOFF_RUNNING'
+        )
+
+    def _start_navigation(
+        self,
+        command: str,
+    ) -> None:
+        """Start navigation to a named waypoint."""
+
+        parts = command.split()
+
+        if len(parts) < 2:
+            self.get_logger().warning(
+                f'Invalid navigation command: {command}'
+            )
+            self.last_received_command = ''
+            return
+
+        waypoint = parts[-1]
+
+        if waypoint not in self.waypoints:
+            self.get_logger().error(
+                f'Unknown waypoint: {waypoint}'
+            )
+
+            self._publish_status(
+                f'NAVIGATE_FAILED {waypoint}'
+            )
+
+            self.last_received_command = ''
+            return
+
+        self.current_action = 'NAVIGATE'
+        self.active_waypoint = waypoint
+
+        self.target_position = (
+            self.waypoints[
+                waypoint
+            ]
+        )
+
+        self.get_logger().info(
+            f'Navigating to {waypoint}: '
+            f'{self.target_position}'
+        )
+
+        self._publish_status(
+            f'NAVIGATE_RUNNING {waypoint}'
+        )
+
+    def _start_return_home(self) -> None:
+        """Return horizontally to the recorded home location."""
+
+        if self.home_ground_position is None:
+            self.get_logger().warning(
+                'Cannot RTL: home position unavailable.'
+            )
+            self.last_received_command = ''
+            return
+
+        self.current_action = 'RTL'
+
+        self.active_waypoint = ''
+
+        self.target_position = (
+            self.home_ground_position[0],
+            self.home_ground_position[1],
+            self.takeoff_altitude,
+        )
+
+        self._publish_status(
+            'RTL_RUNNING'
+        )
+
+    def _start_landing(self) -> None:
+        """Start vertical landing at the current XY position."""
+
+        if not self.have_odometry:
+            self.get_logger().warning(
+                'Cannot LAND: no odometry yet.'
+            )
+            self.last_received_command = ''
+            return
+
+        self.current_action = 'LAND'
+
+        self.active_waypoint = ''
+
+        self.target_position = (
+            self.current_position[0],
+            self.current_position[1],
+            self.landing_altitude,
+        )
+
+        self._publish_status(
+            'LAND_RUNNING'
+        )
+
+    def _control_loop(self) -> None:
+        """Execute the currently active motion command."""
+
+        if not self.have_odometry:
+            return
+
+        if self.current_action == 'IDLE':
             return
 
         if self.target_position is None:
             return
 
-        current_x = (
-            self.current_position[0]
-        )
-
-        current_y = (
-            self.current_position[1]
-        )
-
-        current_z = (
-            self.current_position[2]
-        )
-
-        target_x = (
+        dx = (
             self.target_position[0]
+            - self.current_position[0]
         )
 
-        target_y = (
+        dy = (
             self.target_position[1]
+            - self.current_position[1]
         )
 
-        target_z = (
+        dz = (
             self.target_position[2]
+            - self.current_position[2]
         )
 
-        error_world_x = (
-            target_x - current_x
+        distance_3d = math.sqrt(
+            dx * dx
+            + dy * dy
+            + dz * dz
         )
-
-        error_world_y = (
-            target_y - current_y
-        )
-
-        error_z = (
-            target_z - current_z
-        )
-
-        horizontal_distance = (
-            math.sqrt(
-                error_world_x ** 2
-                + error_world_y ** 2
-            )
-        )
-
-        distance_3d = (
-            math.sqrt(
-                error_world_x ** 2
-                + error_world_y ** 2
-                + error_z ** 2
-            )
-        )
-
-        # =========================================================
-        # Check target completion
-        # =========================================================
 
         if (
             distance_3d
             <= self.waypoint_tolerance
         ):
-
-            self._complete_current_action()
-
+            self._complete_action()
             return
 
         command = Twist()
 
-        # =========================================================
-        # TAKEOFF
-        # =========================================================
+        horizontal_distance = math.sqrt(
+            dx * dx
+            + dy * dy
+        )
 
-        if (
-            self.current_action
-            == 'TAKEOFF'
-        ):
-
-            command.linear.z = (
-                self._limited_vertical_velocity(
-                    error_z
-                )
+        if horizontal_distance > 0.05:
+            horizontal_scale = min(
+                self.cruise_speed
+                / horizontal_distance,
+                1.0,
             )
 
-            self.velocity_publisher.publish(
-                command
+            command.linear.x = (
+                dx
+                * horizontal_scale
             )
 
-            return
-
-        # =========================================================
-        # LAND
-        # =========================================================
-
-        if (
-            self.current_action
-            == 'LAND'
-        ):
-
-            command.linear.z = (
-                self._limited_vertical_velocity(
-                    error_z
-                )
+            command.linear.y = (
+                dy
+                * horizontal_scale
             )
 
-            self.velocity_publisher.publish(
-                command
+        if abs(dz) > 0.05:
+            command.linear.z = max(
+                -self.vertical_speed,
+                min(
+                    self.vertical_speed,
+                    dz,
+                ),
             )
 
-            return
+        self.velocity_publisher.publish(
+            command
+        )
 
-        # =========================================================
-        # NAVIGATION / RTL
-        # =========================================================
-
-        if self.current_action in {
-            'NAVIGATE',
-            'RETURN_TO_HOME',
-        }:
-
-            # -----------------------------------------------------
-            # Convert world-frame XY error into body-frame XY
-            # because MulticopterVelocityControl expects velocity
-            # relative to vehicle orientation.
-            # -----------------------------------------------------
-
-            cos_yaw = math.cos(
-                self.current_yaw
-            )
-
-            sin_yaw = math.sin(
-                self.current_yaw
-            )
-
-            error_body_x = (
-                cos_yaw
-                * error_world_x
-                + sin_yaw
-                * error_world_y
-            )
-
-            error_body_y = (
-                -sin_yaw
-                * error_world_x
-                + cos_yaw
-                * error_world_y
-            )
-
-            if horizontal_distance > 0.01:
-
-                command.linear.x = (
-                    self.cruise_speed
-                    * error_body_x
-                    / horizontal_distance
-                )
-
-                command.linear.y = (
-                    self.cruise_speed
-                    * error_body_y
-                    / horizontal_distance
-                )
-
-            command.linear.z = (
-                self._limited_vertical_velocity(
-                    error_z
-                )
-            )
-
-            self.velocity_publisher.publish(
-                command
-            )
-
-    # =============================================================
-    # Action completion
-    # =============================================================
-
-    def _complete_current_action(
-        self,
-    ) -> None:
+    def _complete_action(self) -> None:
+        """Stop motion and report action completion."""
 
         completed_action = (
             self.current_action
@@ -845,112 +515,69 @@ class GazeboExecutor(Node):
             self.active_waypoint
         )
 
-        self._publish_stop()
+        self._publish_zero_velocity()
 
-        self.current_action = (
-            'IDLE'
-        )
-
+        self.current_action = 'IDLE'
         self.target_position = None
-
         self.active_waypoint = ''
 
-        # ---------------------------------------------------------
-        # TAKEOFF
-        # ---------------------------------------------------------
-
         if completed_action == 'TAKEOFF':
-
             self.get_logger().info(
-                'TAKEOFF COMPLETED'
+                'Takeoff completed.'
             )
 
             self._publish_status(
                 'TAKEOFF_COMPLETED'
             )
 
-            return
-
-        # ---------------------------------------------------------
-        # NAVIGATE
-        # ---------------------------------------------------------
-
-        if completed_action == 'NAVIGATE':
-
+        elif completed_action == 'NAVIGATE':
             self.get_logger().info(
-                f'WAYPOINT REACHED: '
+                f'Waypoint reached: '
                 f'{completed_waypoint}'
             )
 
             self._publish_status(
-                f'NAVIGATION_COMPLETED '
+                f'NAVIGATE_COMPLETED '
                 f'{completed_waypoint}'
             )
 
-            return
-
-        # ---------------------------------------------------------
-        # RTL
-        # ---------------------------------------------------------
-
-        if (
-            completed_action
-            == 'RETURN_TO_HOME'
-        ):
-
+        elif completed_action == 'RTL':
             self.get_logger().info(
-                'RETURN TO HOME COMPLETED'
+                'Return-to-home completed.'
             )
 
             self._publish_status(
                 'RTL_COMPLETED'
             )
 
-            return
-
-        # ---------------------------------------------------------
-        # LAND
-        # ---------------------------------------------------------
-
-        if completed_action == 'LAND':
-
+        elif completed_action == 'LAND':
             self.get_logger().info(
-                'LAND COMPLETED'
+                'Landing completed.'
             )
 
             self._publish_status(
                 'LAND_COMPLETED'
             )
 
-            return
+        self.last_received_command = ''
 
-    # =============================================================
-    # Velocity helper
-    # =============================================================
+    def _stop_vehicle(self) -> None:
+        """Stop the simulated multicopter."""
 
-    def _limited_vertical_velocity(
-        self,
-        error_z: float,
-    ) -> float:
+        self._publish_zero_velocity()
 
-        if abs(error_z) < 0.05:
-            return 0.0
+        self.current_action = 'IDLE'
+        self.target_position = None
+        self.active_waypoint = ''
 
-        return max(
-            -self.vertical_speed,
-            min(
-                self.vertical_speed,
-                error_z,
-            ),
+        self._publish_status(
+            'STOPPED'
         )
 
-    # =============================================================
-    # Publish stop
-    # =============================================================
+        self.last_received_command = ''
 
-    def _publish_stop(
-        self,
-    ) -> None:
+    def _publish_zero_velocity(self) -> None:
+        """Publish zero velocity."""
 
         command = Twist()
 
@@ -958,56 +585,46 @@ class GazeboExecutor(Node):
             command
         )
 
-    # =============================================================
-    # Status publishing
-    # =============================================================
-
     def _publish_status(
         self,
         status: str,
     ) -> None:
+        """Publish Gazebo execution status."""
 
         message = String()
-
-        message.data = (
-            status
-        )
+        message.data = status
 
         self.status_publisher.publish(
             message
+        )
+
+        self.get_logger().info(
+            f'Gazebo status: {status}'
         )
 
 
 def main(
     args=None,
 ) -> None:
+    """Run Gazebo executor node."""
 
     rclpy.init(
         args=args
     )
 
-    node = (
-        GazeboExecutor()
-    )
+    node = GazeboExecutor()
 
     try:
-
         rclpy.spin(
             node
         )
-
     except KeyboardInterrupt:
-
         pass
-
     finally:
-
-        node._publish_stop()
-
+        node._publish_zero_velocity()
         node.destroy_node()
 
         if rclpy.ok():
-
             rclpy.shutdown()
 
 

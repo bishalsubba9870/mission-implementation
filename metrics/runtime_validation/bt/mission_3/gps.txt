@@ -1,0 +1,17 @@
+Mission: M3
+Formalism: BT
+Trigger: 49 completed navigation tasks
+
+GPS_LOST:
+PASS - Triggered during NAV_51_WP50.
+PASS - Navigation paused.
+
+GPS_AVAILABLE:
+PASS - Interrupted navigation resumed.
+PASS - Mission continued to completion.
+
+GPS_RECOVERY_FAILED:
+PASS - Emergency landing executed.
+PASS - Mission safely terminated.
+
+Overall: PASS

@@ -1,0 +1,48 @@
+metrics/snapshots/refactored/propulsion/fsm/fsm_executor.py
+    LOC: 731
+    LLOC: 230
+    SLOC: 553
+    Comments: 0
+    Single comments: 19
+    Multi: 0
+    Blank: 159
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/propulsion/fsm/mission_loader.py
+    LOC: 81
+    LLOC: 26
+    SLOC: 62
+    Comments: 0
+    Single comments: 2
+    Multi: 0
+    Blank: 17
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/propulsion/fsm/progress_interface.py
+    LOC: 41
+    LLOC: 9
+    SLOC: 28
+    Comments: 0
+    Single comments: 2
+    Multi: 0
+    Blank: 11
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/propulsion/fsm/runtime_condition.py
+    LOC: 34
+    LLOC: 11
+    SLOC: 25
+    Comments: 0
+    Single comments: 2
+    Multi: 0
+    Blank: 7
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%

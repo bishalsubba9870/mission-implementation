@@ -1,0 +1,4 @@
+metrics/snapshots/refactored/nominal/htn/htn_domain.py - A (54.76)
+metrics/snapshots/refactored/nominal/htn/htn_executor.py - A (47.87)
+metrics/snapshots/refactored/nominal/htn/htn_planner.py - A (43.11)
+metrics/snapshots/refactored/nominal/htn/mission_loader.py - A (54.59)

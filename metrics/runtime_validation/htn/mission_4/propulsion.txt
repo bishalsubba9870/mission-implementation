@@ -1,0 +1,12 @@
+HTN Mission 4 - Propulsion
+
+Mission: M4
+Trigger: completed_navigation_tasks = 100
+
+PROPULSION_FAILURE
+-> HTN paused active navigation
+-> m_propulsion_failure
+-> emergency_land
+-> safe_terminate
+
+Result: PASS

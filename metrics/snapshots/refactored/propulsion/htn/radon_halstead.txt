@@ -1,0 +1,65 @@
+metrics/snapshots/refactored/propulsion/htn/htn_domain.py:
+    h1: 5
+    h2: 43
+    N1: 23
+    N2: 43
+    vocabulary: 48
+    length: 66
+    calculated_length: 244.939024926627
+    volume: 368.60752504759637
+    difficulty: 2.5
+    effort: 921.518812618991
+    time: 51.195489589943946
+    bugs: 0.12286917501586546
+metrics/snapshots/refactored/propulsion/htn/htn_executor.py:
+    h1: 11
+    h2: 65
+    N1: 37
+    N2: 72
+    vocabulary: 76
+    length: 109
+    calculated_length: 429.5076556518598
+    volume: 681.0240989653508
+    difficulty: 6.092307692307692
+    effort: 4149.008356773522
+    time: 230.50046426519566
+    bugs: 0.2270080329884503
+metrics/snapshots/refactored/propulsion/htn/htn_planner.py:
+    h1: 4
+    h2: 9
+    N1: 6
+    N2: 9
+    vocabulary: 13
+    length: 15
+    calculated_length: 36.52932501298081
+    volume: 55.506595772116384
+    difficulty: 2.0
+    effort: 111.01319154423277
+    time: 6.167399530235154
+    bugs: 0.01850219859070546
+metrics/snapshots/refactored/propulsion/htn/mission_loader.py:
+    h1: 3
+    h2: 11
+    N1: 9
+    N2: 13
+    vocabulary: 14
+    length: 22
+    calculated_length: 42.808635307173745
+    volume: 83.76180828526728
+    difficulty: 1.7727272727272727
+    effort: 148.48684196024655
+    time: 8.249268997791475
+    bugs: 0.02792060276175576
+metrics/snapshots/refactored/propulsion/htn/runtime_condition.py:
+    h1: 0
+    h2: 0
+    N1: 0
+    N2: 0
+    vocabulary: 0
+    length: 0
+    calculated_length: 0
+    volume: 0
+    difficulty: 0
+    effort: 0
+    time: 0.0
+    bugs: 0.0

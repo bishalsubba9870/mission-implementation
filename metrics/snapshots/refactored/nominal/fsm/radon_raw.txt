@@ -1,0 +1,24 @@
+metrics/snapshots/refactored/nominal/fsm/fsm_executor.py
+    LOC: 362
+    LLOC: 123
+    SLOC: 268
+    Comments: 0
+    Single comments: 11
+    Multi: 0
+    Blank: 83
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/nominal/fsm/mission_loader.py
+    LOC: 81
+    LLOC: 26
+    SLOC: 62
+    Comments: 0
+    Single comments: 2
+    Multi: 0
+    Blank: 17
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%

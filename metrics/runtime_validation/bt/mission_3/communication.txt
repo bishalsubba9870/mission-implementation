@@ -1,0 +1,17 @@
+Mission: M3
+Formalism: BT
+Trigger: 49 completed navigation tasks
+
+COMMUNICATION_LOST:
+PASS - Triggered during mission execution.
+PASS - Current navigation paused.
+
+COMMUNICATION_AVAILABLE:
+PASS - Interrupted navigation resumed.
+PASS - Mission continued to completion.
+
+COMMUNICATION_RECOVERY_FAILED:
+PASS - Return-to-home executed.
+PASS - Mission safely terminated.
+
+Overall: PASS

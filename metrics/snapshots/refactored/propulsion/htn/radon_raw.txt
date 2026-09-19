@@ -1,0 +1,60 @@
+metrics/snapshots/refactored/propulsion/htn/htn_domain.py
+    LOC: 729
+    LLOC: 158
+    SLOC: 535
+    Comments: 0
+    Single comments: 37
+    Multi: 0
+    Blank: 157
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/propulsion/htn/htn_executor.py
+    LOC: 936
+    LLOC: 258
+    SLOC: 693
+    Comments: 0
+    Single comments: 21
+    Multi: 0
+    Blank: 222
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/propulsion/htn/htn_planner.py
+    LOC: 335
+    LLOC: 89
+    SLOC: 257
+    Comments: 0
+    Single comments: 10
+    Multi: 0
+    Blank: 68
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/propulsion/htn/mission_loader.py
+    LOC: 81
+    LLOC: 26
+    SLOC: 62
+    Comments: 0
+    Single comments: 2
+    Multi: 0
+    Blank: 17
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/propulsion/htn/runtime_condition.py
+    LOC: 34
+    LLOC: 11
+    SLOC: 25
+    Comments: 0
+    Single comments: 2
+    Multi: 0
+    Blank: 7
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%

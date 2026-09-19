@@ -1,0 +1,60 @@
+metrics/snapshots/refactored/nominal/bt/bt_executor.py
+    LOC: 435
+    LLOC: 128
+    SLOC: 324
+    Comments: 0
+    Single comments: 13
+    Multi: 0
+    Blank: 98
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/nominal/bt/mission_action.py
+    LOC: 67
+    LLOC: 29
+    SLOC: 44
+    Comments: 0
+    Single comments: 5
+    Multi: 0
+    Blank: 18
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/nominal/bt/mission_loader.py
+    LOC: 81
+    LLOC: 26
+    SLOC: 62
+    Comments: 0
+    Single comments: 2
+    Multi: 0
+    Blank: 17
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/nominal/bt/task_adapter.py
+    LOC: 203
+    LLOC: 50
+    SLOC: 162
+    Comments: 0
+    Single comments: 6
+    Multi: 0
+    Blank: 35
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/nominal/bt/tree_builder.py
+    LOC: 73
+    LLOC: 23
+    SLOC: 53
+    Comments: 0
+    Single comments: 5
+    Multi: 0
+    Blank: 15
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%

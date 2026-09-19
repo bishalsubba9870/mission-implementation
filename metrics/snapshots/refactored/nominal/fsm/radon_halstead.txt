@@ -1,0 +1,26 @@
+metrics/snapshots/refactored/nominal/fsm/fsm_executor.py:
+    h1: 7
+    h2: 28
+    N1: 17
+    N2: 34
+    vocabulary: 35
+    length: 51
+    calculated_length: 154.25742227201613
+    volume: 261.5934338641933
+    difficulty: 4.25
+    effort: 1111.7720939228216
+    time: 61.76511632904564
+    bugs: 0.08719781128806443
+metrics/snapshots/refactored/nominal/fsm/mission_loader.py:
+    h1: 3
+    h2: 11
+    N1: 9
+    N2: 13
+    vocabulary: 14
+    length: 22
+    calculated_length: 42.808635307173745
+    volume: 83.76180828526728
+    difficulty: 1.7727272727272727
+    effort: 148.48684196024655
+    time: 8.249268997791475
+    bugs: 0.02792060276175576

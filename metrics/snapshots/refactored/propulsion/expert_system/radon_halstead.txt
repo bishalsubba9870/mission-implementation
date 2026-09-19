@@ -1,0 +1,65 @@
+metrics/snapshots/refactored/propulsion/expert_system/es_domain.py:
+    h1: 4
+    h2: 55
+    N1: 28
+    N2: 55
+    vocabulary: 59
+    length: 83
+    calculated_length: 325.9747842438563
+    volume: 488.25937309703284
+    difficulty: 2.0
+    effort: 976.5187461940657
+    time: 54.251041455225874
+    bugs: 0.1627531243656776
+metrics/snapshots/refactored/propulsion/expert_system/es_executor.py:
+    h1: 12
+    h2: 50
+    N1: 31
+    N2: 60
+    vocabulary: 62
+    length: 91
+    calculated_length: 325.2123594973901
+    volume: 541.8318642452057
+    difficulty: 7.2
+    effort: 3901.189422565481
+    time: 216.73274569808228
+    bugs: 0.18061062141506856
+metrics/snapshots/refactored/propulsion/expert_system/mission_loader.py:
+    h1: 3
+    h2: 11
+    N1: 9
+    N2: 13
+    vocabulary: 14
+    length: 22
+    calculated_length: 42.808635307173745
+    volume: 83.76180828526728
+    difficulty: 1.7727272727272727
+    effort: 148.48684196024655
+    time: 8.249268997791475
+    bugs: 0.02792060276175576
+metrics/snapshots/refactored/propulsion/expert_system/rule_engine.py:
+    h1: 11
+    h2: 38
+    N1: 23
+    N2: 40
+    vocabulary: 49
+    length: 63
+    calculated_length: 237.47499331586653
+    volume: 353.7267201792581
+    difficulty: 5.7894736842105265
+    effort: 2047.8915378799154
+    time: 113.77175210443974
+    bugs: 0.11790890672641936
+metrics/snapshots/refactored/propulsion/expert_system/runtime_condition.py:
+    h1: 0
+    h2: 0
+    N1: 0
+    N2: 0
+    vocabulary: 0
+    length: 0
+    calculated_length: 0
+    volume: 0
+    difficulty: 0
+    effort: 0
+    time: 0.0
+    bugs: 0.0

@@ -1,0 +1,39 @@
+metrics/snapshots/nominal/expert_system/es_domain.py:
+    h1: 4
+    h2: 18
+    N1: 10
+    N2: 18
+    vocabulary: 22
+    length: 28
+    calculated_length: 83.05865002596161
+    volume: 124.86408532184433
+    difficulty: 2.0
+    effort: 249.72817064368866
+    time: 13.873787257982704
+    bugs: 0.04162136177394811
+metrics/snapshots/nominal/expert_system/es_executor.py:
+    h1: 9
+    h2: 28
+    N1: 18
+    N2: 32
+    vocabulary: 37
+    length: 50
+    calculated_length: 163.13526283059372
+    volume: 260.4726682814475
+    difficulty: 5.142857142857143
+    effort: 1339.5737225903015
+    time: 74.42076236612786
+    bugs: 0.0868242227604825
+metrics/snapshots/nominal/expert_system/rule_engine.py:
+    h1: 11
+    h2: 38
+    N1: 23
+    N2: 40
+    vocabulary: 49
+    length: 63
+    calculated_length: 237.47499331586653
+    volume: 353.7267201792581
+    difficulty: 5.7894736842105265
+    effort: 2047.8915378799154
+    time: 113.77175210443974
+    bugs: 0.11790890672641936

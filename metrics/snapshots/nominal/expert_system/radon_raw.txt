@@ -1,0 +1,36 @@
+metrics/snapshots/nominal/expert_system/es_domain.py
+    LOC: 186
+    LLOC: 33
+    SLOC: 144
+    Comments: 0
+    Single comments: 1
+    Multi: 3
+    Blank: 38
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 2%
+metrics/snapshots/nominal/expert_system/es_executor.py
+    LOC: 634
+    LLOC: 156
+    SLOC: 469
+    Comments: 18
+    Single comments: 19
+    Multi: 3
+    Blank: 143
+    - Comment Stats
+        (C % L): 3%
+        (C % S): 4%
+        (C + M % L): 3%
+metrics/snapshots/nominal/expert_system/rule_engine.py
+    LOC: 336
+    LLOC: 114
+    SLOC: 244
+    Comments: 9
+    Single comments: 13
+    Multi: 3
+    Blank: 76
+    - Comment Stats
+        (C % L): 3%
+        (C % S): 4%
+        (C + M % L): 4%

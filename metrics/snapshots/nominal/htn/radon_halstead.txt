@@ -1,0 +1,39 @@
+metrics/snapshots/nominal/htn/htn_domain.py:
+    h1: 3
+    h2: 8
+    N1: 4
+    N2: 8
+    vocabulary: 11
+    length: 12
+    calculated_length: 28.75488750216347
+    volume: 41.51317942364757
+    difficulty: 1.5
+    effort: 62.26976913547136
+    time: 3.4594316186372978
+    bugs: 0.01383772647454919
+metrics/snapshots/nominal/htn/htn_executor.py:
+    h1: 11
+    h2: 37
+    N1: 22
+    N2: 42
+    vocabulary: 48
+    length: 64
+    calculated_length: 230.80352233328142
+    volume: 357.43760004615405
+    difficulty: 6.243243243243243
+    effort: 2231.569881369232
+    time: 123.97610452051289
+    bugs: 0.11914586668205135
+metrics/snapshots/nominal/htn/htn_planner.py:
+    h1: 4
+    h2: 9
+    N1: 6
+    N2: 9
+    vocabulary: 13
+    length: 15
+    calculated_length: 36.52932501298081
+    volume: 55.506595772116384
+    difficulty: 2.0
+    effort: 111.01319154423277
+    time: 6.167399530235154
+    bugs: 0.01850219859070546

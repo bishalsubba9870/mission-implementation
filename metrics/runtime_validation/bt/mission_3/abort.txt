@@ -1,0 +1,11 @@
+Mission: M3
+Formalism: BT
+Trigger: 49 completed navigation tasks
+
+ABORT_REQUESTED:
+PASS - Triggered during mission execution.
+PASS - Current task paused.
+PASS - Return-to-home executed.
+PASS - Mission safely terminated.
+
+Overall: PASS

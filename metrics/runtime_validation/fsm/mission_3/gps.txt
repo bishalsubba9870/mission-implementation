@@ -1,0 +1,8 @@
+Mission: M3
+Trigger: 49
+
+GPS_AVAILABLE:
+PASS - resumed interrupted navigation and mission completed successfully.
+
+GPS_RECOVERY_FAILED:
+PASS - GPS_RECOVERY -> LAND -> SAFE_TERMINATED.

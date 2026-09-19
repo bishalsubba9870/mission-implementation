@@ -1,0 +1,39 @@
+metrics/snapshots/scenario_capable/expert_system/abort/es_domain.py:
+    h1: 4
+    h2: 155
+    N1: 78
+    N2: 155
+    vocabulary: 159
+    length: 233
+    calculated_length: 1135.799282817507
+    volume: 1703.901728581255
+    difficulty: 2.0
+    effort: 3407.80345716251
+    time: 189.3224142868061
+    bugs: 0.5679672428604183
+metrics/snapshots/scenario_capable/expert_system/abort/es_executor.py:
+    h1: 11
+    h2: 65
+    N1: 47
+    N2: 87
+    vocabulary: 76
+    length: 134
+    calculated_length: 429.5076556518598
+    volume: 837.2222868014405
+    difficulty: 7.361538461538461
+    effort: 6163.244065145989
+    time: 342.40244806366604
+    bugs: 0.2790740956004802
+metrics/snapshots/scenario_capable/expert_system/abort/rule_engine.py:
+    h1: 11
+    h2: 38
+    N1: 23
+    N2: 40
+    vocabulary: 49
+    length: 63
+    calculated_length: 237.47499331586653
+    volume: 353.7267201792581
+    difficulty: 5.7894736842105265
+    effort: 2047.8915378799154
+    time: 113.77175210443974
+    bugs: 0.11790890672641936

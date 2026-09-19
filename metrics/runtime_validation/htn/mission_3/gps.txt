@@ -1,0 +1,31 @@
+HTN Mission 3 GPS Validation
+
+Mission: M3
+Mission items: 102
+Trigger: completed_navigation_tasks = 50
+
+Test 1:
+GPS_LOST
+-> HTN paused active navigation
+-> m_gps_lost selected
+-> wait_for_gps
+-> GPS_AVAILABLE
+-> m_gps_restored selected
+-> resume_mission
+-> interrupted navigation resumed
+-> mission completed successfully
+
+Result: PASS
+
+Test 2:
+GPS_LOST
+-> HTN paused active navigation
+-> m_gps_lost selected
+-> wait_for_gps
+-> GPS_RECOVERY_FAILED
+-> m_gps_recovery_failed selected
+-> emergency_land
+-> safe_terminate
+-> mission safely terminated
+
+Result: PASS

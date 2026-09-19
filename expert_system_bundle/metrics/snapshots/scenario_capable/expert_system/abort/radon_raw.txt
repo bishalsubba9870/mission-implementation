@@ -1,0 +1,36 @@
+metrics/snapshots/scenario_capable/expert_system/abort/es_domain.py
+    LOC: 679
+    LLOC: 113
+    SLOC: 485
+    Comments: 33
+    Single comments: 34
+    Multi: 3
+    Blank: 157
+    - Comment Stats
+        (C % L): 5%
+        (C % S): 7%
+        (C + M % L): 5%
+metrics/snapshots/scenario_capable/expert_system/abort/es_executor.py
+    LOC: 1018
+    LLOC: 304
+    SLOC: 768
+    Comments: 24
+    Single comments: 25
+    Multi: 3
+    Blank: 222
+    - Comment Stats
+        (C % L): 2%
+        (C % S): 3%
+        (C + M % L): 3%
+metrics/snapshots/scenario_capable/expert_system/abort/rule_engine.py
+    LOC: 336
+    LLOC: 114
+    SLOC: 244
+    Comments: 9
+    Single comments: 13
+    Multi: 3
+    Blank: 76
+    - Comment Stats
+        (C % L): 3%
+        (C % S): 4%
+        (C + M % L): 4%

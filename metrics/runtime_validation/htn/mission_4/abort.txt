@@ -1,0 +1,12 @@
+HTN Mission 4 - Abort
+
+Mission: M4
+Trigger: completed_navigation_tasks = 100
+
+ABORT_REQUESTED
+-> HTN paused active navigation
+-> m_abort_requested
+-> return_to_home
+-> safe_terminate
+
+Result: PASS

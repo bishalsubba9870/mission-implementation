@@ -1,0 +1,65 @@
+metrics/snapshots/refactored/abort/expert_system/es_domain.py:
+    h1: 4
+    h2: 153
+    N1: 77
+    N2: 153
+    vocabulary: 157
+    length: 230
+    calculated_length: 1118.3803399319759
+    volume: 1677.7627722450743
+    difficulty: 2.0
+    effort: 3355.5255444901486
+    time: 186.41808580500825
+    bugs: 0.5592542574150248
+metrics/snapshots/refactored/abort/expert_system/es_executor.py:
+    h1: 12
+    h2: 59
+    N1: 38
+    N2: 73
+    vocabulary: 71
+    length: 111
+    calculated_length: 390.0954899210025
+    volume: 682.6219302650197
+    difficulty: 7.423728813559322
+    effort: 5067.600092475909
+    time: 281.53333847088385
+    bugs: 0.22754064342167324
+metrics/snapshots/refactored/abort/expert_system/mission_loader.py:
+    h1: 3
+    h2: 11
+    N1: 9
+    N2: 13
+    vocabulary: 14
+    length: 22
+    calculated_length: 42.808635307173745
+    volume: 83.76180828526728
+    difficulty: 1.7727272727272727
+    effort: 148.48684196024655
+    time: 8.249268997791475
+    bugs: 0.02792060276175576
+metrics/snapshots/refactored/abort/expert_system/rule_engine.py:
+    h1: 11
+    h2: 38
+    N1: 23
+    N2: 40
+    vocabulary: 49
+    length: 63
+    calculated_length: 237.47499331586653
+    volume: 353.7267201792581
+    difficulty: 5.7894736842105265
+    effort: 2047.8915378799154
+    time: 113.77175210443974
+    bugs: 0.11790890672641936
+metrics/snapshots/refactored/abort/expert_system/runtime_condition.py:
+    h1: 0
+    h2: 0
+    N1: 0
+    N2: 0
+    vocabulary: 0
+    length: 0
+    calculated_length: 0
+    volume: 0
+    difficulty: 0
+    effort: 0
+    time: 0.0
+    bugs: 0.0

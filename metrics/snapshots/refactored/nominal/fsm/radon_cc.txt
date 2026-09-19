@@ -1,0 +1,18 @@
+metrics/snapshots/refactored/nominal/fsm/fsm_executor.py
+    M 135:4 FSMExecutor._create_state_name - A (5)
+    F 331:0 main - A (4)
+    M 80:4 FSMExecutor._build_fsm - A (4)
+    M 239:4 FSMExecutor._task_action - A (4)
+    C 14:0 FSMExecutor - A (3)
+    M 213:4 FSMExecutor._enter_state - A (3)
+    M 266:4 FSMExecutor._timer_callback - A (3)
+    M 175:4 FSMExecutor._handle_event - A (2)
+    M 316:4 FSMExecutor._finish_mission - A (2)
+    M 17:4 FSMExecutor.__init__ - A (1)
+    M 119:4 FSMExecutor._add_task_state - A (1)
+    M 287:4 FSMExecutor._log_mission_summary - A (1)
+metrics/snapshots/refactored/nominal/fsm/mission_loader.py
+    F 11:0 load_mission - B (8)
+
+13 blocks (classes, functions, methods) analyzed.
+Average complexity: A (3.1538461538461537)

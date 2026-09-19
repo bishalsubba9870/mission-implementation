@@ -1,0 +1,13 @@
+HTN Mission 4 - Wind
+
+Mission: M4
+Trigger: completed_navigation_tasks = 100
+
+WIND_UNSAFE
+-> HTN paused active navigation
+-> m_wind_unsafe
+-> abort_mission
+-> safe_land
+-> safe_terminate
+
+Result: PASS

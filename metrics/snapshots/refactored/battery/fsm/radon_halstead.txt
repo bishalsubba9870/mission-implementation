@@ -1,0 +1,52 @@
+metrics/snapshots/refactored/battery/fsm/fsm_executor.py:
+    h1: 9
+    h2: 56
+    N1: 34
+    N2: 65
+    vocabulary: 65
+    length: 99
+    calculated_length: 353.74120064820664
+    volume: 596.2144134898169
+    difficulty: 5.223214285714286
+    effort: 3114.155641888776
+    time: 173.00864677159865
+    bugs: 0.198738137829939
+metrics/snapshots/refactored/battery/fsm/mission_loader.py:
+    h1: 3
+    h2: 11
+    N1: 9
+    N2: 13
+    vocabulary: 14
+    length: 22
+    calculated_length: 42.808635307173745
+    volume: 83.76180828526728
+    difficulty: 1.7727272727272727
+    effort: 148.48684196024655
+    time: 8.249268997791475
+    bugs: 0.02792060276175576
+metrics/snapshots/refactored/battery/fsm/progress_interface.py:
+    h1: 0
+    h2: 0
+    N1: 0
+    N2: 0
+    vocabulary: 0
+    length: 0
+    calculated_length: 0
+    volume: 0
+    difficulty: 0
+    effort: 0
+    time: 0.0
+    bugs: 0.0
+metrics/snapshots/refactored/battery/fsm/runtime_condition.py:
+    h1: 0
+    h2: 0
+    N1: 0
+    N2: 0
+    vocabulary: 0
+    length: 0
+    calculated_length: 0
+    volume: 0
+    difficulty: 0
+    effort: 0
+    time: 0.0
+    bugs: 0.0

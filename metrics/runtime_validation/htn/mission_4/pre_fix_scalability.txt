@@ -1,0 +1,22 @@
+HTN Mission 4 Pre-Fix Scalability Test
+
+Mission: M4
+Mission items: 201
+
+Result: FAIL
+
+Observed error:
+maximum recursion depth exceeded
+
+Cause:
+The recursive HTN planner exceeded Python's recursion depth while
+decomposing the larger ordered task network.
+
+Interpretation:
+Mission 3 was successfully planned, but Mission 4 exposed a scalability
+limitation in the recursive planner implementation.
+
+Corrective action:
+Replace recursive depth-first HTN search with an explicit-stack
+implementation while preserving SHOP-style ordered decomposition
+and method backtracking.

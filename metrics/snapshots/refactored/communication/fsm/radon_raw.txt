@@ -1,0 +1,48 @@
+metrics/snapshots/refactored/communication/fsm/fsm_executor.py
+    LOC: 791
+    LLOC: 256
+    SLOC: 601
+    Comments: 0
+    Single comments: 24
+    Multi: 0
+    Blank: 166
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/communication/fsm/mission_loader.py
+    LOC: 81
+    LLOC: 26
+    SLOC: 62
+    Comments: 0
+    Single comments: 2
+    Multi: 0
+    Blank: 17
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/communication/fsm/progress_interface.py
+    LOC: 41
+    LLOC: 9
+    SLOC: 28
+    Comments: 0
+    Single comments: 2
+    Multi: 0
+    Blank: 11
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/communication/fsm/runtime_condition.py
+    LOC: 34
+    LLOC: 11
+    SLOC: 25
+    Comments: 0
+    Single comments: 2
+    Multi: 0
+    Blank: 7
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%

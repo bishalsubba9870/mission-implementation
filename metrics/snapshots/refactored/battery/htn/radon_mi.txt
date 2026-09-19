@@ -1,0 +1,5 @@
+metrics/snapshots/refactored/battery/htn/htn_domain.py - A (21.68)
+metrics/snapshots/refactored/battery/htn/htn_executor.py - B (18.51)
+metrics/snapshots/refactored/battery/htn/htn_planner.py - A (43.11)
+metrics/snapshots/refactored/battery/htn/mission_loader.py - A (54.59)
+metrics/snapshots/refactored/battery/htn/runtime_condition.py - A (100.00)

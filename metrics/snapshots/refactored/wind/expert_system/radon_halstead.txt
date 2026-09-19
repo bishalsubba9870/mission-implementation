@@ -1,0 +1,65 @@
+metrics/snapshots/refactored/wind/expert_system/es_domain.py:
+    h1: 4
+    h2: 108
+    N1: 54
+    N2: 108
+    vocabulary: 112
+    length: 162
+    calculated_length: 737.5278502336547
+    volume: 1102.7914973733318
+    difficulty: 2.0
+    effort: 2205.5829947466636
+    time: 122.53238859703687
+    bugs: 0.3675971657911106
+metrics/snapshots/refactored/wind/expert_system/es_executor.py:
+    h1: 12
+    h2: 57
+    N1: 37
+    N2: 71
+    vocabulary: 69
+    length: 108
+    calculated_length: 375.4942808160442
+    volume: 659.7206413320423
+    difficulty: 7.473684210526316
+    effort: 4930.543740481579
+    time: 273.91909669342107
+    bugs: 0.2199068804440141
+metrics/snapshots/refactored/wind/expert_system/mission_loader.py:
+    h1: 3
+    h2: 11
+    N1: 9
+    N2: 13
+    vocabulary: 14
+    length: 22
+    calculated_length: 42.808635307173745
+    volume: 83.76180828526728
+    difficulty: 1.7727272727272727
+    effort: 148.48684196024655
+    time: 8.249268997791475
+    bugs: 0.02792060276175576
+metrics/snapshots/refactored/wind/expert_system/rule_engine.py:
+    h1: 11
+    h2: 38
+    N1: 23
+    N2: 40
+    vocabulary: 49
+    length: 63
+    calculated_length: 237.47499331586653
+    volume: 353.7267201792581
+    difficulty: 5.7894736842105265
+    effort: 2047.8915378799154
+    time: 113.77175210443974
+    bugs: 0.11790890672641936
+metrics/snapshots/refactored/wind/expert_system/runtime_condition.py:
+    h1: 0
+    h2: 0
+    N1: 0
+    N2: 0
+    vocabulary: 0
+    length: 0
+    calculated_length: 0
+    volume: 0
+    difficulty: 0
+    effort: 0
+    time: 0.0
+    bugs: 0.0

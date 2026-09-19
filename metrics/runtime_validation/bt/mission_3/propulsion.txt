@@ -1,0 +1,11 @@
+Mission: M3
+Formalism: BT
+Trigger: 49 completed navigation tasks
+
+PROPULSION_FAILURE:
+PASS - Triggered during mission execution.
+PASS - Current task paused.
+PASS - Emergency landing executed.
+PASS - Mission safely terminated.
+
+Overall: PASS

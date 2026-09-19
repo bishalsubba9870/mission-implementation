@@ -1,0 +1,9 @@
+metrics/snapshots/final/waypoint/waypoint_executor.py
+    M 48:4 WaypointExecutor.execute_mission - A (5)
+    C 9:0 WaypointExecutor - A (3)
+    F 97:0 main - A (1)
+    M 11:4 WaypointExecutor.__init__ - A (1)
+    M 39:4 WaypointExecutor.load_mission - A (1)
+
+5 blocks (classes, functions, methods) analyzed.
+Average complexity: A (2.2)

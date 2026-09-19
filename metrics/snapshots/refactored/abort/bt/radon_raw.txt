@@ -1,0 +1,144 @@
+metrics/snapshots/refactored/abort/bt/abort_requested.py
+    LOC: 83
+    LLOC: 39
+    SLOC: 54
+    Comments: 0
+    Single comments: 5
+    Multi: 0
+    Blank: 24
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/abort/bt/battery_critical.py
+    LOC: 80
+    LLOC: 37
+    SLOC: 52
+    Comments: 0
+    Single comments: 5
+    Multi: 0
+    Blank: 23
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/abort/bt/bt_executor.py
+    LOC: 811
+    LLOC: 266
+    SLOC: 591
+    Comments: 0
+    Single comments: 32
+    Multi: 0
+    Blank: 188
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/abort/bt/communication_recovery.py
+    LOC: 107
+    LLOC: 54
+    SLOC: 68
+    Comments: 0
+    Single comments: 6
+    Multi: 0
+    Blank: 33
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/abort/bt/gps_recovery.py
+    LOC: 103
+    LLOC: 50
+    SLOC: 67
+    Comments: 0
+    Single comments: 5
+    Multi: 0
+    Blank: 31
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/abort/bt/mission_action.py
+    LOC: 167
+    LLOC: 82
+    SLOC: 110
+    Comments: 0
+    Single comments: 9
+    Multi: 0
+    Blank: 48
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/abort/bt/mission_loader.py
+    LOC: 81
+    LLOC: 26
+    SLOC: 62
+    Comments: 0
+    Single comments: 2
+    Multi: 0
+    Blank: 17
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/abort/bt/propulsion_failure.py
+    LOC: 85
+    LLOC: 38
+    SLOC: 55
+    Comments: 0
+    Single comments: 5
+    Multi: 0
+    Blank: 25
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/abort/bt/runtime_condition.py
+    LOC: 34
+    LLOC: 11
+    SLOC: 25
+    Comments: 0
+    Single comments: 2
+    Multi: 0
+    Blank: 7
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/abort/bt/task_adapter.py
+    LOC: 203
+    LLOC: 50
+    SLOC: 162
+    Comments: 0
+    Single comments: 6
+    Multi: 0
+    Blank: 35
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/abort/bt/tree_builder.py
+    LOC: 158
+    LLOC: 35
+    SLOC: 127
+    Comments: 0
+    Single comments: 6
+    Multi: 0
+    Blank: 25
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+metrics/snapshots/refactored/abort/bt/wind_unsafe.py
+    LOC: 136
+    LLOC: 62
+    SLOC: 90
+    Comments: 0
+    Single comments: 7
+    Multi: 0
+    Blank: 39
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%

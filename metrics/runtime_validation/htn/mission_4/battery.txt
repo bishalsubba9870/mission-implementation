@@ -1,0 +1,12 @@
+HTN Mission 4 - Battery
+
+Mission: M4
+Trigger: completed_navigation_tasks = 100
+
+BATTERY_CRITICAL
+-> HTN paused active navigation
+-> m_battery_critical
+-> emergency_land
+-> safe_terminate
+
+Result: PASS

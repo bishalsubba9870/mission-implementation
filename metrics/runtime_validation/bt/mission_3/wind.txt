@@ -1,0 +1,12 @@
+Mission: M3
+Formalism: BT
+Trigger: 49 completed navigation tasks
+
+WIND_UNSAFE:
+PASS - Triggered during mission execution.
+PASS - Current task paused.
+PASS - Abort action executed.
+PASS - Safe landing executed.
+PASS - Mission safely terminated.
+
+Overall: PASS

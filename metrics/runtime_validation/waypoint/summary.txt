@@ -1,0 +1,32 @@
+Waypoint Runtime Validation
+
+M1
+Mission items: 4
+Nominal execution: PASS
+
+M2
+Mission items: 13
+Nominal execution: PASS
+
+M3
+Mission items: 102
+Nominal execution: PASS
+
+M4
+Mission items: 201
+Nominal execution: PASS
+
+Runtime recovery scenarios:
+GPS loss/recovery: N/A
+Propulsion failure: N/A
+Communication loss/recovery: N/A
+Unsafe wind: N/A
+Battery critical: N/A
+Directed abort recovery: N/A
+
+Reason:
+Waypoint is evaluated as a fixed sequential mission baseline.
+Reactive runtime recovery is not inherent to the waypoint formalism and
+was therefore not artificially added.
+
+Overall nominal result: PASS

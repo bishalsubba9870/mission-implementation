@@ -1,0 +1,91 @@
+HTN Mission 3 Runtime Validation Summary
+
+Mission: M3
+Mission items: 102
+Trigger point: completed_navigation_tasks = 50
+
+1. Nominal
+Result: PASS
+Mission completed with no runtime fault.
+
+2. GPS recovery success
+GPS_LOST
+-> HTN paused active navigation
+-> m_gps_lost
+-> wait_for_gps
+-> GPS_AVAILABLE
+-> m_gps_restored
+-> resume_mission
+-> interrupted navigation resumed
+-> mission completed
+Result: PASS
+
+3. GPS recovery failure
+GPS_LOST
+-> HTN paused active navigation
+-> m_gps_lost
+-> wait_for_gps
+-> GPS_RECOVERY_FAILED
+-> m_gps_recovery_failed
+-> emergency_land
+-> safe_terminate
+Result: PASS
+
+4. Propulsion failure
+PROPULSION_FAILURE
+-> HTN paused active navigation
+-> m_propulsion_failure
+-> emergency_land
+-> safe_terminate
+Result: PASS
+
+5. Communication recovery success
+COMMUNICATION_LOST
+-> HTN paused active navigation
+-> m_communication_lost
+-> wait_for_communication
+-> COMMUNICATION_AVAILABLE
+-> m_communication_restored
+-> resume_mission
+-> interrupted navigation resumed
+-> mission completed
+Result: PASS
+
+6. Communication recovery failure
+COMMUNICATION_LOST
+-> HTN paused active navigation
+-> wait_for_communication
+-> COMMUNICATION_RECOVERY_FAILED
+-> m_communication_recovery_failed
+-> return_to_home
+-> safe_terminate
+Result: PASS
+
+7. Unsafe wind
+WIND_UNSAFE
+-> HTN paused active navigation
+-> m_wind_unsafe
+-> abort_mission
+-> safe_land
+-> safe_terminate
+Result: PASS
+
+8. Critical battery
+BATTERY_CRITICAL
+-> HTN paused active navigation
+-> m_battery_critical
+-> emergency_land
+-> safe_terminate
+Result: PASS
+
+9. Abort request
+ABORT_REQUESTED
+-> HTN paused active navigation
+-> m_abort_requested
+-> return_to_home
+-> safe_terminate
+Result: PASS
+
+Conclusion:
+The same final HTN implementation executed Mission 3 without source-code changes.
+All supported runtime scenarios and both recoverable branches were validated successfully.

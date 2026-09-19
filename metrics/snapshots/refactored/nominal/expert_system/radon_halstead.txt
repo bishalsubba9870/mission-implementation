@@ -1,0 +1,52 @@
+metrics/snapshots/refactored/nominal/expert_system/es_domain.py:
+    h1: 4
+    h2: 16
+    N1: 9
+    N2: 16
+    vocabulary: 20
+    length: 25
+    calculated_length: 72.0
+    volume: 108.04820237218406
+    difficulty: 2.0
+    effort: 216.09640474436813
+    time: 12.005355819131562
+    bugs: 0.03601606745739469
+metrics/snapshots/refactored/nominal/expert_system/es_executor.py:
+    h1: 7
+    h2: 20
+    N1: 11
+    N2: 22
+    vocabulary: 27
+    length: 33
+    calculated_length: 106.09004635215048
+    volume: 156.91128757139447
+    difficulty: 3.85
+    effort: 604.1084571498687
+    time: 33.561580952770484
+    bugs: 0.052303762523798154
+metrics/snapshots/refactored/nominal/expert_system/mission_loader.py:
+    h1: 3
+    h2: 11
+    N1: 9
+    N2: 13
+    vocabulary: 14
+    length: 22
+    calculated_length: 42.808635307173745
+    volume: 83.76180828526728
+    difficulty: 1.7727272727272727
+    effort: 148.48684196024655
+    time: 8.249268997791475
+    bugs: 0.02792060276175576
+metrics/snapshots/refactored/nominal/expert_system/rule_engine.py:
+    h1: 11
+    h2: 38
+    N1: 23
+    N2: 40
+    vocabulary: 49
+    length: 63
+    calculated_length: 237.47499331586653
+    volume: 353.7267201792581
+    difficulty: 5.7894736842105265
+    effort: 2047.8915378799154
+    time: 113.77175210443974
+    bugs: 0.11790890672641936

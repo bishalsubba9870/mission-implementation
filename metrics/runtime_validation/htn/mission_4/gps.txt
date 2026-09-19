@@ -1,0 +1,26 @@
+HTN Mission 4 - GPS
+
+Mission: M4
+Trigger: completed_navigation_tasks = 100
+
+GPS_LOST
+-> HTN paused active navigation
+-> m_gps_lost
+-> wait_for_gps
+
+Recovery success:
+GPS_AVAILABLE
+-> m_gps_restored
+-> resume_mission
+-> navigation resumed
+-> mission completed
+
+Result: PASS
+
+Recovery failure:
+GPS_RECOVERY_FAILED
+-> m_gps_recovery_failed
+-> emergency_land
+-> safe_terminate
+
+Result: PASS
